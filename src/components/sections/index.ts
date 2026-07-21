@@ -1,0 +1,11 @@
+export { Hero } from "./Hero";
+export { TrustedBy } from "./TrustedBy";
+export { About } from "./About";
+export { IntegratedAdvantage } from "./IntegratedAdvantage";
+export { Services } from "./Services";
+export { Industries } from "./Industries";
+export { ProjectsShowcase } from "./ProjectsShowcase";
+export { CaseStudies } from "./CaseStudies";
+export { Numbers } from "./Numbers";
+export { CtaBanner } from "./CtaBanner";
+export { Blog } from "./Blog";

@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   AFAQ SYSTEMS — DESIGN TOKENS
+   Tailwind v4 CSS-first config. Every color, font, type step, radius, and
+   layout constant is declared here and consumed as a utility.
+   ========================================================================= */
+
+@theme {
+  /* --- Color: Ink (dark surfaces) ------------------------------------- */
+  --color-ink-900: #0a2419; /* deepest — hero/footer/dark sections   */
+  --color-ink-800: #0f2e26; /* dark section surface                  */
+  --color-ink-700: #16382e; /* elevated dark surface, card on dark   */
+
+  /* --- Color: Brand green -------------------------------------------- */
+  --color-brand-500: #2cb34a; /* PRIMARY brand green — logo, accents  */
+  --color-brand-400: #3dc95c; /* hover state                          */
+  --color-brand-600: #1f8f39; /* pressed / dense text on light        */
+
+  /* --- Color: Tech teal (GIS / digital only, sparingly) ------------- */
+  --color-tech-500: #3fb8c4;
+
+  /* --- Color: Engineering gold (dividers, key accents, sparingly) --- */
+  --color-gold: #c7a55b;
+  --color-gold-soft: #d8bd85;
+
+  /* --- Color: Slate (text + hairlines) ------------------------------ */
+  --color-slate-900: #1b1f1e; /* body text on light                  */
+  --color-slate-600: #5a6461; /* secondary text                      */
+  --color-slate-300: #c9d2ce; /* hairline borders                    */
+
+  /* --- Color: Mist (light surfaces) --------------------------------- */
+  --color-mist-100: #e9eeec;
+  --color-mist-50: #f5f7f6;
+  --color-white: #ffffff;
+
+  /* --- Derived line / divider colors -------------------------------- */
+  --color-line: color-mix(in srgb, #1b1f1e 12%, transparent); /* on light */
+  --color-line-inv: color-mix(in srgb, #ffffff 12%, transparent); /* on dark */
+  --color-divider: color-mix(in srgb, #2cb34a 40%, transparent); /* blueprint */
+
+  /* --- Fonts --------------------------------------------------------- */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-ibm-arabic), ui-sans-serif, sans-serif;
+
+  /* --- Fluid type scale (clamp) ------------------------------------- */
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow--font-weight: 600;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+
+  --text-body-lg: clamp(1.05rem, 1.4vw, 1.25rem);
+  --text-body-lg--line-height: 1.6;
+
+  --text-h3: clamp(1.35rem, 2vw, 1.75rem);
+  --text-h3--line-height: 1.25;
+
+  --text-h2: clamp(2rem, 4vw, 3.25rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h1: clamp(2.5rem, 5.5vw, 4.5rem);
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-display: clamp(3rem, 7vw, 6.5rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-stat: clamp(3rem, 6vw, 5.5rem);
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.03em;
+
+  /* --- Radius -------------------------------------------------------- */
+  --radius-card: 12px;
+  --radius-image: 8px;
+  --radius-button: 8px;
+
+  /* --- Spacing / layout --------------------------------------------- */
+  --spacing-gutter: 32px;
+  --spacing-section: clamp(96px, 12vw, 180px);
+
+  /* --- Container ----------------------------------------------------- */
+  --container-content: 1440px;
+}
+
+/* ============================================================================
+   BASE LAYER
+   ========================================================================= */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.65;
+    background-color: var(--color-ink-900);
+    color: var(--color-mist-50);
+  }
+
+  /* Arabic needs more vertical air and its own family. */
+  [dir="rtl"] body,
+  :lang(ar) body {
+    font-family: var(--font-arabic);
+    line-height: 1.9;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  [dir="rtl"] :is(h1, h2, h3, h4, h5, h6),
+  :lang(ar) :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-arabic);
+  }
+
+  /* Visible, consistent focus ring for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-500);
+    color: var(--color-ink-900);
+  }
+
+  /* Children of a reveal group start hidden ONLY when JS is available, so
+     non-JS users always see the final state. GSAP animates them to visible. */
+  .js .reveal-group > * {
+    opacity: 0;
+  }
+}
+
+/* ============================================================================
+   REDUCED MOTION — CSS-level guard.
+   JS/GSAP motion is gated separately via gsap.matchMedia().
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================
+   ARABIC DISPLAY FONT — cascade fix.
+   The base-layer `[dir=rtl] h1..h6 { font-arabic }` rule is out-ranked by the
+   Tailwind `.font-display` utility (utilities layer wins over base), which would
+   otherwise force Space Grotesk onto Arabic headings, eyebrows, and buttons.
+   This rule is unlayered, so it wins over all @layer utilities. Stat/counter
+   values are marked `dir="ltr"`, so they stay excluded and keep Space Grotesk
+   numerals. Arabic connected script also drops the Latin tracking.
+   ========================================================================= */
+
+[dir="rtl"] .font-display:not([dir="ltr"]) {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}

@@ -1,0 +1,780 @@
+{
+  "Meta": {
+    "title": "AFAQ Systems Co. — Pioneers in Integrated Engineering",
+    "description": "Riyadh-based integrated engineering firm delivering Survey & GIS, Intelligent Transportation Systems, AV integration, and steel & civil works. From the depths of the earth to the heights of space technology."
+  },
+  "Common": {
+    "skipToContent": "Skip to content",
+    "languageName": "English",
+    "switchToArabic": "العربية",
+    "switchToEnglish": "English"
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Contact Us",
+    "menu": "Menu",
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Hero": {
+    "eyebrow": "EST. 2008 · RIYADH · VISION 2030 ALIGNED",
+    "title": "Engineering Every Layer of Tomorrow.",
+    "subtitle": "Pioneers in Integrated Engineering — delivering end-to-end solutions from geospatial intelligence to smart infrastructure, supporting Saudi Arabia's Vision 2030.",
+    "ctaPrimary": "Explore Services",
+    "ctaSecondary": "Contact Us",
+    "scroll": "Scroll",
+    "layers": {
+      "earth": "Depths of the Earth",
+      "surface": "Surface Infrastructure",
+      "city": "Smart Cities",
+      "space": "Space Technology"
+    }
+  },
+  "Trusted": {
+    "eyebrow": "Trusted across the Kingdom",
+    "title": "Government, industry, and technology partners.",
+    "note": "Partner and client identities are represented as text marks pending brand-approved logos.",
+    "logos": [
+      "Riyadh Metro",
+      "KAFD",
+      "SWCC",
+      "Saudi Electricity",
+      "MEWA",
+      "Riyadh Airports",
+      "SAR",
+      "ROSHN",
+      "Diriyah",
+      "Qiddiya",
+      "NEOM",
+      "MODON",
+      "Trimble",
+      "Esri"
+    ]
+  },
+  "About": {
+    "eyebrow": "01 — Who We Are",
+    "title": "One engineering partner connecting the physical and the digital.",
+    "lead": "AFAQ Systems is a multidisciplinary Saudi engineering company. Since 2008 we have united surveying, civil and steel construction, intelligent transportation, and audio-visual systems under a single, accountable delivery model — so infrastructure and intelligence are engineered together, not stitched together.",
+    "imageLabel": "Photograph — engineers on a Riyadh infrastructure site",
+    "values": {
+      "independence": {
+        "title": "Engineering Independence",
+        "body": "In-house survey, design, fabrication, and integration teams — full ownership of quality from first datum to final handover."
+      },
+      "integration": {
+        "title": "Physical + Digital Integration",
+        "body": "Every structure is captured as data. Geospatial models, digital twins, and intelligent systems extend physical assets into living infrastructure."
+      },
+      "vision": {
+        "title": "Vision 2030 Alignment",
+        "body": "Built for the Kingdom's giga-projects — smart cities, mobility, and utilities delivered to government-grade standards."
+      }
+    }
+  },
+  "Integrated": {
+    "eyebrow": "02 — The Integrated Advantage",
+    "title": "One partner. Every layer.",
+    "lead": "Most projects are handed between disconnected vendors. AFAQ engineers the full stack — from the survey datum beneath the ground to the intelligent systems above it — as one continuous chain of accountability.",
+    "tagline": "One Partner. Every Layer. Every Project.",
+    "layers": {
+      "survey": {
+        "index": "L1",
+        "name": "Survey & Geospatial",
+        "depth": "Beneath the surface",
+        "body": "GNSS control, topographic and hydrographic survey, GIS and reality capture establish the precise ground truth every layer above depends on.",
+        "imageLabel": "Photograph — surveyor with GNSS rover in the field"
+      },
+      "civil": {
+        "index": "L2",
+        "name": "Civil & Steel",
+        "depth": "On the surface",
+        "body": "Roads, structures, and steel fabrication turn survey data into built infrastructure — engineered, fabricated, and installed in-house.",
+        "imageLabel": "Photograph — steel fabrication and structural works"
+      },
+      "its": {
+        "index": "L3",
+        "name": "Intelligent Transport",
+        "depth": "Across the city",
+        "body": "Traffic management, tolling, and ITS field devices make mobility corridors responsive, measured, and safe.",
+        "imageLabel": "Photograph — intelligent transportation control corridor"
+      },
+      "av": {
+        "index": "L4",
+        "name": "AV & Digital Systems",
+        "depth": "Into the digital",
+        "body": "LED display systems, control rooms, and audio-visual integration turn infrastructure into intelligent, connected environments.",
+        "imageLabel": "Photograph — large-scale LED display and control room"
+      }
+    }
+  },
+  "Services": {
+    "eyebrow": "03 — Services",
+    "title": "Four disciplines. One integrated delivery.",
+    "explore": "Explore",
+    "items": {
+      "survey": {
+        "name": "Survey & Geospatial",
+        "summary": "GNSS control, topographic and hydrographic survey, GIS, and reality capture — the measured ground truth for every project.",
+        "imageLabel": "Photograph — survey team with total station at dawn"
+      },
+      "civil": {
+        "name": "Civil & Steel Engineering",
+        "summary": "Structural design, steel fabrication, and civil works delivered in-house from drawing to installation.",
+        "imageLabel": "Photograph — steel fabrication workshop"
+      },
+      "its": {
+        "name": "Intelligent Transportation Systems",
+        "summary": "Traffic management, tolling, and ITS field infrastructure for responsive, measurable mobility.",
+        "imageLabel": "Photograph — highway ITS gantry at night"
+      },
+      "av": {
+        "name": "AV & Smart Systems",
+        "summary": "LED display systems, control rooms, and audio-visual integration for intelligent environments.",
+        "imageLabel": "Photograph — architectural LED façade installation"
+      }
+    }
+  },
+  "Industries": {
+    "eyebrow": "04 — Industries",
+    "title": "Engineering for the sectors building the Kingdom.",
+    "items": {
+      "defense": {
+        "name": "Defense & Security",
+        "body": "Secure infrastructure, surveillance integration, and mission-grade systems."
+      },
+      "energy": {
+        "name": "Energy & Utilities",
+        "body": "Water, power, and utility corridors mapped, built, and instrumented."
+      },
+      "government": {
+        "name": "Government",
+        "body": "Government-grade delivery for ministries and public authorities."
+      },
+      "transport": {
+        "name": "Transportation",
+        "body": "Roads, tolling, and intelligent mobility across the network."
+      },
+      "entertainment": {
+        "name": "Entertainment",
+        "body": "Stadiums, venues, and large-format display and AV systems."
+      },
+      "smartcities": {
+        "name": "Smart Cities",
+        "body": "Digital twins, sensor networks, and connected urban infrastructure."
+      }
+    }
+  },
+  "Projects": {
+    "eyebrow": "05 — Selected Work",
+    "title": "Work across every engineering layer.",
+    "note": "Representative capability areas. Project imagery and named references to be supplied by the client.",
+    "cta": "View project",
+    "items": {
+      "geospatial": {
+        "name": "Geospatial Control Network",
+        "location": "Riyadh Region",
+        "category": "Survey & GIS",
+        "year": "Capability",
+        "imageLabel": "Photograph — GNSS control survey, district scale"
+      },
+      "water": {
+        "name": "Water Infrastructure Corridor",
+        "location": "Western Region",
+        "category": "Civil & Utilities",
+        "year": "Capability",
+        "imageLabel": "Photograph — water transmission infrastructure works"
+      },
+      "control": {
+        "name": "Operations Control Room",
+        "location": "Central Region",
+        "category": "AV & Control Systems",
+        "year": "Capability",
+        "imageLabel": "Photograph — utility operations control room video wall"
+      },
+      "facade": {
+        "name": "Architectural LED Façade",
+        "location": "Riyadh",
+        "category": "AV & Smart Systems",
+        "year": "Capability",
+        "imageLabel": "Photograph — building-scale LED media façade at night"
+      },
+      "stadium": {
+        "name": "Stadium Steel & Displays",
+        "location": "Riyadh",
+        "category": "Steel & Entertainment",
+        "year": "Capability",
+        "imageLabel": "Photograph — stadium scoreboard steel and LED"
+      }
+    }
+  },
+  "CaseStudies": {
+    "eyebrow": "06 — Case Studies",
+    "title": "Precision, proven layer by layer.",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution",
+    "resultsLabel": "Results",
+    "items": {
+      "survey": {
+        "name": "Establishing Ground Truth at Regional Scale",
+        "category": "Survey & Geospatial",
+        "challenge": "A multi-district development required a unified, verifiable coordinate framework before any design or construction could begin.",
+        "solution": "AFAQ deployed a GNSS control network with continuous quality control, delivering a survey-grade geospatial base and GIS deliverables for every downstream discipline.",
+        "metricA": "±2mm",
+        "metricALabel": "GNSS accuracy",
+        "metricB": "13",
+        "metricBLabel": "Regions served",
+        "imageLabel": "Photograph — regional GNSS control survey"
+      },
+      "integrated": {
+        "name": "From Structure to Smart System",
+        "category": "Civil · Steel · AV",
+        "challenge": "A landmark venue needed structural steel, display systems, and control integration delivered on a single accountable timeline.",
+        "solution": "In-house fabrication, installation, and AV integration under one delivery model removed vendor hand-offs and compressed the critical path.",
+        "metricA": "200+",
+        "metricALabel": "Structures delivered",
+        "metricB": "1",
+        "metricBLabel": "Accountable partner",
+        "imageLabel": "Photograph — integrated steel and display installation"
+      }
+    }
+  },
+  "Numbers": {
+    "eyebrow": "07 — AFAQ in Numbers",
+    "title": "Measured by what we deliver.",
+    "items": {
+      "years": { "value": 17, "suffix": "+", "label": "Years of Engineering" },
+      "projects": { "value": 500, "suffix": "+", "label": "Projects Delivered" },
+      "government": { "value": 50, "suffix": "+", "label": "Government Clients" },
+      "private": { "value": 200, "suffix": "+", "label": "Private Clients" }
+    }
+  },
+  "CtaBanner": {
+    "eyebrow": "Let's build",
+    "title": "Let's Build the Future Together.",
+    "body": "From the depths of the earth to the heights of space technology — one partner for every layer of your project.",
+    "ctaPrimary": "Start Your Project",
+    "ctaSecondary": "Contact Us"
+  },
+  "Blog": {
+    "eyebrow": "08 — Insights",
+    "title": "Engineering perspectives.",
+    "readMore": "Read article",
+    "items": {
+      "digitaltwin": {
+        "title": "Why every structure should be born as data",
+        "date": "2026",
+        "category": "Digital Twin",
+        "imageLabel": "Photograph — reality-capture point cloud of a structure"
+      },
+      "vision2030": {
+        "title": "Integrated engineering and the Vision 2030 giga-project era",
+        "date": "2026",
+        "category": "Vision 2030",
+        "imageLabel": "Photograph — Riyadh skyline under development"
+      },
+      "gnss": {
+        "title": "Ground truth: the discipline of survey-grade accuracy",
+        "date": "2026",
+        "category": "Geospatial",
+        "imageLabel": "Photograph — GNSS rover at a survey marker"
+      }
+    }
+  },
+  "Footer": {
+    "tagline": "Pioneers in Integrated Engineering.",
+    "summary": "AFAQ Systems Co. — a multidisciplinary Saudi engineering company connecting physical infrastructure with digital intelligence, from the depths of the earth to the heights of space technology.",
+    "vision": "Proudly aligned with Saudi Arabia's Vision 2030.",
+    "navHeading": "Explore",
+    "servicesHeading": "Services",
+    "contactHeading": "Contact",
+    "newsletterHeading": "Newsletter",
+    "newsletterBody": "Engineering insights, occasionally. No noise.",
+    "newsletterPlaceholder": "Your email",
+    "newsletterCta": "Subscribe",
+    "location": "Riyadh, Saudi Arabia",
+    "email": "info@afaq-systems.com",
+    "phone": "+966 11 000 0000",
+    "mapLabel": "Map — Riyadh headquarters",
+    "rights": "AFAQ Systems Co. All rights reserved.",
+    "established": "Established 2008",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "About AFAQ Systems — Integrated Engineering Partner",
+      "description": "Since 2008, AFAQ Systems has delivered integrated engineering across survey, civil and steel, intelligent transportation, and AV — connecting every infrastructure layer for Saudi Vision 2030."
+    },
+    "hero": {
+      "eyebrow": "ABOUT AFAQ · EST. 2008 · RIYADH",
+      "title": "Engineering Every Layer of Tomorrow.",
+      "subtitle": "Since 2008, AFAQ Systems has delivered integrated engineering solutions that bridge the physical and digital worlds. From underground utility mapping to intelligent transportation systems and advanced AV technologies, we transform infrastructure into connected assets that power Saudi Arabia's Vision 2030.",
+      "cta": "Explore Our Services",
+      "scroll": "Our story"
+    },
+    "story": {
+      "eyebrow": "02 — Our Story",
+      "title": "From the Depths of the Earth to the Heights of Space Technology.",
+      "lead": "AFAQ began as a specialist survey practice and grew, discipline by discipline, into a fully integrated engineering company. Each capability we added connected to the last — until a single partner could carry a project from the first ground measurement to the intelligent systems that run it.",
+      "imageLabel": "Photograph — AFAQ engineering across a decade of Saudi infrastructure",
+      "milestones": {
+        "founded": { "tag": "2008", "title": "Company Founded", "body": "Established in Riyadh as a specialist surveying practice." },
+        "survey": { "tag": "Expansion", "title": "Survey & GIS", "body": "Grew into geospatial intelligence — GNSS control, mapping, and GIS." },
+        "civil": { "tag": "Build", "title": "Civil & Steel Works", "body": "Added in-house civil construction and steel fabrication." },
+        "its": { "tag": "Mobility", "title": "Intelligent Transportation", "body": "Extended into traffic management, tolling, and ITS field systems." },
+        "av": { "tag": "Systems", "title": "AV Integration", "body": "Brought LED display, control rooms, and AV integration in-house." },
+        "integrated": { "tag": "Today", "title": "Integrated Engineering Partner", "body": "One accountable partner across every infrastructure layer." }
+      }
+    },
+    "philosophy": {
+      "eyebrow": "03 — Our Philosophy",
+      "title": "Engineering Without Boundaries.",
+      "cards": {
+        "independence": {
+          "title": "Engineering Independence",
+          "body": "Self-performed projects with complete control from planning through execution."
+        },
+        "integration": {
+          "title": "Physical + Digital Integration",
+          "body": "Connecting infrastructure with intelligent digital systems."
+        },
+        "vision": {
+          "title": "Vision 2030 Alignment",
+          "body": "Supporting Saudi Arabia's transformation through integrated engineering solutions."
+        }
+      }
+    },
+    "excellence": {
+      "eyebrow": "05 — Engineering Excellence",
+      "title": "Built to standard.",
+      "note": "The codes, standards, and platforms our engineering is built around. Formal certification records are available on request.",
+      "items": {
+        "sbc": { "name": "Saudi Building Code", "detail": "Structural and civil works engineered to SBC requirements." },
+        "iso": { "name": "ISO 9001", "detail": "Quality-management discipline across project delivery." },
+        "avixa": { "name": "AVIXA", "detail": "Audio-visual systems designed to AVIXA standards." },
+        "aisc": { "name": "AISC", "detail": "Steel design and fabrication to AISC specifications." },
+        "esri": { "name": "Esri", "detail": "GIS delivered on the Esri ArcGIS platform." },
+        "aws": { "name": "AWS", "detail": "Cloud and digital infrastructure on AWS." },
+        "ntcip": { "name": "NTCIP", "detail": "ITS device interoperability via NTCIP protocols." }
+      }
+    },
+    "innovation": {
+      "eyebrow": "06 — Innovation",
+      "title": "Leadership Through Innovation.",
+      "items": {
+        "gis": { "name": "GIS", "body": "Enterprise geospatial systems as the single source of spatial truth." },
+        "twins": { "name": "Digital Twins", "body": "Living digital replicas of physical assets for analysis and operations." },
+        "smart": { "name": "Smart Infrastructure", "body": "Sensor-instrumented assets that report their own condition." },
+        "drone": { "name": "Drone Survey", "body": "UAV photogrammetry and LiDAR for fast, safe reality capture." },
+        "ai": { "name": "AI-assisted Engineering", "body": "Machine assistance across mapping, detection, and quality control." }
+      }
+    },
+    "trust": {
+      "eyebrow": "07 — Why AFAQ",
+      "title": "Why clients trust AFAQ.",
+      "items": {
+        "years": { "value": 17, "suffix": "+", "label": "Years of Engineering", "note": "Delivering across the Kingdom since 2008." },
+        "projects": { "value": 500, "suffix": "+", "label": "Projects Delivered", "note": "From district survey to national systems." },
+        "government": { "value": 50, "suffix": "+", "label": "Government Clients", "note": "Trusted at government-grade standards." },
+        "private": { "value": 200, "suffix": "+", "label": "Private Clients", "note": "Industry, energy, and entertainment." },
+        "retention": { "value": 100, "suffix": "%", "label": "Client Retention", "note": "Partners who return, project after project." },
+        "coverage": { "value": 13, "suffix": "", "label": "Regions Covered", "note": "Nationwide reach across Saudi Arabia." }
+      }
+    },
+    "vision2030": {
+      "eyebrow": "09 — Vision 2030",
+      "title": "Engineering the Infrastructure Behind Vision 2030.",
+      "body": "The Kingdom's transformation runs on infrastructure — measured, built, and connected. AFAQ engineers the layers beneath the landmarks that define Vision 2030.",
+      "note": "Landmark programs shown are representative of the sectors AFAQ serves.",
+      "landmarks": {
+        "neom": "NEOM",
+        "diriyah": "Diriyah",
+        "qiddiya": "Qiddiya",
+        "kafd": "KAFD",
+        "metro": "Riyadh Metro",
+        "swcc": "SWCC"
+      }
+    },
+    "numbers": {
+      "eyebrow": "10 — AFAQ in Numbers",
+      "title": "Measured by what we deliver.",
+      "items": {
+        "years": { "value": 17, "suffix": "+", "label": "Years of Excellence" },
+        "projects": { "value": 500, "suffix": "+", "label": "Projects Delivered" },
+        "government": { "value": 50, "suffix": "+", "label": "Government Clients" },
+        "private": { "value": 200, "suffix": "+", "label": "Private Clients" },
+        "regions": { "value": 13, "suffix": "", "label": "Regions Covered" },
+        "retention": { "value": 100, "suffix": "%", "label": "Client Retention" }
+      }
+    },
+    "cta": {
+      "eyebrow": "Let's build",
+      "title": "Let's Engineer the Future Together.",
+      "body": "Whether you're planning national infrastructure, intelligent transportation systems, digital transformation, or mission-critical engineering projects, AFAQ is ready to build with you.",
+      "ctaPrimary": "Contact Us",
+      "ctaSecondary": "View Projects"
+    }
+  },
+  "ProjectsPage": {
+    "meta": {
+      "title": "Projects — AFAQ Systems Engineering Archive",
+      "description": "Explore AFAQ's engineering work across Saudi Arabia — survey & GIS, civil & steel, intelligent transportation, AV integration, and integrated engineering. Search by sector, region, and owning entity."
+    },
+    "hero": {
+      "eyebrow": "PROJECTS · ENGINEERING ARCHIVE",
+      "title": "Engineering Excellence Across the Kingdom.",
+      "subtitle": "Explore more than {count} engineering engagements spanning geospatial intelligence, intelligent transportation systems, civil infrastructure, AV integration, and smart-city developments across Saudi Arabia.",
+      "cta": "Browse the archive",
+      "scroll": "Explore"
+    },
+    "stats": {
+      "eyebrow": "By the numbers",
+      "items": {
+        "projects": { "value": 500, "suffix": "+", "label": "Projects" },
+        "years": { "value": 17, "suffix": "+", "label": "Years" },
+        "regions": { "value": 13, "suffix": "", "label": "Regions" },
+        "government": { "value": 50, "suffix": "+", "label": "Government Entities" },
+        "private": { "value": 200, "suffix": "+", "label": "Private Clients" }
+      }
+    },
+    "explorer": {
+      "note": "Representative sample of AFAQ's engineering scope. Records are illustrative; the full project register is confirmed with the client.",
+      "searchPlaceholder": "Search projects…",
+      "searchLabel": "Search projects by name",
+      "filters": {
+        "category": "Category",
+        "region": "Region",
+        "entity": "Owning Entity",
+        "year": "Year",
+        "sort": "Sort",
+        "all": "All",
+        "allCategories": "All categories",
+        "allRegions": "All regions",
+        "allEntities": "All entities",
+        "allYears": "All years",
+        "clear": "Clear filters"
+      },
+      "sort": {
+        "newest": "Newest",
+        "oldest": "Oldest",
+        "az": "Alphabetical"
+      },
+      "view": {
+        "label": "View",
+        "list": "List",
+        "grid": "Grid",
+        "map": "Map",
+        "mapSoon": "Map view — coming soon. A nationwide project map is on the roadmap."
+      },
+      "columns": {
+        "project": "Project",
+        "category": "Category",
+        "location": "Location",
+        "entity": "Owning Entity",
+        "year": "Year"
+      },
+      "showing": "Showing {shown} of {total} projects",
+      "loadMore": "Load more",
+      "empty": "No projects match your filters.",
+      "emptyAction": "Clear filters",
+      "open": "Open project",
+      "expand": "Expand"
+    },
+    "drawer": {
+      "close": "Close",
+      "location": "Location",
+      "entity": "Owning Entity",
+      "category": "Category",
+      "year": "Year",
+      "scopeLabel": "Scope",
+      "technicalLabel": "Technical",
+      "relatedLabel": "Related services",
+      "caseStudy": "View Case Study",
+      "contact": "Contact Us"
+    },
+    "cta": {
+      "eyebrow": "Matched experience",
+      "title": "Looking for Experience That Matches Your Next Project?",
+      "body": "Explore our case studies or speak with our engineering team to discuss your project requirements.",
+      "ctaPrimary": "View Case Studies",
+      "ctaSecondary": "Contact Us"
+    },
+    "categories": {
+      "survey": "Survey & GIS",
+      "civil": "Steel & Civil",
+      "its": "ITS",
+      "av": "AV Integration",
+      "integrated": "Integrated Engineering"
+    },
+    "regions": {
+      "riyadh": "Riyadh",
+      "makkah": "Makkah",
+      "madinah": "Madinah",
+      "eastern": "Eastern Province",
+      "qassim": "Qassim",
+      "asir": "Asir",
+      "tabuk": "Tabuk",
+      "hail": "Ha'il",
+      "northern": "Northern Borders",
+      "jazan": "Jazan",
+      "najran": "Najran",
+      "bahah": "Al Bahah",
+      "jawf": "Al Jawf"
+    },
+    "entities": {
+      "rcrc": "Royal Commission for Riyadh City",
+      "swcc": "Saline Water Conversion Corp.",
+      "sec": "Saudi Electricity Company",
+      "mewa": "Environment, Water & Agriculture",
+      "mot": "Ministry of Transport",
+      "mod": "Ministry of Defense",
+      "pif": "Public Investment Fund",
+      "neom": "NEOM",
+      "qiddiya": "Qiddiya",
+      "diriyah": "Diriyah",
+      "kafd": "KAFD",
+      "municipality": "Municipal Authority"
+    }
+  },
+  "ServicesPage": {
+    "meta": {
+      "title": "Services — AFAQ Integrated Engineering",
+      "description": "AFAQ delivers integrated engineering end to end — survey & geospatial, civil & steel, intelligent transportation systems, and AV & smart systems — self-performed from datum to commissioning."
+    },
+    "hero": {
+      "eyebrow": "SERVICES · EVERY LAYER",
+      "title": "Integrated Engineering, End to End.",
+      "subtitle": "Four disciplines, delivered by one accountable partner — from the survey datum beneath the ground to the intelligent systems above it. Self-performed, government-grade, and engineered to connect.",
+      "cta": "Talk to our team",
+      "scroll": "Our disciplines"
+    },
+    "disciplines": {
+      "survey": {
+        "name": "Survey & Geospatial",
+        "tagline": "The measured ground truth.",
+        "overview": "GNSS control, topographic and hydrographic survey, GIS, and reality capture establish the precise spatial foundation every project depends on.",
+        "capabilities": {
+          "c1": "GNSS control networks",
+          "c2": "Topographic & hydrographic survey",
+          "c3": "GIS & enterprise mapping",
+          "c4": "UAV LiDAR & photogrammetry",
+          "c5": "Deformation & monitoring"
+        },
+        "deliverables": {
+          "d1": "Survey-grade control",
+          "d2": "GIS datasets & mapping",
+          "d3": "Reality-capture models"
+        },
+        "imageLabel": "Photograph — survey team with GNSS rover in the field"
+      },
+      "civil": {
+        "name": "Civil & Steel Engineering",
+        "tagline": "From drawing to installation.",
+        "overview": "Structural design, steel fabrication, and civil works are self-performed in-house — turning survey data into built, verifiable infrastructure.",
+        "capabilities": {
+          "c1": "Structural design",
+          "c2": "Steel fabrication",
+          "c3": "Civil works & roadworks",
+          "c4": "Foundations & earthworks",
+          "c5": "Site supervision & QA"
+        },
+        "deliverables": {
+          "d1": "Fabricated structural steel",
+          "d2": "Built civil infrastructure",
+          "d3": "As-built records"
+        },
+        "imageLabel": "Photograph — steel fabrication and structural works"
+      },
+      "its": {
+        "name": "Intelligent Transportation Systems",
+        "tagline": "Mobility, measured and responsive.",
+        "overview": "Traffic management, tolling, and ITS field infrastructure make mobility corridors responsive, safe, and measurable — integrated to the control center.",
+        "capabilities": {
+          "c1": "Traffic management systems",
+          "c2": "Tolling & enforcement",
+          "c3": "ITS field devices",
+          "c4": "Control-center integration",
+          "c5": "NTCIP interoperability"
+        },
+        "deliverables": {
+          "d1": "ITS field infrastructure",
+          "d2": "Central control systems",
+          "d3": "Integration & commissioning"
+        },
+        "imageLabel": "Photograph — highway ITS gantry at night"
+      },
+      "av": {
+        "name": "AV & Smart Systems",
+        "tagline": "Infrastructure made intelligent.",
+        "overview": "LED display systems, control rooms, and audio-visual integration turn built assets into intelligent, connected environments.",
+        "capabilities": {
+          "c1": "LED display systems",
+          "c2": "Control rooms & video walls",
+          "c3": "Audio-visual integration",
+          "c4": "Architectural media façades",
+          "c5": "AVIXA-standard design"
+        },
+        "deliverables": {
+          "d1": "Display & LED systems",
+          "d2": "Control-room integration",
+          "d3": "Content & control platforms"
+        },
+        "imageLabel": "Photograph — architectural LED façade installation"
+      }
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "title": "From datum to commissioning.",
+      "lead": "One continuous chain of accountability — no vendor hand-offs between the layers.",
+      "steps": {
+        "discovery": { "title": "Survey & Discovery", "body": "Establish the ground truth and define requirements from measured data." },
+        "design": { "title": "Design & Engineering", "body": "Engineer the solution across every discipline as one coordinated model." },
+        "build": { "title": "Build & Fabricate", "body": "Self-perform construction, steel fabrication, and installation in-house." },
+        "commission": { "title": "Integrate & Commission", "body": "Connect the systems and hand over living, connected infrastructure." }
+      }
+    },
+    "cta": {
+      "eyebrow": "One partner, every layer",
+      "title": "Have a project that spans disciplines?",
+      "body": "Bring the whole scope to one accountable partner. Let's map your project across every engineering layer.",
+      "ctaPrimary": "Contact Us",
+      "ctaSecondary": "View Projects"
+    }
+  },
+  "CaseStudiesPage": {
+    "meta": {
+      "title": "Case Studies — AFAQ Systems",
+      "description": "How AFAQ delivers integrated engineering across Saudi Arabia — challenges, solutions, and outcomes across survey, civil & steel, intelligent transportation, and AV integration."
+    },
+    "hero": {
+      "eyebrow": "CASE STUDIES",
+      "title": "Precision, Proven Layer by Layer.",
+      "subtitle": "A closer look at how AFAQ engineers the full stack — from the survey datum to the intelligent systems above it — as one continuous chain of accountability.",
+      "scroll": "Read the studies"
+    },
+    "note": "Representative case studies illustrating AFAQ's delivery model. Named references and figures are confirmed with the client.",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution",
+    "resultsLabel": "Results",
+    "readMore": "Discuss a similar project",
+    "items": {
+      "survey": {
+        "name": "Establishing Ground Truth at Regional Scale",
+        "category": "Survey & Geospatial",
+        "location": "Riyadh Region",
+        "challenge": "A multi-district development required a unified, verifiable coordinate framework before any design or construction could begin.",
+        "solution": "AFAQ deployed a GNSS control network with continuous quality control, delivering a survey-grade geospatial base and GIS deliverables for every downstream discipline.",
+        "metricA": "±2mm",
+        "metricALabel": "GNSS accuracy",
+        "metricB": "13",
+        "metricBLabel": "Regions served",
+        "imageLabel": "Photograph — regional GNSS control survey"
+      },
+      "integrated": {
+        "name": "From Structure to Smart System",
+        "category": "Civil · Steel · AV",
+        "location": "Riyadh",
+        "challenge": "A landmark venue needed structural steel, display systems, and control integration delivered on a single accountable timeline.",
+        "solution": "In-house fabrication, installation, and AV integration under one delivery model removed vendor hand-offs and compressed the critical path.",
+        "metricA": "200+",
+        "metricALabel": "Structures delivered",
+        "metricB": "1",
+        "metricBLabel": "Accountable partner",
+        "imageLabel": "Photograph — integrated steel and display installation"
+      },
+      "its": {
+        "name": "A Corridor That Responds in Real Time",
+        "category": "Intelligent Transportation",
+        "location": "Eastern Province",
+        "challenge": "A congested corridor needed measurable, responsive traffic flow without wholesale reconstruction.",
+        "solution": "ITS field devices, adaptive signal control, and a central monitoring integration turned the corridor into a measured, responsive network.",
+        "metricA": "4",
+        "metricALabel": "ITS subsystems",
+        "metricB": "24/7",
+        "metricBLabel": "Monitoring",
+        "imageLabel": "Photograph — intelligent transportation control corridor"
+      },
+      "av": {
+        "name": "Turning a Building into a Canvas",
+        "category": "AV & Smart Systems",
+        "location": "Riyadh",
+        "challenge": "A landmark tower required a building-scale media façade with reliable content and control infrastructure.",
+        "solution": "AFAQ engineered the LED façade, pixel mapping, and content-control platform as one integrated system, commissioned end to end.",
+        "metricA": "1",
+        "metricALabel": "Integrated system",
+        "metricB": "100%",
+        "metricBLabel": "In-house delivery",
+        "imageLabel": "Photograph — building-scale LED media façade at night"
+      }
+    },
+    "cta": {
+      "eyebrow": "Matched experience",
+      "title": "Looking for Experience That Matches Your Project?",
+      "body": "Explore the full project archive or speak with our engineering team about your requirements.",
+      "ctaPrimary": "View Projects",
+      "ctaSecondary": "Contact Us"
+    }
+  },
+  "ContactPage": {
+    "meta": {
+      "title": "Contact — AFAQ Systems",
+      "description": "Speak with AFAQ's engineering team about survey & GIS, civil & steel, intelligent transportation, AV integration, or an integrated project across every layer."
+    },
+    "hero": {
+      "eyebrow": "CONTACT",
+      "title": "Let's Discuss Your Project.",
+      "subtitle": "Whether you're planning national infrastructure, intelligent transportation, digital transformation, or a mission-critical project, our engineering team is ready to help."
+    },
+    "form": {
+      "heading": "Send us a message",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "company": "Organization",
+      "companyPlaceholder": "Company or entity",
+      "subject": "Area of interest",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project…",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "required": "Required",
+      "invalidEmail": "Enter a valid email address",
+      "successTitle": "Thank you.",
+      "successBody": "Your message is ready. Connect this form to your email service or CRM to start receiving submissions.",
+      "reset": "Send another",
+      "note": "This form is presentational — wire it to your backend, email service, or CRM to receive submissions.",
+      "subjects": {
+        "general": "General inquiry",
+        "survey": "Survey & GIS",
+        "civil": "Civil & Steel",
+        "its": "Intelligent Transportation",
+        "av": "AV & Smart Systems",
+        "integrated": "Integrated project"
+      }
+    },
+    "info": {
+      "heading": "Reach us directly",
+      "locationLabel": "Headquarters",
+      "location": "Riyadh, Saudi Arabia",
+      "emailLabel": "Email",
+      "email": "info@afaq-systems.com",
+      "phoneLabel": "Phone",
+      "phone": "+966 11 000 0000",
+      "hoursLabel": "Hours",
+      "hours": "Sun–Thu · 8:00–17:00 AST",
+      "mapLabel": "Map — Riyadh headquarters"
+    }
+  }
+}
