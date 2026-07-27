@@ -175,8 +175,8 @@
   "Projects": {
     "eyebrow": "05 — Selected Work",
     "title": "Work across every engineering layer.",
-    "note": "Representative capability areas. Project imagery and named references to be supplied by the client.",
-    "cta": "View project",
+    "note": "A selection of real projects delivered across the Kingdom.",
+    "cta": "View Case Study",
     "items": {
       "geospatial": {
         "name": "Geospatial Control Network",
@@ -213,7 +213,8 @@
         "year": "Capability",
         "imageLabel": "Photograph — stadium scoreboard steel and LED"
       }
-    }
+    },
+    "viewAll": "View all projects"
   },
   "CaseStudies": {
     "eyebrow": "06 — Case Studies",

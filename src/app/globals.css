@@ -78,7 +78,8 @@
 
   /* --- Spacing / layout --------------------------------------------- */
   --spacing-gutter: 32px;
-  --spacing-section: clamp(96px, 12vw, 180px);
+  /* Tighter vertical rhythm on phones, expansive on desktop. */
+  --spacing-section: clamp(72px, 9vw, 180px);
 
   /* --- Container ----------------------------------------------------- */
   --container-content: 1440px;

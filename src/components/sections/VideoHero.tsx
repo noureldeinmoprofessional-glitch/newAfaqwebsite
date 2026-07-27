@@ -143,13 +143,15 @@ export function VideoHero() {
       className="relative w-full overflow-hidden bg-white"
       aria-label={t("title")}
     >
-      {/* ── Full-bleed scroll-controlled film. object-contain keeps the whole
-          composition (never cropped/distorted) at full size; RTL simply mirrors
-          it horizontally — still full size, never shrunk to a side. ── */}
-      <div className="absolute inset-0">
+      {/* ── Scroll-controlled film. One <video> element, positioned responsively:
+          • Desktop: full-bleed, object-contain — whole composition at full size.
+          • Mobile: anchored to a bottom band, object-cover object-bottom so the
+            drone + LiDAR scan stay visible below the marketing content.
+          RTL simply mirrors it horizontally. ── */}
+      <div className="absolute inset-x-0 bottom-0 h-[46svh] lg:inset-0 lg:h-auto">
         <video
           ref={videoRef}
-          className="h-full w-full object-contain opacity-0 transition-opacity duration-700 [transform:translateZ(0)] [backface-visibility:hidden] data-[ready=true]:opacity-100 rtl:[transform:scaleX(-1)_translateZ(0)]"
+          className="h-full w-full object-cover object-bottom opacity-0 transition-opacity duration-700 [transform:translateZ(0)] [backface-visibility:hidden] data-[ready=true]:opacity-100 lg:object-contain lg:object-center rtl:[transform:scaleX(-1)_translateZ(0)]"
           data-ready={ready}
           src="/media/hero.mp4"
           muted
@@ -159,6 +161,9 @@ export function VideoHero() {
           aria-hidden="true"
           tabIndex={-1}
         />
+        {/* Mobile: soft white fade so the band melts into the content above and
+            keeps the CTAs legible where they overlap the film's upper area. */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white via-white/80 to-transparent lg:hidden" />
       </div>
 
       {/* Elegant loading state (white theme, no black frame). */}
@@ -168,12 +173,12 @@ export function VideoHero() {
         </div>
       )}
 
-      {/* ── Marketing content, overlaid on the empty side of the film.
-          Sits at the inline-start (left in LTR, right in RTL) automatically. ── */}
+      {/* ── Marketing content. Top-aligned on mobile (above the film), centered
+          and overlaid on the empty side of the film on desktop. ── */}
       <Container className="pointer-events-none relative z-10">
         <div
           ref={contentRef}
-          className="flex min-h-[100svh] flex-col justify-center pt-24 pb-12 lg:pt-0 lg:pb-0"
+          className="flex min-h-[100svh] flex-col justify-start pt-28 lg:justify-center lg:pt-0 lg:pb-0"
         >
           <div className="pointer-events-auto max-w-xl">
             <p className="vh-reveal flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">
@@ -181,13 +186,15 @@ export function VideoHero() {
               {t("eyebrow")}
             </p>
 
-            <h1 className="vh-reveal mt-6 font-display text-display font-semibold leading-[0.98] tracking-[-0.03em] text-brand-600">
+            <h1 className="vh-reveal mt-5 font-display text-h1 font-semibold leading-[1.02] tracking-[-0.02em] text-brand-600 lg:mt-6 lg:text-display lg:leading-[0.98] lg:tracking-[-0.03em]">
               {t("title")}
             </h1>
 
-            <p className="vh-reveal mt-7 max-w-lg text-body-lg text-slate-600">{t("subtitle")}</p>
+            <p className="vh-reveal mt-5 max-w-lg text-body text-slate-600 lg:mt-7 lg:text-body-lg">
+              {t("subtitle")}
+            </p>
 
-            <div className="vh-reveal mt-10 flex flex-wrap gap-4">
+            <div className="vh-reveal mt-8 flex flex-wrap gap-3 sm:gap-4 lg:mt-10">
               {/* Primary CTA — in-page anchor, so a plain <a> (not a locale route). */}
               <a
                 href="#services"

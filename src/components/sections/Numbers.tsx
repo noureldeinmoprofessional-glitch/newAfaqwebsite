@@ -56,21 +56,21 @@ export function Numbers() {
           </Heading>
         </div>
 
-        <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12 lg:mt-20 lg:grid-cols-4">
+        <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:mt-20 lg:grid-cols-4">
           {KEYS.map((key) => (
-            <div key={key} className="border-t border-line pt-6">
+            <div key={key} className="border-t border-line pt-5 sm:pt-6">
               <dt className="sr-only">{t(`items.${key}.label`)}</dt>
               <dd>
                 <span
                   data-count={String(t.raw(`items.${key}.value`))}
                   data-suffix={t(`items.${key}.suffix`)}
                   dir="ltr"
-                  className="block font-display text-stat font-bold leading-none tracking-[-0.03em] text-slate-900 tabular-nums"
+                  className="block font-display text-stat font-bold leading-none tracking-[-0.03em] text-brand-600 tabular-nums"
                 >
                   {String(t.raw(`items.${key}.value`))}
                   {t(`items.${key}.suffix`)}
                 </span>
-                <span className="mt-4 block text-eyebrow uppercase tracking-[0.12em] text-slate-600">
+                <span className="mt-3 block text-eyebrow uppercase tracking-[0.12em] text-slate-600 sm:mt-4">
                   {t(`items.${key}.label`)}
                 </span>
               </dd>

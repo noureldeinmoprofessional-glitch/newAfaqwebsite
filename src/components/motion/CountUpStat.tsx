@@ -24,7 +24,7 @@ interface CountUpStatProps {
 }
 
 const toneClass: Record<NonNullable<CountUpStatProps["tone"]>, string> = {
-  brand: "text-brand-500",
+  brand: "text-brand-600",
   gold: "text-brand-400",
   ink: "text-slate-900",
 };
@@ -74,8 +74,8 @@ export function CountUpStat({
         {value}
         {suffix}
       </span>
-      <span className="text-eyebrow uppercase tracking-[0.12em] text-current/70">{label}</span>
-      {sublabel && <span className="text-body text-current/50">{sublabel}</span>}
+      <span className="text-eyebrow uppercase tracking-[0.12em] text-slate-600">{label}</span>
+      {sublabel && <span className="text-body text-slate-500">{sublabel}</span>}
     </div>
   );
 }

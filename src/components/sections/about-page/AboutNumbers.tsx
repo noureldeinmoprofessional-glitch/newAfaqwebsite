@@ -31,7 +31,7 @@ export function AboutNumbers() {
                 value={Number(t.raw(`items.${key}.value`))}
                 suffix={t(`items.${key}.suffix`)}
                 label={t(`items.${key}.label`)}
-                tone="ink"
+                tone="brand"
               />
             </div>
           ))}
