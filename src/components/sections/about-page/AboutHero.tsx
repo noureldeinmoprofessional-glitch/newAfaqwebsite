@@ -65,7 +65,7 @@ export function AboutHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink-800 via-ink-900 to-ink-900" />
         <TechBackground variant="topo" opacity={7} className="ah-topo text-brand-400" />
         <TechBackground variant="grid" opacity={5} className="text-tech-500" />
-        <TechBackground variant="survey" opacity={5} className="text-gold -right-1/4 left-auto w-2/3" />
+        <TechBackground variant="survey" opacity={5} className="text-brand-400 -right-1/4 left-auto w-2/3" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-900 to-transparent" />
       </div>
@@ -73,10 +73,10 @@ export function AboutHero() {
       <Container className="relative flex min-h-svh flex-col justify-center pb-24 pt-32">
         <div className="ah-content max-w-4xl">
           <p
-            className="ah-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-gold opacity-0"
+            className="ah-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
-            <span className="inline-block h-px w-8 bg-gold" aria-hidden="true" />
+            <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
             {t("eyebrow")}
           </p>
 
@@ -109,7 +109,7 @@ export function AboutHero() {
         <span className="font-display text-[0.6875rem] uppercase tracking-[0.2em] text-mist-50/50">
           {t("scroll")}
         </span>
-        <span className="ah-scroll-line block h-16 w-px origin-top bg-gradient-to-b from-gold to-transparent" aria-hidden="true" />
+        <span className="ah-scroll-line block h-16 w-px origin-top bg-gradient-to-b from-brand-500 to-transparent" aria-hidden="true" />
       </div>
     </section>
   );

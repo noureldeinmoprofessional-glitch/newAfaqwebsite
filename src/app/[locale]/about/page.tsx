@@ -5,11 +5,13 @@ import { IntegratedAdvantage, Industries } from "@/components/sections";
 import {
   AboutHero,
   OurStory,
-  Philosophy,
+  OurValues,
   EngineeringExcellence,
   Innovation,
   TrustPillars,
   Vision2030,
+  Technologies,
+  Partners,
   AboutNumbers,
   AboutCta,
 } from "@/components/sections/about-page";
@@ -40,13 +42,15 @@ export default async function AboutUsPage({
     <main id="main">
       <AboutHero />
       <OurStory />
-      <Philosophy />
+      <OurValues />
       <IntegratedAdvantage />
       <EngineeringExcellence />
       <Innovation />
       <TrustPillars />
       <Industries />
       <Vision2030 />
+      <Partners />
+      <Technologies />
       <AboutNumbers />
       <AboutCta />
     </main>

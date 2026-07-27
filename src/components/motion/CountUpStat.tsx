@@ -25,7 +25,7 @@ interface CountUpStatProps {
 
 const toneClass: Record<NonNullable<CountUpStatProps["tone"]>, string> = {
   brand: "text-brand-500",
-  gold: "text-gold",
+  gold: "text-brand-400",
   ink: "text-slate-900",
 };
 

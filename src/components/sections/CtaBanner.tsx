@@ -2,11 +2,9 @@
 
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { ArrowRight } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
-import { Link } from "@/i18n/navigation";
-import { Container, Section, Heading } from "@/components/primitives";
+import { Container, Section, Heading, Button } from "@/components/primitives";
 import { TechBackground } from "@/components/visual/TechBackground";
 
 /**
@@ -53,19 +51,12 @@ export function CtaBanner() {
           <p className="mx-auto mt-8 max-w-2xl text-body-lg text-mist-50/70">{t("body")}</p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="group inline-flex h-13 items-center gap-2 rounded-button bg-brand-500 px-8 font-display font-medium text-ink-900 transition-colors hover:bg-brand-400"
-            >
+            <Button variant="primary" size="lg" href="/contact">
               {t("ctaPrimary")}
-              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" strokeWidth={2} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex h-13 items-center gap-2 rounded-button border border-mist-50/25 px-8 font-display font-medium text-mist-50 transition-colors hover:border-brand-400 hover:text-brand-400"
-            >
+            </Button>
+            <Button variant="outline" size="lg" href="/contact">
               {t("ctaSecondary")}
-            </Link>
+            </Button>
           </div>
         </div>
       </Container>

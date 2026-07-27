@@ -6,8 +6,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { gsap, SplitText } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { easeExpo, easeOut } from "@/lib/gsap/easings";
-import { Link } from "@/i18n/navigation";
-import { Container } from "@/components/primitives";
+import { Container, Button } from "@/components/primitives";
 import { TechBackground } from "@/components/visual/TechBackground";
 
 const LAYER_KEYS = ["earth", "surface", "city", "space"] as const;
@@ -111,19 +110,26 @@ export function Hero() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#services"
-                className="hero-cta group inline-flex h-13 items-center gap-2 rounded-button bg-brand-500 px-7 font-display font-medium text-ink-900 opacity-0 transition-colors hover:bg-brand-400"
+                className="hero-cta group/btn inline-flex items-center gap-3 rounded-full bg-brand-500 py-2 ps-7 pe-2 font-display text-base font-medium text-ink-900 opacity-0 transition-colors hover:bg-brand-400"
                 style={{ transform: "translateY(20px)" }}
               >
-                {t("ctaPrimary")}
-                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" strokeWidth={2} />
+                <span>{t("ctaPrimary")}</span>
+                <span
+                  className="inline-flex size-10 items-center justify-center rounded-full bg-ink-900 text-brand-400 transition-transform duration-300 group-hover/btn:translate-x-0.5 rtl:group-hover/btn:-translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2.5} />
+                </span>
               </a>
-              <Link
+              <Button
+                variant="outline"
+                size="lg"
                 href="/contact"
-                className="hero-cta inline-flex h-13 items-center gap-2 rounded-button border border-mist-50/25 px-7 font-display font-medium text-mist-50 opacity-0 transition-colors hover:border-brand-400 hover:text-brand-400"
+                className="hero-cta opacity-0"
                 style={{ transform: "translateY(20px)" }}
               >
                 {t("ctaSecondary")}
-              </Link>
+              </Button>
             </div>
           </div>
 

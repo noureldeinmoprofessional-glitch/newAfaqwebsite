@@ -7,41 +7,37 @@
    ========================================================================= */
 
 @theme {
-  /* --- Color: Ink (dark surfaces) ------------------------------------- */
-  --color-ink-900: #0a2419; /* deepest — hero/footer/dark sections   */
-  --color-ink-800: #0f2e26; /* dark section surface                  */
-  --color-ink-700: #16382e; /* elevated dark surface, card on dark   */
+  /* --- Color: Ink (navy dark surfaces — profile navy #1A2E35) -------- */
+  --color-ink-900: #142329; /* deepest — hero/footer/dark sections   */
+  --color-ink-800: #1a2e35; /* navy — dark section surface           */
+  --color-ink-700: #24404a; /* elevated dark surface, card on dark   */
 
-  /* --- Color: Brand green -------------------------------------------- */
-  --color-brand-500: #2cb34a; /* PRIMARY brand green — logo, accents  */
-  --color-brand-400: #3dc95c; /* hover state                          */
-  --color-brand-600: #1f8f39; /* pressed / dense text on light        */
+  /* --- Color: Brand green (profile green #27AE60) -------------------- */
+  --color-brand-500: #27ae60; /* PRIMARY brand green — logo, accents  */
+  --color-brand-400: #2ecc71; /* hover / accent on dark               */
+  --color-brand-600: #1e9350; /* pressed / dense text on light        */
 
   /* --- Color: Tech teal (GIS / digital only, sparingly) ------------- */
   --color-tech-500: #3fb8c4;
 
-  /* --- Color: Engineering gold (dividers, key accents, sparingly) --- */
-  --color-gold: #c7a55b;
-  --color-gold-soft: #d8bd85;
-
-  /* --- Color: Slate (text + hairlines) ------------------------------ */
-  --color-slate-900: #1b1f1e; /* body text on light                  */
-  --color-slate-600: #5a6461; /* secondary text                      */
-  --color-slate-300: #c9d2ce; /* hairline borders                    */
+  /* --- Color: Slate (navy-tinted text + hairlines) ------------------ */
+  --color-slate-900: #1a2e35; /* headlines + strong text on light    */
+  --color-slate-600: #566169; /* secondary text                      */
+  --color-slate-300: #cbd5d6; /* hairline borders                    */
 
   /* --- Color: Mist (light surfaces) --------------------------------- */
-  --color-mist-100: #e9eeec;
-  --color-mist-50: #f5f7f6;
+  --color-mist-100: #e9edec;
+  --color-mist-50: #f5f7f7;
   --color-white: #ffffff;
 
   /* --- Derived line / divider colors -------------------------------- */
-  --color-line: color-mix(in srgb, #1b1f1e 12%, transparent); /* on light */
+  --color-line: color-mix(in srgb, #1a2e35 12%, transparent); /* on light */
   --color-line-inv: color-mix(in srgb, #ffffff 12%, transparent); /* on dark */
-  --color-divider: color-mix(in srgb, #2cb34a 40%, transparent); /* blueprint */
+  --color-divider: color-mix(in srgb, #27ae60 40%, transparent); /* blueprint */
 
   /* --- Fonts --------------------------------------------------------- */
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-arabic: var(--font-ibm-arabic), ui-sans-serif, sans-serif;
 
   /* --- Fluid type scale (clamp) ------------------------------------- */

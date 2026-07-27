@@ -1,4 +1,5 @@
 export { Hero } from "./Hero";
+export { VideoHero } from "./VideoHero";
 export { TrustedBy } from "./TrustedBy";
 export { About } from "./About";
 export { IntegratedAdvantage } from "./IntegratedAdvantage";

@@ -8,7 +8,7 @@ const PILLARS = ["years", "projects", "government", "private", "retention", "cov
 
 /**
  * About §7 — Why Clients Trust AFAQ. Editorial grid of six statistics that count
- * into view, separated by thin gold dividers, over a blueprint grid.
+ * into view, separated by thin green dividers, over a blueprint grid.
  */
 export function TrustPillars() {
   const t = useTranslations("AboutPage.trust");
@@ -24,7 +24,7 @@ export function TrustPillars() {
           </Heading>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden border-t border-gold/40 bg-gold/20 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden border-t border-brand-500/40 bg-brand-500/20 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
           {PILLARS.map((key) => (
             <div key={key} className="bg-white p-8 lg:p-10">
               <CountUpStat

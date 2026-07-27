@@ -44,8 +44,7 @@ export function About() {
             <Reveal>
               <MediaFrame
                 ratio="4/5"
-                tone="deep"
-                texture="survey"
+                image="engineers-site"
                 label={t("imageLabel")}
                 className="lg:sticky lg:top-28"
               />

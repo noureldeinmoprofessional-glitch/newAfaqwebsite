@@ -9,10 +9,10 @@ import { MediaFrame } from "@/components/visual/MediaFrame";
 import { cn } from "@/lib/utils";
 
 const LAYERS = [
-  { key: "survey", tone: "deep", texture: "survey" },
-  { key: "civil", tone: "steel", texture: "terrain" },
-  { key: "its", tone: "mid", texture: "grid" },
-  { key: "av", tone: "steel", texture: "survey" },
+  { key: "survey", image: "survey" },
+  { key: "civil", image: "steel-fabrication" },
+  { key: "its", image: "its" },
+  { key: "av", image: "av-led" },
 ] as const;
 
 /**
@@ -82,8 +82,7 @@ export function IntegratedAdvantage() {
                   <MediaFrame
                     key={layer.key}
                     ratio="4/5"
-                    tone={layer.tone}
-                    texture={layer.texture}
+                    image={layer.image}
                     label={t(`layers.${layer.key}.imageLabel`)}
                     className={cn(
                       "absolute inset-0 transition-opacity duration-700",
@@ -148,8 +147,7 @@ export function IntegratedAdvantage() {
                     <div className="mt-8 lg:hidden">
                       <MediaFrame
                         ratio="16/10"
-                        tone={layer.tone}
-                        texture={layer.texture}
+                        image={layer.image}
                         label={t(`layers.${layer.key}.imageLabel`)}
                       />
                     </div>

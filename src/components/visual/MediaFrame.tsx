@@ -1,15 +1,15 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { TechBackground } from "./TechBackground";
+import { imageSrc, type ImageTopic } from "@/lib/images";
 
 /**
- * Standing in for real project photography (see MISSING_ASSETS.md). Renders a
- * premium engineering surface — deep-green gradient + technical overlay — at a
- * fixed aspect ratio with a descriptive label naming the shot the client should
- * supply. When a real image URL lands, pass `src` and it renders instead.
+ * Dominant engineering imagery frame. When an `image` topic (or raw `src`) is
+ * given it renders the photograph with a subtle legibility gradient and a thin
+ * engineered inset border. Without one it falls back to a green gradient +
+ * technical overlay placeholder labelled with the intended shot.
  *
- * Large by design: imagery should dominate (brief §Photography). The frame is
- * relative + overflow-hidden so callers can layer parallax / blueprint content.
+ * Relative + overflow-hidden so callers can layer parallax / captions.
  */
 type Tone = "deep" | "mid" | "steel";
 type Texture = "grid" | "topo" | "terrain" | "survey";
@@ -19,12 +19,14 @@ interface MediaFrameProps {
   ratio?: string;
   tone?: Tone;
   texture?: Texture;
-  /** Short descriptor of the intended photograph, shown as a placeholder tag. */
+  /** Short descriptor of the shot — used as alt text and placeholder tag. */
   label?: string;
   className?: string;
   /** Optional overlay content (parallax layers, captions, gradients). */
   children?: ReactNode;
-  /** Real image src once available. */
+  /** On-brand photo topic (public/images/<topic>.jpg). */
+  image?: ImageTopic;
+  /** Or a raw image src. */
   src?: string;
   alt?: string;
   rounded?: boolean;
@@ -43,10 +45,12 @@ export function MediaFrame({
   label,
   className,
   children,
+  image,
   src,
-  alt = "",
+  alt,
   rounded = true,
 }: MediaFrameProps) {
+  const photo = src ?? (image ? imageSrc(image) : undefined);
   return (
     <div
       className={cn(
@@ -56,14 +60,23 @@ export function MediaFrame({
       )}
       style={{ aspectRatio: ratio }}
     >
-      {src ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
+      {photo ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={photo}
+            alt={alt ?? label ?? ""}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* Subtle deep-green legibility wash + engineered border. */}
+          <div className="absolute inset-0 bg-gradient-to-t from-ink-900/40 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-4 border border-mist-50/10" aria-hidden="true" />
+        </>
       ) : (
         <>
           <div className={cn("absolute inset-0 bg-gradient-to-br", tones[tone])} />
           <TechBackground variant={texture} opacity={8} className="text-brand-400" />
-          {/* Corner survey ticks for engineered framing. */}
           <div className="absolute inset-4 border border-mist-50/10" aria-hidden="true" />
           {label && (
             <span className="absolute bottom-4 left-4 z-10 max-w-[70%] font-display text-[0.6875rem] uppercase tracking-[0.14em] text-mist-50/45">

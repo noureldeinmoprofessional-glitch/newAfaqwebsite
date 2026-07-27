@@ -136,7 +136,7 @@ export function ProjectDrawer({
             </div>
 
             <div className="flex-1 overflow-y-auto px-6 py-6">
-              <ProjectGlyph category={shown.category} ratio="16/9" />
+              <ProjectGlyph category={shown.category} seed={shown.id} ratio="16/9" />
 
               <h2 className="mt-6 font-display text-h2 font-semibold leading-[1.1] text-slate-900">
                 {shown.name[lang]}

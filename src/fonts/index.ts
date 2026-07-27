@@ -4,25 +4,21 @@ import localFont from "next/font/local";
  * Self-hosted fonts (woff2 checked into the repo under src/fonts).
  * No Google Fonts CDN calls at build or runtime.
  *
+ * English typeface: Poppins (display + body). Arabic: IBM Plex Sans Arabic.
+ *
  * CSS variables consumed by the Tailwind `@theme` font tokens in globals.css:
- *   --font-space-grotesk  →  --font-display
- *   --font-inter          →  --font-body
- *   --font-ibm-arabic     →  --font-arabic
+ *   --font-poppins     →  --font-display + --font-body
+ *   --font-ibm-arabic  →  --font-arabic
  */
 
-export const spaceGrotesk = localFont({
-  src: "./space-grotesk-latin-wght.woff2",
-  variable: "--font-space-grotesk",
-  weight: "300 700",
-  display: "swap",
-  preload: true,
-  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
-});
-
-export const inter = localFont({
-  src: "./inter-latin-wght.woff2",
-  variable: "--font-inter",
-  weight: "100 900",
+export const poppins = localFont({
+  src: [
+    { path: "./poppins-latin-400.woff2", weight: "400", style: "normal" },
+    { path: "./poppins-latin-500.woff2", weight: "500", style: "normal" },
+    { path: "./poppins-latin-600.woff2", weight: "600", style: "normal" },
+    { path: "./poppins-latin-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-poppins",
   display: "swap",
   preload: true,
   fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
@@ -35,14 +31,9 @@ export const ibmPlexArabic = localFont({
   ],
   variable: "--font-ibm-arabic",
   display: "swap",
-  // Preloaded only when Arabic is the active locale is not possible per-route
-  // here; keep it non-preloaded to avoid loading Arabic glyphs on /en pages.
+  // Non-preloaded so Arabic glyphs don't load on /en pages.
   preload: false,
   fallback: ["ui-sans-serif", "sans-serif"],
 });
 
-export const fontVariables = [
-  spaceGrotesk.variable,
-  inter.variable,
-  ibmPlexArabic.variable,
-].join(" ");
+export const fontVariables = [poppins.variable, ibmPlexArabic.variable].join(" ");

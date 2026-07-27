@@ -12,7 +12,7 @@ const MILESTONES = ["founded", "survey", "civil", "its", "av", "integrated"] as 
 
 /**
  * About §2 — Our Story. Split layout: sticky immersive photography on one side,
- * an editorial vertical timeline on the other. A thin gold connection line fills
+ * an editorial vertical timeline on the other. A thin green connection line fills
  * as the section scrolls, and each milestone rises into view.
  */
 export function OurStory() {
@@ -75,8 +75,7 @@ export function OurStory() {
               <p className="mt-6 max-w-md text-body-lg text-mist-50/60">{t("lead")}</p>
               <MediaFrame
                 ratio="4/5"
-                tone="deep"
-                texture="terrain"
+                image="riyadh-skyline"
                 label={t("imageLabel")}
                 className="mt-10"
               />
@@ -86,18 +85,18 @@ export function OurStory() {
           {/* Timeline */}
           <div className="story-column relative ps-8 lg:col-span-6 lg:col-start-7 lg:ps-12">
             <div className="absolute inset-y-2 start-0 w-px bg-line-inv" aria-hidden="true">
-              <div className="story-fill absolute inset-x-0 top-0 h-full origin-top bg-gold" style={{ transform: "scaleY(0)" }} />
+              <div className="story-fill absolute inset-x-0 top-0 h-full origin-top bg-brand-500" style={{ transform: "scaleY(0)" }} />
             </div>
 
             <ol className="flex flex-col">
               {MILESTONES.map((key, i) => (
                 <li key={key} data-milestone className="relative py-8 first:pt-0 last:pb-0">
                   <span
-                    className="absolute -start-8 top-9 size-3 -translate-x-1/2 rounded-full border-2 border-gold bg-ink-900 first:top-1 rtl:translate-x-1/2 lg:-start-12"
+                    className="absolute -start-8 top-9 size-3 -translate-x-1/2 rounded-full border-2 border-brand-500 bg-ink-900 first:top-1 rtl:translate-x-1/2 lg:-start-12"
                     aria-hidden="true"
                   />
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display text-eyebrow uppercase tracking-[0.14em] text-gold">
+                    <span className="font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400">
                       {t(`milestones.${key}.tag`)}
                     </span>
                     <span className="font-display text-sm tabular-nums text-mist-50/30">

@@ -4,12 +4,13 @@ import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { MediaFrame } from "@/components/visual/MediaFrame";
 import { TechBackground } from "@/components/visual/TechBackground";
 import { Reveal } from "@/components/motion/Reveal";
+import { Link } from "@/i18n/navigation";
 
 const SERVICES = [
-  { key: "survey", Icon: Radar, tone: "deep", texture: "survey" },
-  { key: "civil", Icon: Building2, tone: "steel", texture: "terrain" },
-  { key: "its", Icon: Route, tone: "mid", texture: "grid" },
-  { key: "av", Icon: MonitorPlay, tone: "steel", texture: "survey" },
+  { key: "survey", Icon: Radar, image: "survey" },
+  { key: "civil", Icon: Building2, image: "steel-fabrication" },
+  { key: "its", Icon: Route, image: "its" },
+  { key: "av", Icon: MonitorPlay, image: "av-led" },
 ] as const;
 
 /**
@@ -32,9 +33,9 @@ export function Services() {
       </Container>
 
       <div className="mt-14 flex flex-col border-t border-line lg:mt-20">
-        {SERVICES.map(({ key, Icon, tone, texture }, i) => (
+        {SERVICES.map(({ key, Icon, image }, i) => (
           <Reveal key={key} as="article" once className="group relative border-b border-line">
-            <a href="#projects" className="block">
+            <Link href={`/services/${key}`} className="block">
               <Container className="grid items-center gap-8 py-10 lg:grid-cols-12 lg:gap-12 lg:py-14">
                 {/* Copy */}
                 <div className={`lg:col-span-5 ${i % 2 === 1 ? "lg:order-2" : ""}`}>
@@ -62,7 +63,7 @@ export function Services() {
                 <div className={`lg:col-span-7 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div className="relative overflow-hidden rounded-image">
                     <div className="transition-transform duration-700 ease-out group-hover:scale-[1.04]">
-                      <MediaFrame ratio="16/9" tone={tone} texture={texture} label={t(`items.${key}.imageLabel`)} rounded={false} />
+                      <MediaFrame ratio="16/9" image={image} label={t(`items.${key}.imageLabel`)} rounded={false} />
                     </div>
                     {/* Blueprint overlay revealed on hover */}
                     <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
@@ -72,7 +73,7 @@ export function Services() {
                   </div>
                 </div>
               </Container>
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>

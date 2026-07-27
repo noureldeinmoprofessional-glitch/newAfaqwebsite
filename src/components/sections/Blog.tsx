@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { MediaFrame } from "@/components/visual/MediaFrame";
 import { Reveal } from "@/components/motion/Reveal";
@@ -32,7 +33,7 @@ export function Blog() {
         <Reveal className="mt-14 grid gap-8 md:grid-cols-2 lg:mt-16 lg:grid-cols-3" stagger={0.1}>
           {POSTS.map(({ key, tone, texture }) => (
             <article key={key} className="group">
-              <a href="#blog" className="block">
+              <Link href="/blog" className="block">
                 <div className="overflow-hidden rounded-image">
                   <div className="transition-transform duration-700 ease-out group-hover:scale-[1.05]">
                     <MediaFrame ratio="4/3" tone={tone} texture={texture} label={t(`items.${key}.imageLabel`)} rounded={false} />
@@ -53,7 +54,7 @@ export function Blog() {
                   {t("readMore")}
                   <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2} />
                 </span>
-              </a>
+              </Link>
             </article>
           ))}
         </Reveal>

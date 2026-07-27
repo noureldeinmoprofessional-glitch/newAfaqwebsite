@@ -10,11 +10,11 @@ import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { MediaFrame } from "@/components/visual/MediaFrame";
 
 const PROJECTS = [
-  { key: "geospatial", tone: "deep", texture: "survey" },
-  { key: "water", tone: "mid", texture: "terrain" },
-  { key: "control", tone: "steel", texture: "grid" },
-  { key: "facade", tone: "steel", texture: "survey" },
-  { key: "stadium", tone: "deep", texture: "terrain" },
+  { key: "geospatial", image: "gis-mapping" },
+  { key: "water", image: "water-infrastructure" },
+  { key: "control", image: "control-room" },
+  { key: "facade", image: "av-led" },
+  { key: "stadium", image: "steel-fabrication" },
 ] as const;
 
 /**
@@ -79,12 +79,12 @@ export function ProjectsShowcase() {
         {/* Viewport (native scroll on mobile; pinned on desktop) */}
         <div className="pin-viewport mt-14 w-full snap-x overflow-x-auto lg:mt-20 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="pin-track flex w-max gap-6 px-5 md:px-10 lg:px-20">
-            {PROJECTS.map(({ key, tone, texture }, i) => (
+            {PROJECTS.map(({ key, image }, i) => (
               <article
                 key={key}
                 className="group relative w-[85vw] shrink-0 snap-start sm:w-[70vw] lg:w-[62vw] xl:w-[54vw]"
               >
-                <MediaFrame ratio="16/10" tone={tone} texture={texture} label={t(`items.${key}.imageLabel`)}>
+                <MediaFrame ratio="16/10" image={image} label={t(`items.${key}.imageLabel`)}>
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/20 to-transparent" />
                   <span className="absolute start-5 top-5 font-display text-sm tabular-nums text-brand-400">
                     {String(i + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}

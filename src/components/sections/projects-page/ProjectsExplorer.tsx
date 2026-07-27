@@ -348,7 +348,7 @@ function Grid({
             )}
           >
             <div className="p-3 pb-0">
-              <ProjectGlyph category={p.category} ratio="16/10" />
+              <ProjectGlyph category={p.category} seed={p.id} ratio="16/10" />
             </div>
             <div className="flex flex-1 flex-col p-5">
               <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-[0.75rem] font-medium text-slate-600">
@@ -467,7 +467,7 @@ function Highlight({ text, query }: { text: string; query: string }) {
     <>
       {parts.map((part, i) =>
         part.toLowerCase() === query.toLowerCase() ? (
-          <mark key={i} className="rounded-[2px] bg-gold/25 text-inherit">
+          <mark key={i} className="rounded-[2px] bg-brand-500/25 text-inherit">
             {part}
           </mark>
         ) : (

@@ -1,12 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { gsap, SplitText } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { easeExpo, easeOut } from "@/lib/gsap/easings";
-import { Link } from "@/i18n/navigation";
-import { Container } from "@/components/primitives";
+import { Container, Button } from "@/components/primitives";
 import { TechBackground } from "@/components/visual/TechBackground";
 
 /**
@@ -81,7 +80,7 @@ export function InnerHero({
         <div className="absolute inset-0 bg-gradient-to-b from-ink-800 via-ink-900 to-ink-900" />
         <TechBackground variant="topo" opacity={7} className="ih-contour text-brand-400" />
         <TechBackground variant="grid" opacity={5} className="text-tech-500" />
-        <TechBackground variant="survey" opacity={4} className="text-gold -right-1/4 left-auto w-2/3" />
+        <TechBackground variant="survey" opacity={4} className="text-brand-400 -right-1/4 left-auto w-2/3" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink-900 to-transparent" />
       </div>
@@ -89,10 +88,10 @@ export function InnerHero({
       <Container className="relative pt-28">
         <div className="ih-content max-w-4xl">
           <p
-            className="ih-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-gold opacity-0"
+            className="ih-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
-            <span className="inline-block h-px w-8 bg-gold" aria-hidden="true" />
+            <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
             {eyebrow}
           </p>
 
@@ -106,14 +105,15 @@ export function InnerHero({
 
           {ctaLabel && ctaHref && (
             <div className="mt-10">
-              <Link
+              <Button
+                variant="primary"
+                size="lg"
                 href={ctaHref}
-                className="ih-cta group inline-flex h-13 items-center gap-2 rounded-button bg-brand-500 px-7 font-display font-medium text-ink-900 opacity-0 transition-colors hover:bg-brand-400"
+                className="ih-cta opacity-0"
                 style={{ transform: "translateY(20px)" }}
               >
                 {ctaLabel}
-                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" strokeWidth={2} />
-              </Link>
+              </Button>
             </div>
           )}
         </div>

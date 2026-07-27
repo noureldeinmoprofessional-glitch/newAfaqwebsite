@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { key: "services", href: "/services" },
   { key: "projects", href: "/projects" },
   { key: "caseStudies", href: "/case-studies" },
-  { key: "blog", href: "/#blog" },
+  { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },
 ] as const;
 const SERVICE_KEYS = ["survey", "civil", "its", "av"] as const;
@@ -19,7 +19,7 @@ const SOCIAL_KEYS = ["linkedin", "x", "instagram", "youtube"] as const;
 
 /**
  * Large corporate footer (brief §12). Deep-green surface with a subtle grid
- * overlay, thin gold separators, and a Vision 2030 statement. Newsletter is
+ * overlay, thin green separators, and a Vision 2030 statement. Newsletter is
  * presentational only — no submission wired (see safety constraints).
  */
 export function SiteFooter() {

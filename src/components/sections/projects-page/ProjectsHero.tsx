@@ -60,7 +60,7 @@ export function ProjectsHero({ count }: { count: number }) {
         <div className="absolute inset-0 bg-gradient-to-b from-ink-800 via-ink-900 to-ink-900" />
         <TechBackground variant="topo" opacity={7} className="ph-contour text-brand-400" />
         <TechBackground variant="grid" opacity={5} className="text-tech-500" />
-        <TechBackground variant="survey" opacity={4} className="text-gold -right-1/4 left-auto w-2/3" />
+        <TechBackground variant="survey" opacity={4} className="text-brand-400 -right-1/4 left-auto w-2/3" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink-900 to-transparent" />
       </div>
@@ -68,10 +68,10 @@ export function ProjectsHero({ count }: { count: number }) {
       <Container className="relative pt-24">
         <div className="ph-content max-w-4xl">
           <p
-            className="ph-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-gold opacity-0"
+            className="ph-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
-            <span className="inline-block h-px w-8 bg-gold" aria-hidden="true" />
+            <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
             {t("eyebrow")}
           </p>
 

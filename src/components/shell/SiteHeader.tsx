@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -21,7 +21,7 @@ const NAV = [
   { key: "services", href: "/services" },
   { key: "projects", href: "/projects" },
   { key: "caseStudies", href: "/case-studies" },
-  { key: "blog", href: "/#blog" },
+  { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },
 ] as const;
 
@@ -67,7 +67,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color] duration-[450ms] ease-out",
         scrolled
-          ? "border-b border-gold/50 bg-white/95 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur-md"
+          ? "border-b border-brand-500/50 bg-white/95 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -109,7 +109,7 @@ export function SiteHeader() {
                     {t(item.key)}
                     {active && (
                       <span
-                        className="absolute -bottom-1.5 inset-x-0 mx-auto h-px w-4 bg-gold"
+                        className="absolute -bottom-1.5 inset-x-0 mx-auto h-px w-4 bg-brand-500"
                         aria-hidden="true"
                       />
                     )}
@@ -131,14 +131,22 @@ export function SiteHeader() {
           <Link
             href="/contact"
             className={cn(
-              "group inline-flex items-center gap-2 rounded-button px-5 py-2.5 font-display text-[0.9375rem] font-medium transition-colors duration-[450ms]",
+              "group/btn inline-flex items-center gap-2.5 rounded-full py-1 ps-4 pe-1 font-display text-[0.9375rem] font-medium transition-colors duration-[450ms]",
               scrolled
                 ? "bg-brand-500 text-ink-900 hover:bg-brand-400"
                 : "border border-mist-50/30 text-mist-50 hover:border-brand-400 hover:text-brand-400",
             )}
           >
-            {t("cta")}
-            <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
+            <span>{t("cta")}</span>
+            <span
+              className={cn(
+                "inline-flex size-7 items-center justify-center rounded-full transition-transform duration-300 group-hover/btn:translate-x-0.5 rtl:group-hover/btn:-translate-x-0.5",
+                scrolled ? "bg-ink-900 text-brand-400" : "bg-brand-500 text-ink-900",
+              )}
+              aria-hidden="true"
+            >
+              <ArrowRight className="size-3.5 rtl:rotate-180" strokeWidth={2.5} />
+            </span>
           </Link>
         </div>
 
@@ -221,7 +229,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                 active ? "text-brand-400" : "text-mist-50",
               )}
             >
-              <span className={cn("font-body text-sm tabular-nums", active ? "text-gold" : "text-brand-500")}>
+              <span className={cn("font-body text-sm tabular-nums", active ? "text-brand-400" : "text-brand-500")}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               {t(item.key)}
@@ -235,10 +243,15 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         <Link
           href="/contact"
           onClick={onClose}
-          className="inline-flex items-center gap-2 rounded-button bg-brand-500 px-5 py-2.5 font-display font-medium text-ink-900"
+          className="group/btn inline-flex items-center gap-2.5 rounded-full bg-brand-500 py-1 ps-4 pe-1 font-display font-medium text-ink-900"
         >
-          {t("cta")}
-          <ArrowUpRight className="size-4" strokeWidth={2} />
+          <span>{t("cta")}</span>
+          <span
+            className="inline-flex size-7 items-center justify-center rounded-full bg-ink-900 text-brand-400 transition-transform duration-300 group-hover/btn:translate-x-0.5 rtl:group-hover/btn:-translate-x-0.5"
+            aria-hidden="true"
+          >
+            <ArrowRight className="size-3.5 rtl:rotate-180" strokeWidth={2.5} />
+          </span>
         </Link>
       </Container>
     </div>

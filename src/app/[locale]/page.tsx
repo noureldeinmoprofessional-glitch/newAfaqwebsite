@@ -1,13 +1,12 @@
 import { setRequestLocale } from "next-intl/server";
 import {
-  Hero,
+  VideoHero,
   TrustedBy,
   About,
   IntegratedAdvantage,
   Services,
   Industries,
   ProjectsShowcase,
-  CaseStudies,
   Numbers,
   CtaBanner,
   Blog,
@@ -23,14 +22,13 @@ export default async function HomePage({
 
   return (
     <main id="main">
-      <Hero />
+      <VideoHero />
       <TrustedBy />
       <About />
       <IntegratedAdvantage />
       <Services />
       <Industries />
       <ProjectsShowcase />
-      <CaseStudies />
       <Numbers />
       <CtaBanner />
       <Blog />

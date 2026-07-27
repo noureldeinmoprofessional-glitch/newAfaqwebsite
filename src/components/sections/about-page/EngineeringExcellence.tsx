@@ -16,7 +16,7 @@ export function EngineeringExcellence() {
 
   return (
     <Section surface="ink-800" id="excellence" className="relative overflow-hidden">
-      <TechBackground variant="grid" opacity={5} className="text-gold" />
+      <TechBackground variant="grid" opacity={5} className="text-brand-400" />
       <Container className="relative">
         <Reveal className="max-w-3xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
@@ -29,9 +29,9 @@ export function EngineeringExcellence() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
           {CERTS.map((key) => (
             <DrawOnScroll key={key} duration={1.2}>
-              <article className="group relative h-full overflow-hidden rounded-card bg-ink-700/30 p-6 transition-[box-shadow,border-color] duration-500 hover:shadow-[0_0_36px_-10px_var(--color-gold)]">
+              <article className="group relative h-full overflow-hidden rounded-card bg-ink-700/30 p-6 transition-[box-shadow,border-color] duration-500 hover:shadow-[0_0_36px_-10px_var(--color-brand-500)]">
                 <svg
-                  className="pointer-events-none absolute inset-0 h-full w-full text-line-inv transition-colors duration-500 group-hover:text-gold/70"
+                  className="pointer-events-none absolute inset-0 h-full w-full text-line-inv transition-colors duration-500 group-hover:text-brand-400/70"
                   fill="none"
                   aria-hidden="true"
                   preserveAspectRatio="none"
@@ -52,7 +52,7 @@ export function EngineeringExcellence() {
                 </svg>
 
                 <div className="relative flex min-h-[130px] flex-col">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-500" aria-hidden="true" />
                   <h3 className="mt-4 font-display text-h3 font-semibold text-mist-50">
                     {t(`items.${key}.name`)}
                   </h3>

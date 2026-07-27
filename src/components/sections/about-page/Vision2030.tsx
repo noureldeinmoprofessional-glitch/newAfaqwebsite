@@ -8,7 +8,7 @@ const LANDMARKS = ["neom", "diriyah", "qiddiya", "kafd", "metro", "swcc"] as con
 
 /**
  * About §9 — Vision 2030. Dark cinematic section over a Riyadh skyline placeholder
- * with digital overlays. A drawn gold line connects glowing landmark-program
+ * with digital overlays. A drawn green line connects glowing landmark-program
  * nodes representing the sectors AFAQ serves.
  */
 export function Vision2030() {
@@ -37,7 +37,7 @@ export function Vision2030() {
         <DrawOnScroll className="relative mt-16 lg:mt-24" duration={2} stagger={0}>
           {/* Connecting line (horizontal on desktop) */}
           <svg
-            className="pointer-events-none absolute inset-x-0 top-3 hidden h-2 w-full text-gold lg:block"
+            className="pointer-events-none absolute inset-x-0 top-3 hidden h-2 w-full text-brand-400 lg:block"
             fill="none"
             aria-hidden="true"
             preserveAspectRatio="none"
@@ -50,8 +50,8 @@ export function Vision2030() {
             {LANDMARKS.map((key) => (
               <li key={key} className="flex flex-col items-center text-center lg:items-start lg:text-start">
                 <span className="relative mb-4 flex size-6 items-center justify-center">
-                  <span className="absolute inline-flex size-6 animate-ping rounded-full bg-gold/30" aria-hidden="true" />
-                  <span className="relative inline-flex size-3 rounded-full bg-gold shadow-[0_0_16px_2px_var(--color-gold)]" aria-hidden="true" />
+                  <span className="absolute inline-flex size-6 animate-ping rounded-full bg-brand-500/30" aria-hidden="true" />
+                  <span className="relative inline-flex size-3 rounded-full bg-brand-500 shadow-[0_0_16px_2px_var(--color-brand-500)]" aria-hidden="true" />
                 </span>
                 <span className="font-display text-h3 font-semibold text-mist-50">
                   {t(`landmarks.${key}`)}
