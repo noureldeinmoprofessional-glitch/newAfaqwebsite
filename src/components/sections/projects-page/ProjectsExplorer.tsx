@@ -264,7 +264,7 @@ function Ledger({
   return (
     <Reveal className="mt-6 flex flex-col" stagger={0.04} y={16}>
       {/* Column header (desktop) */}
-      <div className="hidden grid-cols-[minmax(0,2.6fr)_1fr_1.1fr_1.2fr_auto] gap-4 border-b border-line px-4 pb-3 font-display text-eyebrow uppercase text-slate-400 lg:grid">
+      <div className="hidden grid-cols-[minmax(0,2.6fr)_minmax(210px,1fr)_1.1fr_1.2fr_auto] gap-4 border-b border-line px-4 pb-3 font-display text-eyebrow uppercase text-slate-400 lg:grid">
         <span>{columns("columns.project")}</span>
         <span>{columns("columns.category")}</span>
         <span>{columns("columns.location")}</span>
@@ -280,7 +280,7 @@ function Ledger({
             type="button"
             onClick={() => onOpen(p)}
             className={cn(
-              "group grid grid-cols-1 items-center gap-x-4 gap-y-2 border-s-2 border-b border-b-line bg-white px-4 py-5 text-start transition-colors hover:bg-mist-50 lg:grid-cols-[minmax(0,2.6fr)_1fr_1.1fr_1.2fr_auto]",
+              "group grid grid-cols-1 items-center gap-x-4 gap-y-2 border-s-2 border-b border-b-line bg-white px-4 py-5 text-start transition-colors hover:bg-mist-50 lg:grid-cols-[minmax(0,2.6fr)_minmax(210px,1fr)_1.1fr_1.2fr_auto]",
               meta.borderColor,
             )}
           >
@@ -293,8 +293,8 @@ function Ledger({
               </p>
             </div>
 
-            <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-small font-medium text-slate-600">
-              <span className={cn("size-1.5 rounded-full", meta.dot)} aria-hidden="true" />
+            <span className="inline-flex w-fit items-center gap-1.5 whitespace-nowrap rounded-full border border-line px-2.5 py-1 text-small font-medium text-slate-600">
+              <span className={cn("size-1.5 shrink-0 rounded-full", meta.dot)} aria-hidden="true" />
               {tCat(p.category)}
             </span>
 
@@ -351,8 +351,8 @@ function Grid({
               <ProjectGlyph category={p.category} seed={p.id} ratio="16/10" />
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-small font-medium text-slate-600">
-                <span className={cn("size-1.5 rounded-full", meta.dot)} aria-hidden="true" />
+              <span className="inline-flex w-fit items-center gap-1.5 whitespace-nowrap rounded-full border border-line px-2.5 py-1 text-small font-medium text-slate-600">
+                <span className={cn("size-1.5 shrink-0 rounded-full", meta.dot)} aria-hidden="true" />
                 {tCat(p.category)}
               </span>
               <h3 className="mt-4 font-display text-h3 font-semibold leading-tight text-slate-900 transition-colors group-hover:text-brand-600">
