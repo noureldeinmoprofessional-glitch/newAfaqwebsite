@@ -80,7 +80,7 @@ export function AboutHero() {
             {t("eyebrow")}
           </p>
 
-          <h1 className="ah-title mt-6 max-w-[16ch] font-display text-display font-semibold leading-[0.95] tracking-[-0.03em] text-mist-50">
+          <h1 className="ah-title mt-6 max-w-[16ch] font-display text-display font-semibold text-mist-50">
             {t("title")}
           </h1>
 

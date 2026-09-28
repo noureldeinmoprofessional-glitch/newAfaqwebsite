@@ -89,7 +89,7 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
           </span>
         </div>
 
-        <h1 className="csh-title mt-5 max-w-4xl font-display text-display font-semibold leading-[0.98] tracking-[-0.03em] text-mist-50">
+        <h1 className="csh-title mt-5 max-w-4xl font-display text-display font-semibold text-mist-50">
           {study.name[lang]}
         </h1>
 

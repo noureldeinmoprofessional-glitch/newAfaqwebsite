@@ -99,7 +99,7 @@ export function Hero() {
               {t("eyebrow")}
             </p>
 
-            <h1 className="hero-title mt-6 max-w-[15ch] font-display text-display font-semibold leading-[0.95] tracking-[-0.03em] text-mist-50">
+            <h1 className="hero-title mt-6 max-w-[15ch] font-display text-display font-semibold text-mist-50">
               {t("title")}
             </h1>
 
