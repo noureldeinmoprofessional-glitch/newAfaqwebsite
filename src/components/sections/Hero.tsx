@@ -94,7 +94,7 @@ export function Hero() {
       <Container className="relative flex min-h-svh flex-col justify-center pb-24 pt-32">
         <div className="hero-content grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-9 xl:col-span-8">
-            <p className="hero-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-500 opacity-0" style={{ transform: "translateY(20px)" }}>
+            <p className="hero-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase text-brand-500 opacity-0" style={{ transform: "translateY(20px)" }}>
               <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
               {t("eyebrow")}
             </p>
@@ -110,7 +110,7 @@ export function Hero() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#services"
-                className="hero-cta group/btn inline-flex items-center gap-3 rounded-full bg-brand-500 py-2 ps-7 pe-2 font-display text-base font-medium text-ink-900 opacity-0 transition-colors hover:bg-brand-400"
+                className="hero-cta group/btn inline-flex items-center gap-3 rounded-full bg-brand-500 py-2 ps-7 pe-2 font-display text-body font-medium text-ink-900 opacity-0 transition-colors hover:bg-brand-400"
                 style={{ transform: "translateY(20px)" }}
               >
                 <span>{t("ctaPrimary")}</span>
@@ -141,10 +141,10 @@ export function Hero() {
                 className="flex items-center gap-4 border-s border-line-inv ps-4 opacity-0"
                 style={{ transform: "translateX(20px)" }}
               >
-                <span className="font-display text-sm tabular-nums text-brand-500">
+                <span className="font-display text-small tabular-nums text-brand-500">
                   0{i + 1}
                 </span>
-                <span className="font-display text-sm uppercase tracking-[0.1em] text-mist-50/60">
+                <span className="font-display text-small uppercase tracking-[0.1em] text-mist-50/60">
                   {t(`layers.${k}`)}
                 </span>
               </div>
@@ -156,7 +156,7 @@ export function Hero() {
       {/* Scroll cue */}
       <div className="hero-scroll absolute inset-x-0 bottom-8 flex justify-center opacity-0">
         <div className="flex flex-col items-center gap-2 text-mist-50/50">
-          <span className="font-display text-[0.6875rem] uppercase tracking-[0.2em]">{t("scroll")}</span>
+          <span className="font-display text-eyebrow uppercase">{t("scroll")}</span>
           <ArrowDown className="size-4 animate-bounce" strokeWidth={2} />
         </div>
       </div>

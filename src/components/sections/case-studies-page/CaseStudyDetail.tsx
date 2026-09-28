@@ -82,7 +82,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
 function SectionHead({ num, title, dark = false }: { num: string; title: string; dark?: boolean }) {
   return (
     <>
-      <p className={cn("font-display text-eyebrow uppercase tracking-[0.16em]", dark ? "text-brand-400" : "text-brand-600")}>
+      <p className={cn("font-display text-eyebrow uppercase", dark ? "text-brand-400" : "text-brand-600")}>
         {num}
       </p>
       <h2 className={cn("mt-3 font-display text-h2 font-semibold", dark ? "text-mist-50" : "text-slate-900")}>
@@ -104,14 +104,14 @@ function Overview({ study, num, surface }: { study: CaseStudy; num: string; surf
             <SectionHead num={num} title={t("overviewTitle")} />
           </div>
           <div className="lg:col-span-8">
-            <p className="text-[clamp(1.25rem,2vw,1.6rem)] font-medium leading-[1.5] tracking-[-0.01em] text-slate-800">
+            <p className="text-body-lg font-medium text-slate-800">
               {study.overview[lang]}
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {study.services.map((s, i) => (
                 <span
                   key={i}
-                  className="rounded-full border border-line bg-white px-3.5 py-1.5 text-[0.8125rem] font-medium text-slate-600"
+                  className="rounded-full border border-line bg-white px-3.5 py-1.5 text-small font-medium text-slate-600"
                 >
                   {s[lang]}
                 </span>
@@ -146,7 +146,7 @@ function Snapshot({ study, num, surface }: { study: CaseStudy; num: string; surf
               <span className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-500/10 text-brand-600">
                 <f.icon className="size-5" strokeWidth={2} />
               </span>
-              <p className="mt-4 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-500">{f.label}</p>
+              <p className="mt-4 font-display text-eyebrow uppercase text-slate-500">{f.label}</p>
               <p className="mt-1.5 text-body font-medium text-slate-900">{f.value}</p>
             </div>
           ))}
@@ -241,13 +241,13 @@ function Scope({ study, num, surface }: { study: CaseStudy; num: string; surface
           <div className="mt-12 grid gap-10 border-t border-line pt-10 md:grid-cols-2">
             {!!study.technologies?.length && (
               <div>
-                <p className="inline-flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-brand-600">
+                <p className="inline-flex items-center gap-2 font-display text-eyebrow uppercase text-brand-600">
                   <Cpu className="size-4" strokeWidth={2} />
                   {t("technologiesTitle")}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {study.technologies.map((tech, i) => (
-                    <span key={i} className="rounded-full bg-brand-500/10 px-3.5 py-1.5 text-[0.8125rem] font-medium text-brand-600">
+                    <span key={i} className="rounded-full bg-brand-500/10 px-3.5 py-1.5 text-small font-medium text-brand-600">
                       {tech[lang]}
                     </span>
                   ))}
@@ -256,7 +256,7 @@ function Scope({ study, num, surface }: { study: CaseStudy; num: string; surface
             )}
             {!!study.deliverables?.length && (
               <div>
-                <p className="inline-flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-brand-600">
+                <p className="inline-flex items-center gap-2 font-display text-eyebrow uppercase text-brand-600">
                   <CheckCircle2 className="size-4" strokeWidth={2} />
                   {t("deliverablesTitle")}
                 </p>

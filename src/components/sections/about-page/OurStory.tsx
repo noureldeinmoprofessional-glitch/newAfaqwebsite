@@ -69,7 +69,7 @@ export function OurStory() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-              <Heading as="h2" size="h1" className="mt-6 text-mist-50">
+              <Heading as="h2" size="h2" className="mt-6 text-mist-50">
                 {t("title")}
               </Heading>
               <p className="mt-6 max-w-md text-body-lg text-mist-50/60">{t("lead")}</p>
@@ -96,10 +96,10 @@ export function OurStory() {
                     aria-hidden="true"
                   />
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400">
+                    <span className="font-display text-eyebrow uppercase text-brand-400">
                       {t(`milestones.${key}.tag`)}
                     </span>
-                    <span className="font-display text-sm tabular-nums text-mist-50/30">
+                    <span className="font-display text-small tabular-nums text-mist-50/30">
                       0{i + 1}
                     </span>
                   </div>

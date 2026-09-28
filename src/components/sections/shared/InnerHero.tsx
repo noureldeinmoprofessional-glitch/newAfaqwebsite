@@ -88,7 +88,7 @@ export function InnerHero({
       <Container className="relative pt-28">
         <div className="ih-content max-w-4xl">
           <p
-            className="ih-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0"
+            className="ih-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase text-brand-400 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
             <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
@@ -122,7 +122,7 @@ export function InnerHero({
       {scrollLabel && (
         <div className="ih-scroll absolute inset-x-0 bottom-8 flex justify-center opacity-0">
           <div className="flex flex-col items-center gap-2 text-mist-50/50">
-            <span className="font-display text-[0.6875rem] uppercase tracking-[0.2em]">{scrollLabel}</span>
+            <span className="font-display text-eyebrow uppercase">{scrollLabel}</span>
             <ArrowDown className="size-4 animate-bounce" strokeWidth={2} />
           </div>
         </div>

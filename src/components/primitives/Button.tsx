@@ -36,9 +36,9 @@ const badges: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, { pad: string; badge: string; icon: string }> = {
-  sm: { pad: "ps-4 pe-1 py-1 text-[0.875rem] gap-2.5", badge: "size-7", icon: "size-3.5" },
-  md: { pad: "ps-5 pe-1.5 py-1.5 text-[0.9375rem] gap-3", badge: "size-8", icon: "size-4" },
-  lg: { pad: "ps-7 pe-2 py-2 text-base gap-3", badge: "size-10", icon: "size-4" },
+  sm: { pad: "ps-4 pe-1 py-1 text-small gap-2.5", badge: "size-7", icon: "size-3.5" },
+  md: { pad: "ps-5 pe-1.5 py-1.5 text-small gap-3", badge: "size-8", icon: "size-4" },
+  lg: { pad: "ps-7 pe-2 py-2 text-body gap-3", badge: "size-10", icon: "size-4" },
 };
 
 interface StyleProps {

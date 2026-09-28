@@ -47,7 +47,7 @@ export function CaseStudyMetrics({ metrics }: { metrics: Metric[] }) {
   return (
     <Section surface="ink-900" id="metrics">
       <Container>
-        <p className="font-display text-eyebrow uppercase tracking-[0.16em] text-brand-400">08</p>
+        <p className="font-display text-eyebrow uppercase text-brand-400">08</p>
         <h2 className="mt-3 font-display text-h2 font-semibold text-mist-50">{t("metricsTitle")}</h2>
 
         <div
@@ -58,11 +58,11 @@ export function CaseStudyMetrics({ metrics }: { metrics: Metric[] }) {
             <div key={i} className="border-t border-mist-50/15 pt-5">
               <span
                 dir="ltr"
-                className="block font-display text-[clamp(2.5rem,5vw,3.75rem)] font-bold leading-none tracking-[-0.03em] text-brand-400 tabular-nums"
+                className="block font-display text-stat font-bold text-brand-400 tabular-nums"
               >
                 <MetricValue value={m.value} play={play} />
               </span>
-              <span className="mt-3 block text-eyebrow uppercase tracking-[0.12em] text-mist-50/60">
+              <span className="mt-3 block text-eyebrow uppercase text-mist-50/60">
                 {m.label[lang]}
               </span>
             </div>

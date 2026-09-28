@@ -40,36 +40,63 @@
   --font-body: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-arabic: var(--font-ibm-arabic), ui-sans-serif, sans-serif;
 
-  /* --- Fluid type scale (clamp) ------------------------------------- */
+  /* --- Modular type scale — 1.333 "Perfect Fourth" on a 16px root ----
+     One token per role. Font-size, line-height and tracking live here so
+     components only pick a token. Headings are fluid via clamp(mobile →
+     desktop). body-lg's minimum (18px) stays above body (17px) at every
+     width, so "large body" is never smaller than body on phones.          */
+
+  /* Uppercase micro-labels, tags, pills, overlines (13px). */
   --text-eyebrow: 0.8125rem;
   --text-eyebrow--line-height: 1.4;
-  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow--letter-spacing: 0.12em;
   --text-eyebrow--font-weight: 600;
 
+  /* Captions, meta, form help, secondary nav (14px). */
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  /* Default body copy (17px). */
   --text-body: 1.0625rem;
   --text-body--line-height: 1.65;
 
-  --text-body-lg: clamp(1.05rem, 1.4vw, 1.25rem);
-  --text-body-lg--line-height: 1.6;
+  /* Lead paragraphs, hero subtitles, overviews (18 → 21px). */
+  --text-body-lg: clamp(1.125rem, 1.2vw, 1.3125rem);
+  --text-body-lg--line-height: 1.55;
 
-  --text-h3: clamp(1.35rem, 2vw, 1.75rem);
-  --text-h3--line-height: 1.25;
+  /* Small card title / strong sub-label (19 → 22px). */
+  --text-h4: clamp(1.1875rem, 1.2vw, 1.375rem);
+  --text-h4--line-height: 1.3;
 
-  --text-h2: clamp(2rem, 4vw, 3.25rem);
+  /* Subsection / primary card title (22 → 30px). */
+  --text-h3: clamp(1.375rem, 1.8vw, 1.875rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+
+  /* Section heading (28 → 44px). */
+  --text-h2: clamp(1.75rem, 3.2vw, 2.75rem);
   --text-h2--line-height: 1.1;
   --text-h2--letter-spacing: -0.02em;
 
-  --text-h1: clamp(2.5rem, 5.5vw, 4.5rem);
-  --text-h1--line-height: 1.02;
+  /* Content-page title / large section (34 → 64px). */
+  --text-h1: clamp(2.125rem, 4.5vw, 4rem);
+  --text-h1--line-height: 1.05;
   --text-h1--letter-spacing: -0.02em;
 
-  --text-display: clamp(3rem, 7vw, 6.5rem);
+  /* Marketing hero title (40 → 96px). */
+  --text-display: clamp(2.5rem, 6.5vw, 6rem);
   --text-display--line-height: 0.95;
   --text-display--letter-spacing: -0.03em;
 
-  --text-stat: clamp(3rem, 6vw, 5.5rem);
+  /* Prominent metric numbers — hero/showcase stats (40 → 72px). */
+  --text-stat: clamp(2.5rem, 5vw, 4.5rem);
   --text-stat--line-height: 1;
   --text-stat--letter-spacing: -0.03em;
+
+  /* Compact metric numbers — dense multi-column stat grids (28 → 40px). */
+  --text-stat-sm: clamp(1.75rem, 2.5vw, 2.5rem);
+  --text-stat-sm--line-height: 1;
+  --text-stat-sm--letter-spacing: -0.03em;
 
   /* --- Radius -------------------------------------------------------- */
   --radius-card: 12px;
@@ -169,9 +196,9 @@
    ARABIC DISPLAY FONT — cascade fix.
    The base-layer `[dir=rtl] h1..h6 { font-arabic }` rule is out-ranked by the
    Tailwind `.font-display` utility (utilities layer wins over base), which would
-   otherwise force Space Grotesk onto Arabic headings, eyebrows, and buttons.
+   otherwise force Poppins onto Arabic headings, eyebrows, and buttons.
    This rule is unlayered, so it wins over all @layer utilities. Stat/counter
-   values are marked `dir="ltr"`, so they stay excluded and keep Space Grotesk
+   values are marked `dir="ltr"`, so they stay excluded and keep Poppins
    numerals. Arabic connected script also drops the Latin tracking.
    ========================================================================= */
 

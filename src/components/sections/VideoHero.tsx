@@ -181,16 +181,16 @@ export function VideoHero() {
           className="flex min-h-[100svh] flex-col justify-start pt-28 lg:justify-center lg:pt-0 lg:pb-0"
         >
           <div className="pointer-events-auto max-w-xl">
-            <p className="vh-reveal flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">
+            <p className="vh-reveal flex items-center gap-3 font-display text-eyebrow uppercase text-brand-600">
               <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
               {t("eyebrow")}
             </p>
 
-            <h1 className="vh-reveal mt-5 font-display text-h1 font-semibold leading-[1.02] tracking-[-0.02em] text-brand-600 lg:mt-6 lg:text-display lg:leading-[0.98] lg:tracking-[-0.03em]">
+            <h1 className="vh-reveal mt-5 font-display text-display font-semibold text-brand-600 lg:mt-6">
               {t("title")}
             </h1>
 
-            <p className="vh-reveal mt-5 max-w-lg text-body text-slate-600 lg:mt-7 lg:text-body-lg">
+            <p className="vh-reveal mt-5 max-w-lg text-body-lg text-slate-600 lg:mt-7">
               {t("subtitle")}
             </p>
 
@@ -198,7 +198,7 @@ export function VideoHero() {
               {/* Primary CTA — in-page anchor, so a plain <a> (not a locale route). */}
               <a
                 href="#services"
-                className="group/btn inline-flex items-center gap-3 rounded-full bg-brand-500 py-2 ps-7 pe-2 font-display text-base font-medium text-ink-900 transition-colors hover:bg-brand-400"
+                className="group/btn inline-flex items-center gap-3 rounded-full bg-brand-500 py-2 ps-7 pe-2 font-display text-body font-medium text-ink-900 transition-colors hover:bg-brand-400"
               >
                 <span>{t("ctaPrimary")}</span>
                 <span

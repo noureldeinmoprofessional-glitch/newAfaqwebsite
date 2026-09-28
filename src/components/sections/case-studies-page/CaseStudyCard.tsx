@@ -62,7 +62,7 @@ export function CaseStudyCard({ study, className }: { study: CaseStudy; classNam
 
           {/* Category badge */}
           <div className="absolute start-4 top-4 transition-transform duration-500 ease-out group-hover:-translate-y-0.5">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-ink-900/70 px-3 py-1.5 font-display text-[0.6875rem] uppercase tracking-[0.12em] text-mist-50 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-ink-900/70 px-3 py-1.5 font-display text-eyebrow uppercase text-mist-50 backdrop-blur-sm">
               <Icon className="size-3.5 text-brand-400" strokeWidth={2} />
               {tc(study.category)}
             </span>
@@ -70,7 +70,7 @@ export function CaseStudyCard({ study, className }: { study: CaseStudy; classNam
 
           {/* Featured tag */}
           {study.featured && (
-            <span className="absolute end-4 top-4 rounded-full bg-brand-500 px-2.5 py-1 font-display text-[0.625rem] font-semibold uppercase tracking-[0.12em] text-ink-900">
+            <span className="absolute end-4 top-4 rounded-full bg-brand-500 px-2.5 py-1 font-display text-eyebrow font-semibold uppercase text-ink-900">
               {t("card.featured")}
             </span>
           )}
@@ -78,7 +78,7 @@ export function CaseStudyCard({ study, className }: { study: CaseStudy; classNam
 
         {/* Body */}
         <div className="flex flex-1 flex-col px-1 pt-5">
-          <span className="inline-flex items-center gap-1.5 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-500">
+          <span className="inline-flex items-center gap-1.5 font-display text-eyebrow uppercase text-slate-500">
             <MapPin className="size-3.5 text-brand-600" strokeWidth={2} />
             {study.location[lang]}
           </span>

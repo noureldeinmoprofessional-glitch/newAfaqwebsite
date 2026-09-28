@@ -47,7 +47,7 @@ export function CaseStudyGallery({
   return (
     <Section surface={surface} id="gallery">
       <Container>
-        <p className="font-display text-eyebrow uppercase tracking-[0.16em] text-brand-600">09</p>
+        <p className="font-display text-eyebrow uppercase text-brand-600">09</p>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
           <h2 className="font-display text-h2 font-semibold text-slate-900">{title}</h2>
           <p className="text-body text-slate-500">{t("galleryHint")}</p>

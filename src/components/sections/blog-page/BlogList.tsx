@@ -68,7 +68,7 @@ export function BlogList() {
               <ArticleCover article={featured} ratio="16/10" />
               <div className="px-3 pb-4 lg:px-6">
                 <Meta article={featured} locale={locale} t={t} tc={tc} featuredLabel={t("featured")} />
-                <h2 className="mt-4 font-display text-h1 font-semibold leading-[1.05] text-slate-900 transition-colors group-hover:text-brand-600">
+                <h2 className="mt-4 font-display text-h2 font-semibold text-slate-900 transition-colors group-hover:text-brand-600">
                   {featured.title[lang]}
                 </h2>
                 <p className="mt-4 max-w-xl text-body-lg text-slate-600">{featured.excerpt[lang]}</p>
@@ -147,7 +147,7 @@ function Meta({
   featuredLabel?: string;
 }) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-500", className)}>
+    <div className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-slate-500", className)}>
       {featuredLabel && <span className="text-brand-600">{featuredLabel}</span>}
       <span className="inline-flex items-center gap-1.5 text-brand-600">
         <span className={cn("size-1.5 rounded-full", BLOG_CATEGORY_META[article.category].dot)} aria-hidden="true" />
@@ -179,7 +179,7 @@ function Pill({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[0.875rem] font-medium transition-colors",
+        "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-small font-medium transition-colors",
         active
           ? "border-brand-500 bg-brand-500/10 text-brand-600"
           : "border-line text-slate-600 hover:border-slate-300",

@@ -106,12 +106,12 @@ export function ProjectsShowcase() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/30 to-transparent" />
 
-                    <span className="absolute start-5 top-5 font-display text-sm tabular-nums text-brand-400">
+                    <span className="absolute start-5 top-5 font-display text-small tabular-nums text-brand-400">
                       {String(i + 1).padStart(2, "0")} / {String(FEATURED.length).padStart(2, "0")}
                     </span>
 
                     <div className="absolute inset-x-5 bottom-5 flex flex-col gap-3">
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-display text-eyebrow uppercase tracking-[0.12em] text-mist-50/70">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-display text-eyebrow uppercase text-mist-50/70">
                         {study.industry && (
                           <span className="inline-flex items-center gap-1.5 text-brand-400">
                             <Factory className="size-3.5" strokeWidth={2} />

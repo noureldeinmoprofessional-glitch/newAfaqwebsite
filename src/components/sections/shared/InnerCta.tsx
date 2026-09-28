@@ -54,8 +54,8 @@ export function InnerCta({
 
       <Container className="relative">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400">{eyebrow}</p>
-          <Heading as="h2" size="h1" className="mt-6 text-mist-50">
+          <p className="font-display text-eyebrow uppercase text-brand-400">{eyebrow}</p>
+          <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {title}
           </Heading>
           <p className="mx-auto mt-8 max-w-2xl text-body-lg text-mist-50/70">{body}</p>

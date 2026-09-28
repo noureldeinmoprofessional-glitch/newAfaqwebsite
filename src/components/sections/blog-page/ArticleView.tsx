@@ -33,13 +33,13 @@ export function ArticleView({ article }: { article: Article }) {
         <Container className="relative">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-mist-50/60 transition-colors hover:text-brand-400"
+            className="inline-flex items-center gap-2 font-display text-eyebrow uppercase text-mist-50/60 transition-colors hover:text-brand-400"
           >
             <ArrowLeft className="size-4 rtl:rotate-180" strokeWidth={2} />
             {t("back")}
           </Link>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase tracking-[0.12em] text-mist-50/60">
+          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-mist-50/60">
             <span className="inline-flex items-center gap-1.5 text-brand-400">
               <span className={cn("size-1.5 rounded-full", dot)} aria-hidden="true" />
               {tc(article.category)}

@@ -187,7 +187,7 @@ export function ProjectsExplorer() {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="inline-flex items-center gap-1.5 rounded-button px-3 py-2 text-[0.8125rem] font-medium text-brand-600 transition-colors hover:bg-brand-500/10"
+                  className="inline-flex items-center gap-1.5 rounded-button px-3 py-2 text-small font-medium text-brand-600 transition-colors hover:bg-brand-500/10"
                 >
                   <X className="size-3.5" strokeWidth={2} />
                   {t("filters.clear")}
@@ -198,7 +198,7 @@ export function ProjectsExplorer() {
         </div>
 
         {/* Result count */}
-        <p className="mt-6 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-500">
+        <p className="mt-6 font-display text-eyebrow uppercase text-slate-500">
           {t("showing", { shown: shown.length, total: filtered.length })}
         </p>
 
@@ -264,7 +264,7 @@ function Ledger({
   return (
     <Reveal className="mt-6 flex flex-col" stagger={0.04} y={16}>
       {/* Column header (desktop) */}
-      <div className="hidden grid-cols-[minmax(0,2.6fr)_1fr_1.1fr_1.2fr_auto] gap-4 border-b border-line px-4 pb-3 font-display text-[0.6875rem] uppercase tracking-[0.12em] text-slate-400 lg:grid">
+      <div className="hidden grid-cols-[minmax(0,2.6fr)_1fr_1.1fr_1.2fr_auto] gap-4 border-b border-line px-4 pb-3 font-display text-eyebrow uppercase text-slate-400 lg:grid">
         <span>{columns("columns.project")}</span>
         <span>{columns("columns.category")}</span>
         <span>{columns("columns.location")}</span>
@@ -293,7 +293,7 @@ function Ledger({
               </p>
             </div>
 
-            <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-[0.75rem] font-medium text-slate-600">
+            <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-small font-medium text-slate-600">
               <span className={cn("size-1.5 rounded-full", meta.dot)} aria-hidden="true" />
               {tCat(p.category)}
             </span>
@@ -351,21 +351,21 @@ function Grid({
               <ProjectGlyph category={p.category} seed={p.id} ratio="16/10" />
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-[0.75rem] font-medium text-slate-600">
+              <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-small font-medium text-slate-600">
                 <span className={cn("size-1.5 rounded-full", meta.dot)} aria-hidden="true" />
                 {tCat(p.category)}
               </span>
               <h3 className="mt-4 font-display text-h3 font-semibold leading-tight text-slate-900 transition-colors group-hover:text-brand-600">
                 <Highlight text={p.name[lang]} query={query} />
               </h3>
-              <p className="mt-1 text-[0.8125rem] text-slate-500">
+              <p className="mt-1 text-small text-slate-500">
                 {p.city[lang]} · {tReg(p.region)}
               </p>
               <p className="mt-3 line-clamp-2 flex-1 text-body text-slate-500">
                 <Highlight text={p.scope[lang]} query={query} />
               </p>
               <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
-                <span className="text-[0.8125rem] text-slate-600">{tEnt(p.entity)}</span>
+                <span className="text-small text-slate-600">{tEnt(p.entity)}</span>
                 <ArrowRight className="size-4 text-brand-500 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" strokeWidth={2} />
               </div>
             </div>
@@ -423,7 +423,7 @@ function FacetSelect({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-label={label}
-        className="h-10 cursor-pointer rounded-button border border-line bg-white px-3 pe-8 text-[0.875rem] text-slate-700 transition-colors hover:border-slate-300 focus:border-brand-500 focus:outline-none"
+        className="h-10 cursor-pointer rounded-button border border-line bg-white px-3 pe-8 text-small text-slate-700 transition-colors hover:border-slate-300 focus:border-brand-500 focus:outline-none"
       >
         {children}
       </select>

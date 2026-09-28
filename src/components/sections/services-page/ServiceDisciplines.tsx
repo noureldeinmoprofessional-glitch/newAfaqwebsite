@@ -49,7 +49,7 @@ export function ServiceDisciplines() {
                     <span className="inline-flex size-14 items-center justify-center rounded-button bg-brand-500/10 text-brand-600">
                       <Icon className="size-6" strokeWidth={2} />
                     </span>
-                    <p className="mt-6 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">
+                    <p className="mt-6 font-display text-eyebrow uppercase text-brand-600">
                       {t(`${key}.tagline`)}
                     </p>
                     <Heading as="h2" size="h2" className="mt-3 text-slate-900">
@@ -70,7 +70,7 @@ export function ServiceDisciplines() {
                       {DEL_KEYS.map((d) => (
                         <span
                           key={d}
-                          className="inline-flex items-center rounded-full border border-line px-3 py-1.5 text-[0.8125rem] text-slate-600"
+                          className="inline-flex items-center rounded-full border border-line px-3 py-1.5 text-small text-slate-600"
                         >
                           {t(`${key}.deliverables.${d}`)}
                         </span>

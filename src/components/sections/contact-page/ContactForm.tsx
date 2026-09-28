@@ -47,7 +47,7 @@ export function ContactForm() {
         <span className="inline-flex size-14 items-center justify-center rounded-full bg-brand-500/15 text-brand-600">
           <Check className="size-7" strokeWidth={2} />
         </span>
-        <h3 className="mt-6 font-display text-h2 font-semibold text-slate-900">{t("successTitle")}</h3>
+        <h2 className="mt-6 font-display text-h2 font-semibold text-slate-900">{t("successTitle")}</h2>
         <p className="mt-3 max-w-md text-body text-slate-600">{t("successBody")}</p>
         <button
           type="button"
@@ -65,7 +65,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="rounded-card border border-line bg-white p-6 lg:p-8">
-      <h3 className="font-display text-h3 font-semibold text-slate-900">{t("heading")}</h3>
+      <h2 className="font-display text-h2 font-semibold text-slate-900">{t("heading")}</h2>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
         <Field label={t("name")} error={errors.name} className="sm:col-span-1">
@@ -120,7 +120,7 @@ export function ContactForm() {
       </div>
 
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-sm text-[0.8125rem] text-slate-400">{t("note")}</p>
+        <p className="max-w-sm text-small text-slate-400">{t("note")}</p>
         <button
           type="submit"
           className="group inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-button bg-brand-500 px-7 font-display font-medium text-ink-900 transition-colors hover:bg-brand-400"
@@ -154,9 +154,9 @@ function Field({
 }) {
   return (
     <label className={cn("block", className)}>
-      <span className="mb-1.5 flex items-center justify-between font-display text-eyebrow uppercase tracking-[0.1em] text-slate-600">
+      <span className="mb-1.5 flex items-center justify-between font-display text-eyebrow uppercase text-slate-600">
         {label}
-        {error && <span className="font-body text-[0.75rem] normal-case tracking-normal text-red-500">{error}</span>}
+        {error && <span className="font-body text-small normal-case tracking-normal text-red-500">{error}</span>}
       </span>
       {children}
     </label>

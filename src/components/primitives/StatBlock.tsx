@@ -11,7 +11,7 @@ interface StatBlockProps {
 
 /**
  * A statistic rendered as a visual element, not inline text.
- * Space Grotesk 700, negative tracking, minimum clamp(3rem, 6vw, 5.5rem).
+ * Poppins 700, negative tracking, sized by the shared `--text-stat` token.
  * Western Arabic digits are kept in both locales (engineering data).
  */
 export function StatBlock({ value, label, className, align = "start" }: StatBlockProps) {

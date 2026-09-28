@@ -42,7 +42,7 @@ export function RelatedArticles({ slug }: { slug: string }) {
                     <ArticleCover article={a} ratio="16/10" className="rounded-none" />
                   </div>
                 </div>
-                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-500">
+                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-slate-500">
                   <span className="inline-flex items-center gap-1.5 text-brand-600">
                     <span className={cn("size-1.5 rounded-full", BLOG_CATEGORY_META[a.category].dot)} aria-hidden="true" />
                     {tc(a.category)}

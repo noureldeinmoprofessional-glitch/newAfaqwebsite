@@ -41,7 +41,7 @@ export function ServicesProcess() {
             {STEPS.map((key, i) => (
               <div key={key} className="relative">
                 <div className="flex items-center gap-4">
-                  <span className="relative z-10 inline-flex size-10 items-center justify-center rounded-full border border-brand-500 bg-ink-800 font-display text-sm tabular-nums text-brand-400">
+                  <span className="relative z-10 inline-flex size-10 items-center justify-center rounded-full border border-brand-500 bg-ink-800 font-display text-small tabular-nums text-brand-400">
                     {i + 1}
                   </span>
                 </div>
