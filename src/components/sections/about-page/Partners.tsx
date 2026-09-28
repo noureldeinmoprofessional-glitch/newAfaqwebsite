@@ -18,7 +18,7 @@ export function Partners() {
       <Container>
         <Reveal className="max-w-3xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-          <Heading as="h2" size="h1" className="mt-6 text-slate-900">
+          <Heading as="h2" size="h2" className="mt-6 text-slate-900">
             {t("title")}
           </Heading>
           <p className="mt-6 text-body-lg text-slate-600">{t("note")}</p>
@@ -37,7 +37,7 @@ function Group({ label, names }: { label: string; names: string[] }) {
   return (
     <div>
       <div className="mb-6 flex items-center gap-4">
-        <h3 className="font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">{label}</h3>
+        <h3 className="font-display text-eyebrow uppercase text-brand-600">{label}</h3>
         <span className="h-px flex-1 bg-line" aria-hidden="true" />
         <span className="font-display text-eyebrow tabular-nums text-slate-400">{names.length}</span>
       </div>

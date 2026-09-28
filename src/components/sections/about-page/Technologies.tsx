@@ -18,7 +18,7 @@ export function Technologies() {
       <Container className="relative">
         <Reveal className="max-w-3xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-          <Heading as="h2" size="h1" className="mt-6 text-mist-50">
+          <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
           <p className="mt-6 text-body-lg text-mist-50/70">{t("note")}</p>

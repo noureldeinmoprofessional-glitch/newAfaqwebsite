@@ -74,7 +74,7 @@ export function CountUpStat({
         {value}
         {suffix}
       </span>
-      <span className="text-eyebrow uppercase tracking-[0.12em] text-slate-600">{label}</span>
+      <span className="text-eyebrow uppercase text-slate-600">{label}</span>
       {sublabel && <span className="text-body text-slate-500">{sublabel}</span>}
     </div>
   );

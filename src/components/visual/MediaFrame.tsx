@@ -79,7 +79,7 @@ export function MediaFrame({
           <TechBackground variant={texture} opacity={8} className="text-brand-400" />
           <div className="absolute inset-4 border border-mist-50/10" aria-hidden="true" />
           {label && (
-            <span className="absolute bottom-4 left-4 z-10 max-w-[70%] font-display text-[0.6875rem] uppercase tracking-[0.14em] text-mist-50/45">
+            <span className="absolute bottom-4 left-4 z-10 max-w-[70%] font-display text-eyebrow uppercase text-mist-50/45">
               {label}
             </span>
           )}

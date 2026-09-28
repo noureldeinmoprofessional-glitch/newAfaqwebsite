@@ -10,8 +10,8 @@ interface EyebrowProps {
 }
 
 /**
- * Uppercase technical label. Space Grotesk, tracking 0.14em, weight 600.
- * Used for section labels and eyebrows.
+ * Uppercase technical label. Poppins, tracking 0.12em, weight 600 (from the
+ * `--text-eyebrow` token). Used for section labels and eyebrows.
  */
 export function Eyebrow({ children, className, index, tone = "brand" }: EyebrowProps) {
   return (

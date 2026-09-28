@@ -19,7 +19,7 @@ export function ContactInfo() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h3 className="font-display text-h3 font-semibold text-slate-900">{t("heading")}</h3>
+        <h2 className="font-display text-h2 font-semibold text-slate-900">{t("heading")}</h2>
         <ul className="mt-6 flex flex-col divide-y divide-line">
           {rows.map(({ icon: Icon, label, value, href, ltr }) => (
             <li key={label} className="flex items-start gap-4 py-4 first:pt-0">
@@ -27,7 +27,7 @@ export function ContactInfo() {
                 <Icon className="size-5" strokeWidth={2} />
               </span>
               <div>
-                <p className="font-display text-eyebrow uppercase tracking-[0.1em] text-slate-500">{label}</p>
+                <p className="font-display text-eyebrow uppercase text-slate-500">{label}</p>
                 {href ? (
                   <a
                     href={href}
@@ -53,7 +53,7 @@ export function ContactInfo() {
         <div className="absolute inset-0 grid place-items-center">
           <div className="text-center">
             <MapPin className="mx-auto size-7 text-brand-500" strokeWidth={2} />
-            <p className="mt-2 font-display text-[0.6875rem] uppercase tracking-[0.14em] text-slate-500">
+            <p className="mt-2 font-display text-eyebrow uppercase text-slate-500">
               {t("mapLabel")}
             </p>
           </div>

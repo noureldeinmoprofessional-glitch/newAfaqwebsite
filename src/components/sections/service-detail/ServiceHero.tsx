@@ -21,7 +21,7 @@ export function ServiceHero({ service }: { service: Service }) {
       <Container>
         <Link
           href="/services"
-          className="inline-flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-500 transition-colors hover:text-brand-600"
+          className="inline-flex items-center gap-2 font-display text-eyebrow uppercase text-slate-500 transition-colors hover:text-brand-600"
         >
           <ArrowLeft className="size-4 rtl:rotate-180" strokeWidth={2} />
           {t("back")}
@@ -32,10 +32,10 @@ export function ServiceHero({ service }: { service: Service }) {
             <span className="inline-flex size-14 items-center justify-center rounded-button bg-brand-500/10 text-brand-600">
               <Icon className="size-7" strokeWidth={1.75} />
             </span>
-            <p className="mt-6 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">
+            <p className="mt-6 font-display text-eyebrow uppercase text-brand-600">
               {service.tagline[lang]}
             </p>
-            <h1 className="mt-3 font-display text-h1 font-semibold leading-[1.03] tracking-[-0.02em] text-slate-900">
+            <h1 className="mt-3 font-display text-display font-semibold text-slate-900">
               {service.name[lang]}
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-slate-600">{service.intro[lang]}</p>

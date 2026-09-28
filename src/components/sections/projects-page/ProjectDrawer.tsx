@@ -121,7 +121,7 @@ export function ProjectDrawer({
         {shown && meta && (
           <>
             <div className="flex items-center justify-between border-b border-line px-6 py-4">
-              <span className="inline-flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-600">
+              <span className="inline-flex items-center gap-2 font-display text-eyebrow uppercase text-slate-600">
                 <span className={cn("size-2 rounded-full", meta.dot)} aria-hidden="true" />
                 {tc(shown.category)}
               </span>
@@ -193,7 +193,7 @@ function Meta({
 }) {
   return (
     <div>
-      <dt className="flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-600">
+      <dt className="flex items-center gap-2 font-display text-eyebrow uppercase text-slate-600">
         {icon}
         {label}
       </dt>
@@ -205,7 +205,7 @@ function Meta({
 function Block({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="mt-6">
-      <p className="font-display text-eyebrow uppercase tracking-[0.12em] text-slate-600">{label}</p>
+      <p className="font-display text-eyebrow uppercase text-slate-600">{label}</p>
       <p className="mt-2 text-body-lg text-slate-600">{children}</p>
     </div>
   );

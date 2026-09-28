@@ -58,7 +58,7 @@ export function Industries() {
                 <p className="mt-3 flex-1 text-body text-mist-50/60">
                   {t(`items.${key}.body`)}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="mt-6 inline-flex items-center gap-2 text-eyebrow uppercase text-brand-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   {t(`items.${key}.name`)}
                   <ArrowUpRight className="size-4" strokeWidth={2} />
                 </span>

@@ -72,13 +72,13 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
       <Container className="relative">
         <Link
           href="/case-studies"
-          className="csh-fade inline-flex items-center gap-2 font-display text-eyebrow uppercase tracking-[0.12em] text-mist-50/60 transition-colors hover:text-brand-400"
+          className="csh-fade inline-flex items-center gap-2 font-display text-eyebrow uppercase text-mist-50/60 transition-colors hover:text-brand-400"
         >
           <ArrowLeft className="size-4 rtl:rotate-180" strokeWidth={2} />
           {t("back")}
         </Link>
 
-        <div className="csh-fade mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400">
+        <div className="csh-fade mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-brand-400">
           <span>{t("kicker")}</span>
           <span aria-hidden="true" className="text-mist-50/40">
             ·

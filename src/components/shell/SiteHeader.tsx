@@ -103,7 +103,7 @@ export function SiteHeader() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "relative font-display text-[0.9375rem] font-medium tracking-tight transition-colors duration-300",
+                      "relative font-display text-small font-medium tracking-tight transition-colors duration-300",
                       active ? (scrolled ? "text-slate-900" : "text-mist-50") : linkColor,
                     )}
                   >
@@ -132,7 +132,7 @@ export function SiteHeader() {
           <Link
             href="/contact"
             className={cn(
-              "group/btn inline-flex items-center gap-2.5 rounded-full py-1 ps-4 pe-1 font-display text-[0.9375rem] font-medium transition-colors duration-[450ms]",
+              "group/btn inline-flex items-center gap-2.5 rounded-full py-1 ps-4 pe-1 font-display text-small font-medium transition-colors duration-[450ms]",
               scrolled
                 ? "bg-brand-500 text-ink-900 hover:bg-brand-400"
                 : "border border-mist-50/30 text-mist-50 hover:border-brand-400 hover:text-brand-400",
@@ -277,11 +277,11 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
               aria-current={active ? "page" : undefined}
               data-menu-item
               className={cn(
-                "group flex items-baseline gap-4 border-b border-line-inv py-4 font-display text-[1.75rem] font-semibold leading-none transition-colors hover:text-brand-400",
+                "group flex items-baseline gap-4 border-b border-line-inv py-4 font-display text-h3 font-semibold leading-none transition-colors hover:text-brand-400",
                 active ? "text-brand-400" : "text-mist-50",
               )}
             >
-              <span className={cn("font-body text-sm tabular-nums", active ? "text-brand-400" : "text-brand-500")}>
+              <span className={cn("font-body text-small tabular-nums", active ? "text-brand-400" : "text-brand-500")}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               {t(item.key)}

@@ -70,7 +70,7 @@ export function Numbers() {
                   {String(t.raw(`items.${key}.value`))}
                   {t(`items.${key}.suffix`)}
                 </span>
-                <span className="mt-3 block text-eyebrow uppercase tracking-[0.12em] text-slate-600 sm:mt-4">
+                <span className="mt-3 block text-eyebrow uppercase text-slate-600 sm:mt-4">
                   {t(`items.${key}.label`)}
                 </span>
               </dd>

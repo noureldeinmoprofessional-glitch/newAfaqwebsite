@@ -1,14 +1,15 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type HeadingLevel = "h1" | "h2" | "h3";
-type HeadingSize = "display" | "h1" | "h2" | "h3";
+type HeadingLevel = "h1" | "h2" | "h3" | "h4";
+type HeadingSize = "display" | "h1" | "h2" | "h3" | "h4";
 
 const sizeClasses: Record<HeadingSize, string> = {
   display: "text-display",
   h1: "text-h1",
   h2: "text-h2",
   h3: "text-h3",
+  h4: "text-h4",
 };
 
 interface HeadingProps {
@@ -22,7 +23,7 @@ interface HeadingProps {
 }
 
 /**
- * Display / heading type. Space Grotesk on Latin, IBM Plex Sans Arabic on RTL
+ * Display / heading type. Poppins on Latin, IBM Plex Sans Arabic on RTL
  * (handled globally in globals.css). Semantic level and visual size are
  * decoupled so hierarchy and scale can differ.
  */

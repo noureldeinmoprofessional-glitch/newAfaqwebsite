@@ -24,7 +24,7 @@ export function Philosophy() {
       <Container>
         <Reveal className="max-w-3xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-          <Heading as="h2" size="h1" className="mt-6 text-slate-900">
+          <Heading as="h2" size="h2" className="mt-6 text-slate-900">
             {t("title")}
           </Heading>
         </Reveal>

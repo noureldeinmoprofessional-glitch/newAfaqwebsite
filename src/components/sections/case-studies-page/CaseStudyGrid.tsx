@@ -80,7 +80,7 @@ function Pill({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[0.875rem] font-medium transition-colors",
+        "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-small font-medium transition-colors",
         active
           ? "border-brand-500 bg-brand-500/10 text-brand-600"
           : "border-line text-slate-600 hover:border-slate-300",

@@ -47,7 +47,7 @@ export function Services() {
                       <Icon className="size-6" strokeWidth={2} />
                     </span>
                   </div>
-                  <h3 className="mt-6 font-display text-h1 font-semibold leading-[1.02] text-slate-900 transition-colors group-hover:text-brand-600">
+                  <h3 className="mt-6 font-display text-h3 font-semibold text-slate-900 transition-colors group-hover:text-brand-600">
                     {t(`items.${key}.name`)}
                   </h3>
                   <p className="mt-5 max-w-md text-body-lg text-slate-600">

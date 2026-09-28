@@ -101,7 +101,7 @@ export function SiteFooter() {
                 <a
                   key={k}
                   href="#"
-                  className="group inline-flex items-center gap-1 rounded-button border border-line-inv px-3 py-1.5 text-[0.8125rem] text-mist-50/70 transition-colors hover:border-brand-500 hover:text-brand-400"
+                  className="group inline-flex items-center gap-1 rounded-button border border-line-inv px-3 py-1.5 text-small text-mist-50/70 transition-colors hover:border-brand-500 hover:text-brand-400"
                 >
                   {t(`social.${k}`)}
                   <ArrowUpRight className="size-3" strokeWidth={2} />
@@ -116,7 +116,7 @@ export function SiteFooter() {
               <div className="absolute inset-0 grid place-items-center">
                 <div className="text-center">
                   <MapPin className="mx-auto size-6 text-brand-500" strokeWidth={2} />
-                  <p className="mt-2 font-display text-[0.6875rem] uppercase tracking-[0.14em] text-mist-50/50">
+                  <p className="mt-2 font-display text-eyebrow uppercase text-mist-50/50">
                     {t("mapLabel")}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col gap-4 py-8 text-[0.8125rem] text-mist-50/50 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 py-8 text-small text-mist-50/50 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {t("rights")}</p>
           <p className="font-display uppercase tracking-[0.12em] text-brand-500/80">
             {t("vision")}

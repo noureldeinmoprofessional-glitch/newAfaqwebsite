@@ -31,7 +31,7 @@ export function TrustedBy() {
   return (
     <Section surface="white" className="overflow-hidden border-y border-line py-16 md:py-20">
       <Container>
-        <p className="text-center font-display text-eyebrow uppercase tracking-[0.14em] text-slate-600">
+        <p className="text-center font-display text-eyebrow uppercase text-slate-600">
           {t("eyebrow")}
         </p>
       </Container>
@@ -45,7 +45,7 @@ export function TrustedBy() {
           {[...logos, ...logos].map((name, i) => (
             <span
               key={`${name}-${i}`}
-              className="shrink-0 whitespace-nowrap font-display text-xl font-medium text-slate-900/35 transition-colors duration-300 hover:text-brand-600 md:text-2xl"
+              className="shrink-0 whitespace-nowrap font-display text-h4 font-medium text-slate-900/35 transition-colors duration-300 hover:text-brand-600"
             >
               {name}
             </span>

@@ -40,7 +40,7 @@ export function Blog() {
                   </div>
                 </div>
 
-                <div className="mt-5 flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.12em] text-slate-600">
+                <div className="mt-5 flex items-center gap-3 font-display text-eyebrow uppercase text-slate-600">
                   <span className="text-brand-600">{t(`items.${key}.category`)}</span>
                   <span aria-hidden="true">·</span>
                   <span>{t(`items.${key}.date`)}</span>

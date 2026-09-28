@@ -68,7 +68,7 @@ export function ProjectsHero({ count }: { count: number }) {
       <Container className="relative pt-24">
         <div className="ph-content max-w-4xl">
           <p
-            className="ph-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0"
+            className="ph-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase text-brand-400 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
             <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
@@ -90,7 +90,7 @@ export function ProjectsHero({ count }: { count: number }) {
 
       <div className="ph-scroll absolute inset-x-0 bottom-8 flex justify-center opacity-0">
         <div className="flex flex-col items-center gap-2 text-mist-50/50">
-          <span className="font-display text-[0.6875rem] uppercase tracking-[0.2em]">{t("scroll")}</span>
+          <span className="font-display text-eyebrow uppercase">{t("scroll")}</span>
           <ArrowDown className="size-4 animate-bounce" strokeWidth={2} />
         </div>
       </div>

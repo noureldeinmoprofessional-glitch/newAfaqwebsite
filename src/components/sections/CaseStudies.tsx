@@ -42,7 +42,7 @@ export function CaseStudies() {
                 {/* Copy */}
                 <div className={cn("lg:col-span-6", flipped && "lg:order-1")}>
                   <Reveal stagger={0.1}>
-                    <p className="font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">
+                    <p className="font-display text-eyebrow uppercase text-brand-600">
                       {t(`items.${key}.category`)}
                     </p>
                     <h3 className="mt-4 font-display text-h2 font-semibold leading-[1.08] text-slate-900">
@@ -56,7 +56,7 @@ export function CaseStudies() {
 
                     {/* Results metrics */}
                     <div className="mt-8 border-t border-line pt-8">
-                      <p className="font-display text-eyebrow uppercase tracking-[0.14em] text-slate-600">
+                      <p className="font-display text-eyebrow uppercase text-slate-600">
                         {t("resultsLabel")}
                       </p>
                       <div className="mt-5 grid grid-cols-2 gap-8">
@@ -78,7 +78,7 @@ export function CaseStudies() {
 function Field({ label, body }: { label: string; body: string }) {
   return (
     <div className="grid gap-1 md:grid-cols-[7rem_1fr] md:gap-4">
-      <p className="font-display text-eyebrow uppercase tracking-[0.14em] text-brand-600">{label}</p>
+      <p className="font-display text-eyebrow uppercase text-brand-600">{label}</p>
       <p className="text-body text-slate-600">{body}</p>
     </div>
   );
@@ -87,10 +87,10 @@ function Field({ label, body }: { label: string; body: string }) {
 function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex flex-col gap-1">
-      <span dir="ltr" className="font-display text-[clamp(2.25rem,4vw,3.25rem)] font-bold leading-none tracking-[-0.03em] text-brand-600 tabular-nums">
+      <span dir="ltr" className="font-display text-stat font-bold text-brand-600 tabular-nums">
         {value}
       </span>
-      <span className="text-eyebrow uppercase tracking-[0.12em] text-slate-600">{label}</span>
+      <span className="text-eyebrow uppercase text-slate-600">{label}</span>
     </div>
   );
 }

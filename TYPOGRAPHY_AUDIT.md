@@ -423,4 +423,42 @@ shippable and visually reviewable.
 
 ---
 
-*Audit only — no source files were modified.*
+---
+
+## 8. Implementation (applied)
+
+The proposed scale was implemented on top of the existing token foundation.
+Every text size now routes through a named token — **0 arbitrary `text-[…]`
+values and 0 off-scale Tailwind sizes remain** in `src/`. Final token set (11):
+
+`display · h1 · h2 · h3 · h4 · body-lg · body · small · eyebrow · stat · stat-sm`
+
+**Two deliberate refinements to the §5 defaults, made during implementation:**
+
+1. **Two stat tiers instead of one.** Collapsing all five stat sizes onto a
+   single 40–72px `stat` token would have overflowed the dense metric grids
+   (ServiceDetail renders stats in a **6-up** grid and a **3-up** grid). Added a
+   compact **`stat-sm`** token (28 → 40px) for in-grid metrics; prominent
+   showcase stats use `stat`. Still a reduction from 5 sizes → 2 named tokens.
+2. **Editorial article title stays `h1`, not `display`.** Marketing/landing
+   heroes (Hero, VideoHero, InnerHero, AboutHero, ProjectsHero, CaseStudyHero,
+   ServiceHero) all use `display`. The blog **article** title (`ArticleView`)
+   uses `h1` (64px) because a 96px title over long-form editorial prose reads
+   poorly. Rule: *marketing heroes = `display`; editorial article title = `h1`.*
+
+**Also applied:** section `<h2>` headings normalized to `size="h2"` (CTAs to
+`h1`); card-title inversions fixed (`Services`, `IntegratedAdvantage`,
+`BlogList`); ServiceDetail's body-styled `<h3>`s → `h4`; small uppercase labels
+→ `eyebrow` with redundant per-element `tracking-[…]` stripped so the token's
+0.12em governs; nav/meta → `small`; lead paragraph → `body-lg`; Contact page's
+skipped level fixed (section headings promoted `<h3>` → `<h2>`); dead
+Space-Grotesk/Inter woff2 files deleted and stale "Space Grotesk" comments
+corrected to Poppins.
+
+**Verification:** `tsc --noEmit` clean; `next build` succeeds (all routes
+prerender). Poppins remains the English typeface throughout — no font change.
+**Actual scope:** 50 files changed, +180/−147 lines, 2 files deleted.
+
+---
+
+*Audit performed before any change; §8 records the applied implementation.*

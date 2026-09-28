@@ -73,7 +73,7 @@ export function AboutHero() {
       <Container className="relative flex min-h-svh flex-col justify-center pb-24 pt-32">
         <div className="ah-content max-w-4xl">
           <p
-            className="ah-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase tracking-[0.14em] text-brand-400 opacity-0"
+            className="ah-eyebrow flex items-center gap-3 font-display text-eyebrow uppercase text-brand-400 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
             <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
@@ -106,7 +106,7 @@ export function AboutHero() {
 
       {/* Blueprint scroll indicator */}
       <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8">
-        <span className="font-display text-[0.6875rem] uppercase tracking-[0.2em] text-mist-50/50">
+        <span className="font-display text-eyebrow uppercase text-mist-50/50">
           {t("scroll")}
         </span>
         <span className="ah-scroll-line block h-16 w-px origin-top bg-gradient-to-b from-brand-500 to-transparent" aria-hidden="true" />

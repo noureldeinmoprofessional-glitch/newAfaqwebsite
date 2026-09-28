@@ -67,7 +67,7 @@ export function IntegratedAdvantage() {
       <Container ref={root} className="relative">
         <div className="max-w-3xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-          <Heading as="h2" size="h1" className="mt-6 text-mist-50">
+          <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
           <p className="mt-6 max-w-xl text-body-lg text-mist-50/60">{t("lead")}</p>
@@ -89,7 +89,7 @@ export function IntegratedAdvantage() {
                       active === i ? "opacity-100" : "opacity-0",
                     )}
                   >
-                    <span className="absolute right-4 top-4 font-display text-sm tabular-nums text-brand-400 rtl:left-4 rtl:right-auto">
+                    <span className="absolute right-4 top-4 font-display text-small tabular-nums text-brand-400 rtl:left-4 rtl:right-auto">
                       {t(`layers.${layer.key}.index`)}
                     </span>
                   </MediaFrame>
@@ -129,14 +129,14 @@ export function IntegratedAdvantage() {
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="font-display text-sm tabular-nums text-brand-500">
+                      <span className="font-display text-small tabular-nums text-brand-500">
                         {t(`layers.${layer.key}.index`)}
                       </span>
-                      <span className="font-display text-eyebrow uppercase tracking-[0.14em] text-mist-50/50">
+                      <span className="font-display text-eyebrow uppercase text-mist-50/50">
                         {t(`layers.${layer.key}.depth`)}
                       </span>
                     </div>
-                    <h3 className="mt-4 font-display text-h1 font-semibold leading-[1.05] text-mist-50">
+                    <h3 className="mt-4 font-display text-h3 font-semibold text-mist-50">
                       {t(`layers.${layer.key}.name`)}
                     </h3>
                     <p className="mt-5 max-w-md text-body-lg text-mist-50/60">
