@@ -83,9 +83,10 @@
   --text-h1--line-height: 1.05;
   --text-h1--letter-spacing: -0.02em;
 
-  /* Marketing hero title (40 → 96px). */
+  /* Marketing hero title (40 → 96px). 1.05 keeps multi-line hero headings
+     from colliding (descenders → next line) while staying tight. */
   --text-display: clamp(2.5rem, 6.5vw, 6rem);
-  --text-display--line-height: 0.95;
+  --text-display--line-height: 1.05;
   --text-display--letter-spacing: -0.03em;
 
   /* Prominent metric numbers — hero/showcase stats (40 → 72px). */
