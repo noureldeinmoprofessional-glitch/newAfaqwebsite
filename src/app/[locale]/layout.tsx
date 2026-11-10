@@ -7,6 +7,7 @@ import { getDirection } from "@/i18n/direction";
 import { fontVariables } from "@/fonts";
 import { SiteHeader } from "@/components/shell/SiteHeader";
 import { SiteFooter } from "@/components/shell/SiteFooter";
+import { WhatsAppButton } from "@/components/shell/WhatsAppButton";
 import "../globals.css";
 
 /** Pre-render both locales at build time. */
@@ -73,6 +74,7 @@ export default async function LocaleLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
+          <WhatsAppButton />
         </NextIntlClientProvider>
       </body>
     </html>

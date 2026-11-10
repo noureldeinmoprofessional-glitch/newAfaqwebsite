@@ -53,7 +53,7 @@ export function ArticleView({ article }: { article: Article }) {
             </span>
           </div>
 
-          <h1 className="mt-6 max-w-4xl font-display text-h1 font-semibold leading-[1.03] tracking-[-0.02em] text-mist-50">
+          <h1 className="mt-6 max-w-4xl font-display text-h1 font-semibold tracking-[-0.02em] text-mist-50">
             {article.title[lang]}
           </h1>
 
