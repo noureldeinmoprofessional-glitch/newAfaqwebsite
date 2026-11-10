@@ -5,7 +5,6 @@ import {
   About,
   IntegratedAdvantage,
   Services,
-  Industries,
   ProjectsShowcase,
   Numbers,
   CtaBanner,
@@ -27,7 +26,6 @@ export default async function HomePage({
       <About />
       <IntegratedAdvantage />
       <Services />
-      <Industries />
       <ProjectsShowcase />
       <Numbers />
       <CtaBanner />
