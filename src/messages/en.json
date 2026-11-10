@@ -1108,7 +1108,9 @@
     },
     "technologies": {
       "eyebrow": "Technology",
-      "title": "Technologies & Standards"
+      "title": "Technologies & Standards",
+      "note": "The equipment, platforms and standards behind every deliverable — grouped by how we use them.",
+      "count": "technologies & standards"
     },
     "industries": {
       "eyebrow": "Sectors",

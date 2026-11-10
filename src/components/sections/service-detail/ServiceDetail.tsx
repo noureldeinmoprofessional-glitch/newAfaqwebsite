@@ -1,5 +1,23 @@
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, MapPin, Check, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  MapPin,
+  Check,
+  Sparkles,
+  Crosshair,
+  ScanLine,
+  FileCheck2,
+  Calculator,
+  Flame,
+  ShieldCheck,
+  Radar,
+  Activity,
+  Waypoints,
+  MonitorPlay,
+  Network,
+  Cpu,
+  type LucideIcon,
+} from "lucide-react";
 import { Container, Section, Eyebrow, Heading, Button, type Surface } from "@/components/primitives";
 import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "@/i18n/navigation";
@@ -103,30 +121,85 @@ function Capabilities({ service, surface }: { service: Service; surface: Surface
 }
 
 /* ── 04 · Technologies & Standards ───────────────────────────────────────── */
+/** Pick a discipline icon for a tech group from its English label. */
+const TECH_ICONS: [RegExp, LucideIcon][] = [
+  [/position/i, Crosshair],
+  [/capture/i, ScanLine],
+  [/software|standard|brand/i, FileCheck2],
+  [/engineer|analysis/i, Calculator],
+  [/fabricat|weld/i, Flame],
+  [/protect/i, ShieldCheck],
+  [/detect|enforce/i, Radar],
+  [/operat/i, Activity],
+  [/av-over|av /i, Waypoints],
+  [/display/i, MonitorPlay],
+  [/network|cabl/i, Network],
+];
+const techIcon = (label: string): LucideIcon => TECH_ICONS.find(([re]) => re.test(label))?.[1] ?? Cpu;
+
+/** Static column classes so Tailwind can see them. */
+const TECH_COLS: Record<number, string> = { 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4" };
+
 function Technologies({ service, surface }: { service: Service; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("ServiceDetail.technologies");
+  const groups = service.techGroups;
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
   return (
     <Section surface={surface} id="technologies">
       <Container>
-        <SectionHead eyebrow={t("eyebrow")} title={t("title")} />
-        <div className="mt-10 space-y-8">
-          {service.techGroups.map((g, i) => (
-            <Reveal key={i} className="grid gap-4 border-t border-line pt-6 md:grid-cols-[14rem_1fr] md:gap-8">
-              <p className="font-display text-eyebrow uppercase text-brand-600">{g.label[lang]}</p>
-              <div className="flex flex-wrap gap-2.5">
-                {g.items.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center rounded-full border border-line bg-white px-4 py-2 font-display text-small font-medium text-slate-700 shadow-sm"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
-          ))}
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <SectionHead eyebrow={t("eyebrow")} title={t("title")} />
+            <p className="mt-5 text-body-lg text-slate-600">{t("note")}</p>
+          </div>
+          <div className="flex items-center gap-4 rounded-card border border-line bg-white px-5 py-4 shadow-sm">
+            <span dir="ltr" className="font-display text-stat-sm font-bold text-brand-600 tabular-nums">
+              {total}
+            </span>
+            <span className="max-w-[9rem] text-small font-medium leading-snug text-slate-600">{t("count")}</span>
+          </div>
         </div>
+
+        <Reveal
+          className={cn("mt-12 grid gap-5 sm:grid-cols-2", TECH_COLS[groups.length] ?? "lg:grid-cols-3")}
+          stagger={0.08}
+        >
+          {groups.map((g, i) => {
+            const Icon = techIcon(g.label.en);
+            return (
+              <article
+                key={i}
+                className="group relative flex flex-col overflow-hidden rounded-card border border-line bg-white shadow-sm transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-brand-500/50 hover:shadow-lg hover:shadow-ink-900/5"
+              >
+                <span className="h-1 w-full bg-gradient-to-r from-brand-500 to-tech-500" aria-hidden="true" />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="inline-flex size-11 items-center justify-center rounded-button bg-brand-500/10 text-brand-600 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
+                      <Icon className="size-5" strokeWidth={2} />
+                    </span>
+                    <span className="rounded-full bg-mist-100 px-2.5 py-1 font-display text-small font-semibold tabular-nums text-slate-600">
+                      {g.items.length}
+                    </span>
+                  </div>
+                  <h3 className="mt-5 font-display text-h4 font-semibold text-slate-900">{g.label[lang]}</h3>
+                  <ul className="mt-4 divide-y divide-line border-t border-line">
+                    {g.items.map((item) => (
+                      <li key={item} className="flex items-center gap-3 py-3">
+                        <span className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-brand-600">
+                          <Check className="size-3" strokeWidth={3} />
+                        </span>
+                        <span dir="ltr" className="font-display text-body font-medium text-slate-800">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            );
+          })}
+        </Reveal>
       </Container>
     </Section>
   );
