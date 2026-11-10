@@ -1,68 +1,92 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import {
+  Building2,
+  BadgeCheck,
+  Factory,
+  Map,
+  MonitorPlay,
+  Cloud,
+  Route,
+  ShieldCheck,
+} from "lucide-react";
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { TechBackground } from "@/components/visual/TechBackground";
 import { Reveal } from "@/components/motion/Reveal";
-import { DrawOnScroll } from "@/components/motion/DrawOnScroll";
-
-const CERTS = ["sbc", "iso", "avixa", "aisc", "esri", "aws", "ntcip"] as const;
 
 /**
- * About §5 — Engineering Excellence. Dark-green editorial section presenting the
- * codes, standards, and platforms AFAQ engineers to, inside technical cards with
- * drawn blueprint borders, a small hover glow, and revealed specification detail.
+ * About §5 — Engineering Excellence. A bright credentials panel: an intro with a
+ * credential highlight beside a grid of the codes, standards and platforms AFAQ
+ * engineers to. Each standard shows its discipline, name and description
+ * (always visible — no hover-hidden detail), with a discipline icon.
  */
+const CERTS = [
+  { key: "sbc", Icon: Building2, en: "Structural & Civil", ar: "إنشائي ومدني" },
+  { key: "iso", Icon: BadgeCheck, en: "Quality Management", ar: "إدارة الجودة" },
+  { key: "aisc", Icon: Factory, en: "Structural Steel", ar: "الحديد الإنشائي" },
+  { key: "esri", Icon: Map, en: "Geospatial & GIS", ar: "جيومكاني ونظم معلومات" },
+  { key: "avixa", Icon: MonitorPlay, en: "Audio-Visual", ar: "الصوت والصورة" },
+  { key: "aws", Icon: Cloud, en: "Cloud & Digital", ar: "السحابة والرقمنة" },
+  { key: "ntcip", Icon: Route, en: "Intelligent Transport", ar: "النقل الذكي" },
+] as const;
+
 export function EngineeringExcellence() {
   const t = useTranslations("AboutPage.excellence");
+  const isAr = useLocale() === "ar";
 
   return (
-    <Section surface="ink-800" id="excellence" className="relative overflow-hidden">
-      <TechBackground variant="grid" opacity={5} className="text-brand-400" />
+    <Section surface="white" id="excellence" className="relative overflow-hidden">
+      <TechBackground variant="grid" opacity={3} className="text-brand-500" />
       <Container className="relative">
-        <Reveal className="max-w-3xl">
-          <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-          <Heading as="h2" size="h2" className="mt-6 text-mist-50">
-            {t("title")}
-          </Heading>
-          <p className="mt-6 max-w-xl text-body text-mist-50/55">{t("note")}</p>
-        </Reveal>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Intro + credential highlight */}
+          <div className="lg:col-span-5">
+            <Reveal>
+              <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
+              <Heading as="h2" size="h2" className="mt-6 text-slate-900">
+                {t("title")}
+              </Heading>
+              <p className="mt-6 max-w-md text-body-lg text-slate-600">{t("note")}</p>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
-          {CERTS.map((key) => (
-            <DrawOnScroll key={key} duration={1.2}>
-              <article className="group relative h-full overflow-hidden rounded-card bg-ink-700/30 p-6 transition-[box-shadow,border-color] duration-500 hover:shadow-[0_0_36px_-10px_var(--color-brand-500)]">
-                <svg
-                  className="pointer-events-none absolute inset-0 h-full w-full text-line-inv transition-colors duration-500 group-hover:text-brand-400/70"
-                  fill="none"
-                  aria-hidden="true"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 100"
-                >
-                  <rect
-                    className="draw-path"
-                    pathLength={1}
-                    x="0.5"
-                    y="0.5"
-                    width="99"
-                    height="99"
-                    rx="2"
-                    stroke="currentColor"
-                    strokeWidth="0.5"
-                    vectorEffect="non-scaling-stroke"
-                  />
-                </svg>
-
-                <div className="relative flex min-h-[130px] flex-col">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-500" aria-hidden="true" />
-                  <h3 className="mt-4 font-display text-h3 font-semibold text-mist-50">
-                    {t(`items.${key}.name`)}
-                  </h3>
-                  <p className="mt-2 max-h-0 overflow-hidden text-body text-mist-50/60 opacity-0 transition-all duration-500 group-hover:max-h-24 group-hover:opacity-100">
-                    {t(`items.${key}.detail`)}
+              <div className="mt-8 flex items-center gap-4 rounded-card border border-line bg-mist-50 p-5">
+                <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-button bg-brand-500/10 text-brand-600">
+                  <ShieldCheck className="size-6" strokeWidth={2} />
+                </span>
+                <div>
+                  <p className="font-display text-h4 font-semibold text-slate-900">
+                    {isAr ? "٧ معايير عالمية" : "7 global standards"}
+                  </p>
+                  <p className="text-small text-slate-600">
+                    {isAr ? "عبر كل تخصص هندسي نقدّمه" : "Across every engineering discipline we deliver"}
                   </p>
                 </div>
-              </article>
-            </DrawOnScroll>
-          ))}
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Standards grid — descriptions always visible */}
+          <div className="lg:col-span-7">
+            <Reveal className="grid gap-4 sm:grid-cols-2" stagger={0.08}>
+              {CERTS.map(({ key, Icon, en, ar }) => (
+                <article
+                  key={key}
+                  className="group flex flex-col rounded-card border border-line bg-white p-6 shadow-sm transition-[border-color,box-shadow] duration-300 hover:border-brand-500/50 hover:shadow-md hover:shadow-ink-900/5"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-button bg-brand-500/10 text-brand-600 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
+                      <Icon className="size-5" strokeWidth={2} />
+                    </span>
+                    <span className="font-display text-eyebrow uppercase text-brand-600">
+                      {isAr ? ar : en}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-display text-h4 font-semibold text-slate-900">
+                    {t(`items.${key}.name`)}
+                  </h3>
+                  <p className="mt-2 text-small text-slate-600">{t(`items.${key}.detail`)}</p>
+                </article>
+              ))}
+            </Reveal>
+          </div>
         </div>
       </Container>
     </Section>
