@@ -60,7 +60,7 @@
     ]
   },
   "About": {
-    "eyebrow": "01 — Who We Are",
+    "eyebrow": "Who We Are",
     "title": "One engineering partner connecting the physical and the digital.",
     "lead": "AFAQ Systems is a multidisciplinary Saudi engineering company. Since 2008 we have united surveying, civil and steel construction, intelligent transportation, and audio-visual systems under a single, accountable delivery model — so infrastructure and intelligence are engineered together, not stitched together.",
     "imageLabel": "Photograph — engineers on a Riyadh infrastructure site",
@@ -80,7 +80,7 @@
     }
   },
   "Integrated": {
-    "eyebrow": "02 — The Integrated Advantage",
+    "eyebrow": "The Integrated Advantage",
     "title": "One partner. Every layer.",
     "lead": "Most projects are handed between disconnected vendors. AFAQ engineers the full stack — from the survey datum beneath the ground to the intelligent systems above it — as one continuous chain of accountability.",
     "tagline": "One Partner. Every Layer. Every Project.",
@@ -116,7 +116,7 @@
     }
   },
   "Services": {
-    "eyebrow": "03 — Services",
+    "eyebrow": "Services",
     "title": "Four disciplines. One integrated delivery.",
     "explore": "Explore",
     "items": {
@@ -143,7 +143,7 @@
     }
   },
   "Industries": {
-    "eyebrow": "04 — Industries",
+    "eyebrow": "Industries",
     "title": "Engineering for the sectors building the Kingdom.",
     "items": {
       "defense": {
@@ -173,7 +173,7 @@
     }
   },
   "Projects": {
-    "eyebrow": "05 — Selected Work",
+    "eyebrow": "Selected Work",
     "title": "Work across every engineering layer.",
     "note": "A selection of real projects delivered across the Kingdom.",
     "cta": "View Case Study",
@@ -217,7 +217,7 @@
     "viewAll": "View all projects"
   },
   "CaseStudies": {
-    "eyebrow": "06 — Case Studies",
+    "eyebrow": "Case Studies",
     "title": "Precision, proven layer by layer.",
     "challengeLabel": "Challenge",
     "solutionLabel": "Solution",
@@ -248,7 +248,7 @@
     }
   },
   "Numbers": {
-    "eyebrow": "07 — AFAQ in Numbers",
+    "eyebrow": "AFAQ in Numbers",
     "title": "Measured by what we deliver.",
     "items": {
       "years": {
@@ -281,7 +281,7 @@
     "ctaSecondary": "Contact Us"
   },
   "Blog": {
-    "eyebrow": "08 — Insights",
+    "eyebrow": "Insights",
     "title": "Engineering perspectives.",
     "readMore": "Read article",
     "items": {
@@ -342,7 +342,7 @@
       "scroll": "Our story"
     },
     "story": {
-      "eyebrow": "02 — Our Story",
+      "eyebrow": "Our Story",
       "title": "From the Depths of the Earth to the Heights of Space Technology.",
       "lead": "AFAQ began as a specialist survey practice and grew, discipline by discipline, into a fully integrated engineering company. Each capability we added connected to the last — until a single partner could carry a project from the first ground measurement to the intelligent systems that run it.",
       "imageLabel": "Photograph — AFAQ engineering across a decade of Saudi infrastructure",
@@ -380,7 +380,7 @@
       }
     },
     "excellence": {
-      "eyebrow": "05 — Engineering Excellence",
+      "eyebrow": "Engineering Excellence",
       "title": "Built to standard.",
       "note": "The codes, standards, and platforms our engineering is built around. Formal certification records are available on request.",
       "items": {
@@ -415,7 +415,7 @@
       }
     },
     "innovation": {
-      "eyebrow": "06 — Innovation",
+      "eyebrow": "Innovation",
       "title": "Leadership Through Innovation.",
       "items": {
         "gis": {
@@ -441,7 +441,7 @@
       }
     },
     "trust": {
-      "eyebrow": "07 — Why AFAQ",
+      "eyebrow": "Why AFAQ",
       "title": "Why clients trust AFAQ.",
       "items": {
         "years": {
@@ -483,7 +483,7 @@
       }
     },
     "vision2030": {
-      "eyebrow": "09 — Vision 2030",
+      "eyebrow": "Vision 2030",
       "title": "Engineering the Infrastructure Behind Vision 2030.",
       "body": "The Kingdom's transformation runs on infrastructure — measured, built, and connected. AFAQ engineers the layers beneath the landmarks that define Vision 2030.",
       "note": "Landmark programs shown are representative of the sectors AFAQ serves.",
@@ -497,7 +497,7 @@
       }
     },
     "numbers": {
-      "eyebrow": "10 — AFAQ in Numbers",
+      "eyebrow": "AFAQ in Numbers",
       "title": "Measured by what we deliver.",
       "items": {
         "years": {
@@ -540,7 +540,7 @@
       "ctaSecondary": "View Projects"
     },
     "values": {
-      "eyebrow": "03 — Our Values",
+      "eyebrow": "Our Values",
       "title": "The Principles Behind Every Layer.",
       "cards": {
         "independence": {
@@ -558,7 +558,7 @@
       }
     },
     "technologies": {
-      "eyebrow": "12 — Technologies",
+      "eyebrow": "Technologies",
       "title": "The Platforms We Build On.",
       "note": "Our engineers are certified across the industry's leading AV, display, control and network platforms — the technologies behind every AFAQ deployment.",
       "brands": [
@@ -587,7 +587,7 @@
       ]
     },
     "partners": {
-      "eyebrow": "11 — Clients & Partners",
+      "eyebrow": "Clients & Partners",
       "title": "Trusted Across the Kingdom.",
       "note": "A selection of the entities AFAQ has delivered for. Names are shown as placeholders pending brand-approved logos.",
       "govLabel": "Government & Semi-Government",

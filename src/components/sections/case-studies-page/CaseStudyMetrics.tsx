@@ -47,8 +47,7 @@ export function CaseStudyMetrics({ metrics }: { metrics: Metric[] }) {
   return (
     <Section surface="ink-900" id="metrics">
       <Container>
-        <p className="font-display text-eyebrow uppercase text-brand-400">08</p>
-        <h2 className="mt-3 font-display text-h2 font-semibold text-mist-50">{t("metricsTitle")}</h2>
+        <h2 className="font-display text-h2 font-semibold text-mist-50">{t("metricsTitle")}</h2>
 
         <div
           ref={ref}

@@ -19,12 +19,13 @@ export function TrustedBy() {
   const locale = useLocale();
   const dir = getDirectionMultiplier(locale);
   const track = useRef<HTMLDivElement>(null);
-  const logos = t.raw("logos") as string[];
+  // Show only the first 10 marks, per brand direction.
+  const logos = (t.raw("logos") as string[]).slice(0, 10);
 
   useGsapContext(() => {
     const mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      if (track.current) marquee(track.current, dir, { xPercent: -50, duration: 45 });
+      if (track.current) marquee(track.current, dir, { xPercent: -50, duration: 22 });
     });
   }, track, [locale]);
 
