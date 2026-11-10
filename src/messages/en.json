@@ -489,12 +489,13 @@
       "body": "The Kingdom's transformation runs on infrastructure — measured, built, and connected. AFAQ engineers the layers beneath the landmarks that define Vision 2030.",
       "note": "Landmark programs shown are representative of the sectors AFAQ serves.",
       "landmarks": {
-        "neom": "NEOM",
-        "diriyah": "Diriyah",
-        "qiddiya": "Qiddiya",
-        "kafd": "KAFD",
-        "metro": "Riyadh Metro",
-        "swcc": "SWCC"
+        "neom": { "name": "NEOM", "sector": "Smart City" },
+        "diriyah": { "name": "Diriyah", "sector": "Heritage & Tourism" },
+        "qiddiya": { "name": "Qiddiya", "sector": "Entertainment" },
+        "kafd": { "name": "KAFD", "sector": "Financial District" },
+        "metro": { "name": "Riyadh Metro", "sector": "Transit" },
+        "swcc": { "name": "SWCC", "sector": "Water" },
+        "kingsaadfc": { "name": "King Saad FC", "sector": "Sports" }
       }
     },
     "numbers": {

@@ -39,7 +39,6 @@ function Group({ label, names }: { label: string; names: string[] }) {
       <div className="mb-6 flex items-center gap-4">
         <h3 className="font-display text-eyebrow uppercase text-brand-600">{label}</h3>
         <span className="h-px flex-1 bg-line" aria-hidden="true" />
-        <span className="font-display text-eyebrow tabular-nums text-slate-400">{names.length}</span>
       </div>
       <LogoMarks names={names} variant="light" />
     </div>
