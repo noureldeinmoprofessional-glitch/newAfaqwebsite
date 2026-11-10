@@ -157,10 +157,6 @@ export function IntegratedAdvantage() {
             </div>
           </div>
         </div>
-
-        <p className="mt-16 border-t border-line-inv pt-10 text-center font-display text-h3 font-medium text-brand-400">
-          {t("tagline")}
-        </p>
       </Container>
     </Section>
   );

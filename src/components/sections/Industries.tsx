@@ -22,12 +22,12 @@ export function Industries() {
   const t = useTranslations("Industries");
 
   return (
-    <Section surface="ink-800" id="industries" className="relative overflow-hidden">
-      <TechBackground variant="grid" opacity={4} className="text-brand-400" />
+    <Section surface="mist-50" id="industries" className="relative overflow-hidden">
+      <TechBackground variant="grid" opacity={4} className="text-brand-500" />
       <Container className="relative">
         <Reveal className="max-w-3xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-          <Heading as="h2" size="h2" className="mt-6 text-mist-50">
+          <Heading as="h2" size="h2" className="mt-6 text-slate-900">
             {t("title")}
           </Heading>
         </Reveal>
@@ -36,29 +36,29 @@ export function Industries() {
           {INDUSTRIES.map(({ key, Icon, texture }) => (
             <article
               key={key}
-              className="group relative overflow-hidden rounded-card border border-line-inv bg-ink-700/40 p-8 transition-colors duration-500 hover:border-brand-500/60"
+              className="group relative overflow-hidden rounded-card border border-line bg-white p-8 shadow-sm transition-colors duration-500 hover:border-brand-500/60"
             >
               {/* Linework backdrop */}
               <TechBackground
                 variant={texture}
-                opacity={6}
-                className="text-brand-400 opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+                opacity={5}
+                className="text-brand-500 opacity-50 transition-opacity duration-500 group-hover:opacity-100"
               />
               {/* Animated corner accents */}
               <span className="pointer-events-none absolute end-0 top-0 h-10 w-10 border-e-2 border-t-2 border-brand-500/0 transition-colors duration-500 group-hover:border-brand-500/70" aria-hidden="true" />
               <span className="pointer-events-none absolute bottom-0 start-0 h-10 w-10 border-b-2 border-s-2 border-brand-500/0 transition-colors duration-500 group-hover:border-brand-500/70" aria-hidden="true" />
 
               <div className="relative flex min-h-[200px] flex-col">
-                <span className="inline-flex size-12 items-center justify-center rounded-button bg-white/5 text-brand-400 transition-colors duration-500 group-hover:bg-brand-500 group-hover:text-ink-900">
+                <span className="inline-flex size-12 items-center justify-center rounded-button bg-brand-500/10 text-brand-600 transition-colors duration-500 group-hover:bg-brand-500 group-hover:text-white">
                   <Icon className="size-6" strokeWidth={2} />
                 </span>
-                <h3 className="mt-6 font-display text-h3 font-semibold text-mist-50">
+                <h3 className="mt-6 font-display text-h3 font-semibold text-slate-900">
                   {t(`items.${key}.name`)}
                 </h3>
-                <p className="mt-3 flex-1 text-body text-mist-50/60">
+                <p className="mt-3 flex-1 text-body text-slate-600">
                   {t(`items.${key}.body`)}
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-eyebrow uppercase text-brand-400 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="mt-6 inline-flex items-center gap-2 text-eyebrow uppercase text-brand-600 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   {t(`items.${key}.name`)}
                   <ArrowUpRight className="size-4" strokeWidth={2} />
                 </span>

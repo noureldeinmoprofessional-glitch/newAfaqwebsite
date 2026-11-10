@@ -60,7 +60,7 @@ export function OurValues() {
                   <span className="inline-flex size-16 items-center justify-center rounded-button bg-brand-500/10 text-brand-600 transition-colors duration-500 group-hover:bg-brand-500 group-hover:text-white">
                     <Icon className="size-8" strokeWidth={1.75} />
                   </span>
-                  <h3 className="mt-8 font-display text-h2 font-semibold leading-[1.05] text-slate-900">
+                  <h3 className="mt-8 font-display text-h2 font-semibold text-slate-900">
                     {t(`cards.${key}.title`)}
                   </h3>
                   <p className="mt-4 text-body-lg text-slate-600">{t(`cards.${key}.body`)}</p>

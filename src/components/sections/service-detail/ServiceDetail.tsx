@@ -313,7 +313,7 @@ function FeaturedCase({ study, surface }: { study: CaseStudy; surface: Surface }
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-brand-600">
               <span>{study.projectType?.[lang] ?? study.location[lang]}</span>
             </div>
-            <h3 className="mt-3 font-display text-h2 font-semibold leading-[1.1] text-slate-900">
+            <h3 className="mt-3 font-display text-h2 font-semibold text-slate-900">
               {study.name[lang]}
             </h3>
             <p className="mt-4 text-body-lg text-slate-600">{study.overview[lang]}</p>

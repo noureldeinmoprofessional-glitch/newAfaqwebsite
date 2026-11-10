@@ -6,9 +6,9 @@ import { MediaFrame } from "@/components/visual/MediaFrame";
 import { Reveal } from "@/components/motion/Reveal";
 
 const POSTS = [
-  { key: "digitaltwin", tone: "steel", texture: "grid" },
-  { key: "vision2030", tone: "deep", texture: "terrain" },
-  { key: "gnss", tone: "mid", texture: "survey" },
+  { key: "digitaltwin", src: "/images/blog/digitaltwin.jpg" },
+  { key: "vision2030", src: "/images/blog/vision2030.jpg" },
+  { key: "gnss", src: "/images/blog/gnss.jpg" },
 ] as const;
 
 /**
@@ -31,12 +31,12 @@ export function Blog() {
         </div>
 
         <Reveal className="mt-14 grid gap-8 md:grid-cols-2 lg:mt-16 lg:grid-cols-3" stagger={0.1}>
-          {POSTS.map(({ key, tone, texture }) => (
+          {POSTS.map(({ key, src }) => (
             <article key={key} className="group">
               <Link href="/blog" className="block">
                 <div className="overflow-hidden rounded-image">
                   <div className="transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                    <MediaFrame ratio="4/3" tone={tone} texture={texture} label={t(`items.${key}.imageLabel`)} rounded={false} />
+                    <MediaFrame ratio="4/3" src={src} label={t(`items.${key}.imageLabel`)} rounded={false} />
                   </div>
                 </div>
 
