@@ -1,15 +1,24 @@
 import { useTranslations } from "next-intl";
+import { Network, Landmark, Ticket, Building2, TramFront, Droplets, Trophy, Sparkles } from "lucide-react";
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { TechBackground } from "@/components/visual/TechBackground";
 import { Reveal } from "@/components/motion/Reveal";
 
-const LANDMARKS = ["neom", "diriyah", "qiddiya", "kafd", "metro", "swcc", "kingsaadfc"] as const;
+/** Landmark programs + a sector icon each. */
+const LANDMARKS = [
+  { key: "neom", Icon: Network },
+  { key: "diriyah", Icon: Landmark },
+  { key: "qiddiya", Icon: Ticket },
+  { key: "kafd", Icon: Building2 },
+  { key: "metro", Icon: TramFront },
+  { key: "swcc", Icon: Droplets },
+  { key: "kingsaadfc", Icon: Trophy },
+] as const;
 
 /**
- * About §9 — Vision 2030. Dark cinematic section over a Riyadh skyline placeholder
- * with digital overlays. A vertical timeline connects glowing landmark-program
- * nodes (sector + name) representing the programs AFAQ serves, with generous
- * spacing so each node reads clearly.
+ * About §9 — Vision 2030. Dark cinematic section over a Riyadh skyline placeholder.
+ * A full-width grid of landmark-program tiles (sector + name + icon), with a note
+ * tile completing the grid so the layout stays balanced with no empty space.
  */
 export function Vision2030() {
   const t = useTranslations("AboutPage.vision2030");
@@ -33,37 +42,33 @@ export function Vision2030() {
           <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">{t("body")}</p>
         </Reveal>
 
-        {/* Vertical landmark timeline */}
-        <div className="relative mt-16 lg:mt-20">
-          {/* Timeline rail */}
-          <span
-            className="absolute inset-y-2 start-[13px] w-px bg-gradient-to-b from-brand-500 via-brand-500/40 to-transparent lg:start-[15px]"
-            aria-hidden="true"
-          />
-
-          <Reveal as="ol" className="flex flex-col gap-y-12 lg:gap-y-16" stagger={0.1}>
-            {LANDMARKS.map((key) => (
-              <li key={key} className="relative flex items-start gap-6 lg:gap-8">
-                {/* Node */}
-                <span className="relative mt-0.5 flex size-7 shrink-0 items-center justify-center lg:size-8">
-                  <span className="absolute inline-flex size-7 animate-ping rounded-full bg-brand-500/25 lg:size-8" aria-hidden="true" />
-                  <span className="relative inline-flex size-3.5 rounded-full bg-brand-500 shadow-[0_0_16px_2px_var(--color-brand-500)]" aria-hidden="true" />
+        {/* Landmark programs — full-width balanced grid (7 tiles + 1 note = 2×4) */}
+        <Reveal className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16 lg:grid-cols-4" stagger={0.07}>
+          {LANDMARKS.map(({ key, Icon }) => (
+            <article
+              key={key}
+              className="group relative flex min-h-[176px] flex-col justify-between overflow-hidden rounded-card border border-line-inv bg-white/[0.04] p-5 transition-colors duration-300 hover:border-brand-500/50 hover:bg-white/[0.06]"
+            >
+              <span className="inline-flex size-11 items-center justify-center rounded-button bg-brand-500/15 text-brand-400 shadow-[0_0_22px_-6px_var(--color-brand-500)] transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-ink-900">
+                <Icon className="size-5" strokeWidth={2} />
+              </span>
+              <div>
+                <span className="font-display text-eyebrow uppercase text-brand-400">
+                  {t(`landmarks.${key}.sector`)}
                 </span>
+                <h3 className="mt-1 font-display text-h3 font-semibold text-mist-50">
+                  {t(`landmarks.${key}.name`)}
+                </h3>
+              </div>
+            </article>
+          ))}
 
-                <div className="pt-0.5">
-                  <span className="font-display text-eyebrow uppercase text-brand-400">
-                    {t(`landmarks.${key}.sector`)}
-                  </span>
-                  <h3 className="mt-1 font-display text-h2 font-semibold text-mist-50">
-                    {t(`landmarks.${key}.name`)}
-                  </h3>
-                </div>
-              </li>
-            ))}
-          </Reveal>
-
-          <p className="mt-14 max-w-md text-body text-mist-50/40">{t("note")}</p>
-        </div>
+          {/* Note tile completes the grid */}
+          <div className="flex min-h-[176px] flex-col justify-center rounded-card border border-brand-500/30 bg-brand-500/[0.08] p-5">
+            <Sparkles className="size-5 text-brand-400" strokeWidth={2} aria-hidden="true" />
+            <p className="mt-3 text-small leading-relaxed text-mist-50/75">{t("note")}</p>
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );
