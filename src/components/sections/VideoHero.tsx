@@ -181,12 +181,7 @@ export function VideoHero() {
           className="flex min-h-[100svh] flex-col justify-start pt-28 lg:justify-center lg:pt-0 lg:pb-0"
         >
           <div className="pointer-events-auto max-w-xl">
-            <p className="vh-reveal flex items-center gap-3 font-display text-eyebrow uppercase text-brand-600">
-              <span className="inline-block h-px w-8 bg-brand-500" aria-hidden="true" />
-              {t("eyebrow")}
-            </p>
-
-            <h1 className="vh-reveal mt-5 font-display text-display font-semibold text-brand-600 lg:mt-6">
+            <h1 className="vh-reveal font-display text-display font-semibold text-brand-600">
               {t("title")}
             </h1>
 

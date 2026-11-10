@@ -12,15 +12,16 @@ const VALUES = [
 ] as const;
 
 /**
- * Section 3 — About AFAQ (brief §3). Split layout: large engineering photograph
- * against headline + lead, then three value cards that reveal independently over
- * a blueprint that draws itself.
+ * Section 3 — About AFAQ (brief §3). A single-screen split: a representative
+ * GIS / geospatial image beside the headline, lead and the three value cards —
+ * all in one band so the whole section reads at a glance, with no in-section
+ * scroll (the image no longer pins while the copy scrolls past it).
  */
 export function About() {
   const t = useTranslations("About");
 
   return (
-    <Section surface="mist-50" id="about" className="relative overflow-hidden">
+    <Section surface="mist-50" id="about" flush className="relative overflow-hidden py-16 md:py-20 lg:py-24">
       {/* Self-drawing blueprint */}
       <DrawOnScroll className="pointer-events-none absolute inset-0" duration={2}>
         <svg
@@ -38,44 +39,38 @@ export function About() {
       </DrawOnScroll>
 
       <Container className="relative">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Media */}
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          {/* Representative GIS / geospatial image */}
           <div className="lg:col-span-5">
             <Reveal>
-              <MediaFrame
-                ratio="4/5"
-                image="engineers-site"
-                label={t("imageLabel")}
-                className="lg:sticky lg:top-28"
-              />
+              <MediaFrame ratio="4/5" src="/images/about-gis.jpg" alt={t("imageLabel")} label={t("imageLabel")} />
             </Reveal>
           </div>
 
-          {/* Copy + values */}
+          {/* Headline, lead and values — all in the same band, no scroll. */}
           <div className="lg:col-span-7">
             <Reveal>
               <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
-              <Heading as="h2" size="h2" className="mt-6 max-w-2xl text-slate-900">
+              <Heading as="h2" size="h2" className="mt-4 max-w-2xl text-slate-900">
                 {t("title")}
               </Heading>
-              <p className="mt-6 max-w-xl text-body-lg text-slate-600">{t("lead")}</p>
+              <p className="mt-4 max-w-xl text-body text-slate-600">{t("lead")}</p>
             </Reveal>
 
-            <Reveal className="mt-14 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-1" stagger={0.12}>
+            <Reveal
+              className="mt-7 flex flex-col divide-y divide-line overflow-hidden rounded-card border border-line bg-white"
+              stagger={0.1}
+            >
               {VALUES.map(({ key, Icon }) => (
-                <div key={key} className="group bg-white p-8 transition-colors hover:bg-mist-50">
-                  <div className="flex items-start gap-5">
-                    <span className="mt-1 inline-flex size-11 shrink-0 items-center justify-center rounded-button bg-brand-500/10 text-brand-600 transition-colors group-hover:bg-brand-500 group-hover:text-white">
-                      <Icon className="size-5" strokeWidth={2} />
-                    </span>
-                    <div>
-                      <h3 className="font-display text-h3 font-semibold text-slate-900">
-                        {t(`values.${key}.title`)}
-                      </h3>
-                      <p className="mt-2 max-w-md text-body text-slate-600">
-                        {t(`values.${key}.body`)}
-                      </p>
-                    </div>
+                <div key={key} className="group flex items-start gap-4 p-5 transition-colors hover:bg-mist-50">
+                  <span className="mt-0.5 inline-flex size-10 shrink-0 items-center justify-center rounded-button bg-brand-500/10 text-brand-600 transition-colors group-hover:bg-brand-500 group-hover:text-white">
+                    <Icon className="size-5" strokeWidth={2} />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-h4 font-semibold text-slate-900">
+                      {t(`values.${key}.title`)}
+                    </h3>
+                    <p className="mt-1 text-small text-slate-600">{t(`values.${key}.body`)}</p>
                   </div>
                 </div>
               ))}

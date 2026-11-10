@@ -46,7 +46,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
   const hasServices = !!study.relatedServiceKeys?.length;
   const related = relatedCaseStudies(study.slug, 3);
 
-  // Sequential section numbers over what actually renders.
+  // Render order of the sections that actually appear (drives surface alternation).
   const order: string[] = ["overview", "snapshot"];
   if (hasChallenge) order.push("challenge");
   if (hasSolution) order.push("solution");
@@ -56,7 +56,6 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
   if (hasGallery) order.push("gallery");
   if (hasServices) order.push("services");
   if (related.length) order.push("related");
-  const num = (k: string) => String(order.indexOf(k) + 1).padStart(2, "0");
 
   // Alternating surfaces for the light sections (dark ones don't participate).
   const lightKeys = order.filter((k) => k !== "solution" && k !== "metrics");
@@ -65,35 +64,30 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
   return (
     <>
       <CaseStudyHero study={study} />
-      <Overview study={study} num={num("overview")} surface={surf("overview")} />
-      <Snapshot study={study} num={num("snapshot")} surface={surf("snapshot")} />
-      {hasChallenge && <Challenge study={study} num={num("challenge")} surface={surf("challenge")} />}
-      {hasSolution && <Solution study={study} num={num("solution")} />}
-      {hasScope && <Scope study={study} num={num("scope")} surface={surf("scope")} />}
-      {hasHighlights && <Highlights study={study} num={num("highlights")} surface={surf("highlights")} />}
+      <Overview study={study} surface={surf("overview")} />
+      <Snapshot study={study} surface={surf("snapshot")} />
+      {hasChallenge && <Challenge study={study} surface={surf("challenge")} />}
+      {hasSolution && <Solution study={study} />}
+      {hasScope && <Scope study={study} surface={surf("scope")} />}
+      {hasHighlights && <Highlights study={study} surface={surf("highlights")} />}
       {hasMetrics && <CaseStudyMetrics metrics={study.metrics!} />}
       {hasGallery && <CaseStudyGallery images={study.gallery!} title={t("galleryTitle")} surface={surf("gallery")} />}
-      {hasServices && <RelatedServices study={study} num={num("services")} surface={surf("services")} />}
-      {related.length > 0 && <RelatedStudies studies={related} num={num("related")} surface={surf("related")} />}
+      {hasServices && <RelatedServices study={study} surface={surf("services")} />}
+      {related.length > 0 && <RelatedStudies studies={related} surface={surf("related")} />}
     </>
   );
 }
 
-function SectionHead({ num, title, dark = false }: { num: string; title: string; dark?: boolean }) {
+function SectionHead({ title, dark = false }: { title: string; dark?: boolean }) {
   return (
-    <>
-      <p className={cn("font-display text-eyebrow uppercase", dark ? "text-brand-400" : "text-brand-600")}>
-        {num}
-      </p>
-      <h2 className={cn("mt-3 font-display text-h2 font-semibold", dark ? "text-mist-50" : "text-slate-900")}>
-        {title}
-      </h2>
-    </>
+    <h2 className={cn("font-display text-h2 font-semibold", dark ? "text-mist-50" : "text-slate-900")}>
+      {title}
+    </h2>
   );
 }
 
 /* ── 02 · Executive Overview ─────────────────────────────────────────────── */
-function Overview({ study, num, surface }: { study: CaseStudy; num: string; surface: Surface }) {
+function Overview({ study, surface }: { study: CaseStudy; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("CaseStudyDetail");
   return (
@@ -101,7 +95,7 @@ function Overview({ study, num, surface }: { study: CaseStudy; num: string; surf
       <Container>
         <Reveal className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <SectionHead num={num} title={t("overviewTitle")} />
+            <SectionHead title={t("overviewTitle")} />
           </div>
           <div className="lg:col-span-8">
             <p className="text-body-lg font-medium text-slate-800">
@@ -125,7 +119,7 @@ function Overview({ study, num, surface }: { study: CaseStudy; num: string; surf
 }
 
 /* ── 03 · Project Snapshot ───────────────────────────────────────────────── */
-function Snapshot({ study, num, surface }: { study: CaseStudy; num: string; surface: Surface }) {
+function Snapshot({ study, surface }: { study: CaseStudy; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("CaseStudyDetail");
   const facts: { icon: LucideIcon; label: string; value: string }[] = [
@@ -139,7 +133,7 @@ function Snapshot({ study, num, surface }: { study: CaseStudy; num: string; surf
   return (
     <Section surface={surface} id="snapshot">
       <Container>
-        <SectionHead num={num} title={t("snapshotTitle")} />
+        <SectionHead title={t("snapshotTitle")} />
         <Reveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
           {facts.map((f, i) => (
             <div key={i} className="rounded-card border border-line bg-white p-6">
@@ -157,7 +151,7 @@ function Snapshot({ study, num, surface }: { study: CaseStudy; num: string; surf
 }
 
 /* ── 04 · Engineering Challenge ──────────────────────────────────────────── */
-function Challenge({ study, num, surface }: { study: CaseStudy; num: string; surface: Surface }) {
+function Challenge({ study, surface }: { study: CaseStudy; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("CaseStudyDetail");
   const img = study.gallery?.[1] ?? study.hero;
@@ -166,7 +160,7 @@ function Challenge({ study, num, surface }: { study: CaseStudy; num: string; sur
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <SectionHead num={num} title={t("challengeTitle")} />
+            <SectionHead title={t("challengeTitle")} />
             <div className="mt-6 space-y-5">
               {study.challenge!.map((p, i) => (
                 <p key={i} className="text-body-lg leading-relaxed text-slate-700">
@@ -188,14 +182,14 @@ function Challenge({ study, num, surface }: { study: CaseStudy; num: string; sur
 }
 
 /* ── 05 · The AFAQ Solution (blueprint timeline) ─────────────────────────── */
-function Solution({ study, num }: { study: CaseStudy; num: string }) {
+function Solution({ study }: { study: CaseStudy }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("CaseStudyDetail");
   return (
     <Section surface="ink-900" id="solution" className="relative overflow-hidden">
       <TechBackground variant="grid" opacity={6} className="text-brand-400" />
       <Container className="relative">
-        <SectionHead num={num} title={t("solutionTitle")} dark />
+        <SectionHead title={t("solutionTitle")} dark />
         <ol className="mt-12 space-y-0">
           {study.solutionPhases!.map((phase, i, arr) => (
             <Reveal as="li" key={i} className="relative grid grid-cols-[auto_1fr] gap-x-6">
@@ -221,13 +215,13 @@ function Solution({ study, num }: { study: CaseStudy; num: string }) {
 }
 
 /* ── 06 · Scope of Work ──────────────────────────────────────────────────── */
-function Scope({ study, num, surface }: { study: CaseStudy; num: string; surface: Surface }) {
+function Scope({ study, surface }: { study: CaseStudy; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("CaseStudyDetail");
   return (
     <Section surface={surface} id="scope">
       <Container>
-        <SectionHead num={num} title={t("scopeTitle")} />
+        <SectionHead title={t("scopeTitle")} />
         <Reveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
           {study.scope!.map((s, i) => (
             <div key={i} className="rounded-card border border-line bg-white p-6">
@@ -278,13 +272,13 @@ function Scope({ study, num, surface }: { study: CaseStudy; num: string; surface
 }
 
 /* ── 07 · Project Highlights ─────────────────────────────────────────────── */
-function Highlights({ study, num, surface }: { study: CaseStudy; num: string; surface: Surface }) {
+function Highlights({ study, surface }: { study: CaseStudy; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("CaseStudyDetail");
   return (
     <Section surface={surface} id="highlights">
       <Container>
-        <SectionHead num={num} title={t("highlightsTitle")} />
+        <SectionHead title={t("highlightsTitle")} />
         <Reveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" stagger={0.05}>
           {study.highlights!.map((h, i) => {
             const Icon = HIGHLIGHT_ICONS[i % HIGHLIGHT_ICONS.length];
@@ -308,14 +302,14 @@ function Highlights({ study, num, surface }: { study: CaseStudy; num: string; su
 }
 
 /* ── 10 · Related Engineering Services ───────────────────────────────────── */
-function RelatedServices({ study, num, surface }: { study: CaseStudy; num: string; surface: Surface }) {
+function RelatedServices({ study, surface }: { study: CaseStudy; surface: Surface }) {
   const t = useTranslations("CaseStudyDetail");
   const ts = useTranslations("CaseStudyDetail.services");
   const keys = Array.from(new Set(study.relatedServiceKeys)) as Category[];
   return (
     <Section surface={surface} id="related-services">
       <Container>
-        <SectionHead num={num} title={t("relatedServicesTitle")} />
+        <SectionHead title={t("relatedServicesTitle")} />
         <Reveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
           {keys.map((k) => {
             const { Icon } = CASE_CATEGORY_META[k];
@@ -343,12 +337,12 @@ function RelatedServices({ study, num, surface }: { study: CaseStudy; num: strin
 }
 
 /* ── 11 · Related Case Studies ───────────────────────────────────────────── */
-function RelatedStudies({ studies, num, surface }: { studies: CaseStudy[]; num: string; surface: Surface }) {
+function RelatedStudies({ studies, surface }: { studies: CaseStudy[]; surface: Surface }) {
   const t = useTranslations("CaseStudyDetail");
   return (
     <Section surface={surface} id="related">
       <Container>
-        <SectionHead num={num} title={t("relatedTitle")} />
+        <SectionHead title={t("relatedTitle")} />
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {studies.map((s) => (
             <CaseStudyCard key={s.slug} study={s} />

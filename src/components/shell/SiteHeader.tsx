@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useTranslations } from "next-intl";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -26,6 +26,14 @@ const NAV = [
   { key: "contact", href: "/contact" },
 ] as const;
 
+/** The four services, surfaced as a dropdown under the Services nav item. */
+const SERVICE_LINKS = [
+  { slug: "survey", en: "Survey, GIS & Geospatial Intelligence", ar: "المساحة ونظم المعلومات والذكاء الجيومكاني" },
+  { slug: "civil", en: "Civil & Steel Engineering", ar: "الهندسة المدنية والحديد" },
+  { slug: "its", en: "Intelligent Transportation Systems", ar: "أنظمة النقل الذكية" },
+  { slug: "av", en: "AV Integration & Digital Infrastructure", ar: "تكامل الصوت والصورة والبنية الرقمية" },
+] as const;
+
 /** A nav item is "active" only for full-page routes (not section anchors). */
 function isActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
@@ -35,6 +43,7 @@ function isActive(pathname: string, href: string): boolean {
 
 export function SiteHeader() {
   const t = useTranslations("Nav");
+  const isAr = useLocale() === "ar";
   const pathname = usePathname();
   const root = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -97,15 +106,67 @@ export function SiteHeader() {
           <ul className="flex items-center gap-7">
             {NAV.map((item) => {
               const active = isActive(pathname, item.href);
+              const linkCls = cn(
+                "relative font-display text-small font-medium tracking-tight transition-colors duration-300",
+                active ? (scrolled ? "text-slate-900" : "text-mist-50") : linkColor,
+              );
+
+              // Services → dropdown of the four services (hover / keyboard-focus).
+              if (item.key === "services") {
+                return (
+                  <li key={item.key} className="group/svc relative">
+                    <Link
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
+                      aria-haspopup="true"
+                      className={cn(linkCls, "inline-flex items-center gap-1")}
+                    >
+                      {t(item.key)}
+                      <ChevronDown
+                        className="size-3.5 transition-transform duration-300 group-hover/svc:rotate-180"
+                        strokeWidth={2}
+                        aria-hidden="true"
+                      />
+                      {active && (
+                        <span
+                          className="absolute -bottom-1.5 inset-x-0 mx-auto h-px w-4 bg-brand-500"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </Link>
+
+                    <div className="invisible absolute start-0 top-full z-50 pt-4 opacity-0 transition-all duration-200 group-hover/svc:visible group-hover/svc:opacity-100 group-focus-within/svc:visible group-focus-within/svc:opacity-100">
+                      <ul className="w-72 overflow-hidden rounded-card border border-line bg-white p-2 shadow-xl shadow-ink-900/10">
+                        {SERVICE_LINKS.map((s) => (
+                          <li key={s.slug}>
+                            <Link
+                              href={`/services/${s.slug}`}
+                              className="block rounded-lg px-3 py-2.5 font-display text-small font-medium leading-snug text-slate-700 transition-colors hover:bg-mist-50 hover:text-brand-600"
+                            >
+                              {isAr ? s.ar : s.en}
+                            </Link>
+                          </li>
+                        ))}
+                        <li className="mt-1 border-t border-line pt-1">
+                          <Link
+                            href="/services"
+                            className="block rounded-lg px-3 py-2.5 font-display text-small font-semibold text-brand-600 transition-colors hover:bg-mist-50"
+                          >
+                            {isAr ? "كل الخدمات" : "All services"}
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                );
+              }
+
               return (
                 <li key={item.key}>
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "relative font-display text-small font-medium tracking-tight transition-colors duration-300",
-                      active ? (scrolled ? "text-slate-900" : "text-mist-50") : linkColor,
-                    )}
+                    className={linkCls}
                   >
                     {t(item.key)}
                     {active && (
