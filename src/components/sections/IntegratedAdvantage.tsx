@@ -8,11 +8,12 @@ import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { MediaFrame } from "@/components/visual/MediaFrame";
 import { cn } from "@/lib/utils";
 
+/** Each layer's photo (client-supplied files keep their original names; encoded for URLs). */
 const LAYERS = [
-  { key: "survey", image: "survey" },
-  { key: "civil", image: "steel-fabrication" },
-  { key: "its", image: "its" },
-  { key: "av", image: "av-led" },
+  { key: "survey", src: "/images/survey.jpg" },
+  { key: "civil", src: encodeURI("/images/Civil & Steel.JPG") },
+  { key: "its", src: encodeURI("/images/Intelligent Transport.jpeg") },
+  { key: "av", src: encodeURI("/images/AV & Digital Systems.jpeg") },
 ] as const;
 
 /**
@@ -82,7 +83,7 @@ export function IntegratedAdvantage() {
                   <MediaFrame
                     key={layer.key}
                     ratio="4/5"
-                    image={layer.image}
+                    src={layer.src}
                     label={t(`layers.${layer.key}.imageLabel`)}
                     className={cn(
                       "absolute inset-0 transition-opacity duration-700",
@@ -138,7 +139,7 @@ export function IntegratedAdvantage() {
                     <div className="mt-8 lg:hidden">
                       <MediaFrame
                         ratio="16/10"
-                        image={layer.image}
+                        src={layer.src}
                         label={t(`layers.${layer.key}.imageLabel`)}
                       />
                     </div>
