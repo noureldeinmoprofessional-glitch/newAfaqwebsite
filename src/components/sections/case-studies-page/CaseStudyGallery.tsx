@@ -8,7 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils";
 
 /**
- * 09 — Project Gallery. A premium masonry-style grid with a fullscreen lightbox
+ * Project Gallery. A bento-style grid with a fullscreen lightbox
  * (keyboard + arrow navigation), subtle zoom on hover, and lazy loading.
  */
 export function CaseStudyGallery({
@@ -52,26 +52,39 @@ export function CaseStudyGallery({
           <p className="text-body text-slate-500">{t("galleryHint")}</p>
         </div>
 
-        <Reveal className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5" stagger={0.05}>
-          {images.map((src, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setOpen(i)}
-              className="group block w-full overflow-hidden rounded-image outline-none ring-brand-500/40 focus-visible:ring-2"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={src}
-                alt=""
-                loading="lazy"
+        {/* Bento grid: three photos → one large + two stacked; otherwise an even grid. */}
+        <Reveal
+          className={cn(
+            "mt-10 grid gap-5",
+            images.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3",
+          )}
+          stagger={0.05}
+        >
+          {images.map((src, i) => {
+            const feature = images.length === 3 && i === 0;
+            return (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setOpen(i)}
                 className={cn(
-                  "w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]",
-                  i % 3 === 0 ? "aspect-[4/3]" : i % 3 === 1 ? "aspect-[3/4]" : "aspect-square",
+                  "group relative block w-full overflow-hidden rounded-image outline-none ring-brand-500/40 focus-visible:ring-2",
+                  feature && "sm:col-span-2 lg:row-span-2",
                 )}
-              />
-            </button>
-          ))}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt=""
+                  loading="lazy"
+                  className={cn(
+                    "w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]",
+                    feature ? "aspect-[4/3] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full" : "aspect-[4/3]",
+                  )}
+                />
+              </button>
+            );
+          })}
         </Reveal>
       </Container>
 
