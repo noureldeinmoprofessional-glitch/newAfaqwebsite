@@ -140,7 +140,17 @@ export function ProjectsShowcase() {
                   {study.industry?.[lang] ?? tc(study.category)}
                 </span>
 
-                <h3 className="mt-5 font-display text-h2 font-bold text-brand-600">{study.name[lang]}</h3>
+                {/* Split "Name — Sub" so the sub-line stays on one line under the title. */}
+                {(() => {
+                  const [main, ...rest] = study.name[lang].split(" — ");
+                  const sub = rest.join(" — ");
+                  return (
+                    <h3 className="mt-5 font-display font-bold text-brand-600">
+                      <span className="block text-h2">{main}</span>
+                      {sub && <span className="mt-1 block whitespace-nowrap text-h3 font-semibold">{sub}</span>}
+                    </h3>
+                  );
+                })()}
                 <p className="mt-1 font-display text-h4 font-semibold text-slate-900">{study.client[lang]}</p>
 
                 {study.tagline && (
