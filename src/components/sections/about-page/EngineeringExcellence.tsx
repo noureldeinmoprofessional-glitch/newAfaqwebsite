@@ -61,7 +61,7 @@ export function EngineeringExcellence() {
                   </p>
                 </div>
               </div>
-              <MediaFrame ratio="4/3" src="/images/about/excellence.jpg" alt="" className="mt-8" />
+              <MediaFrame ratio="4/3" src="/images/about/excellence-gnss.jpg" alt="" className="mt-8" />
             </Reveal>
           </div>
 
