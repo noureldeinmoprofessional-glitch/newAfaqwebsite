@@ -2,20 +2,21 @@
 
 import { useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, MapPin, Building, Layers } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { easeExpo, easeOut } from "@/lib/gsap/easings";
 import { Container } from "@/components/primitives";
-import { TechBackground } from "@/components/visual/TechBackground";
 import { Link } from "@/i18n/navigation";
 import type { CaseStudy } from "@/data/case-studies";
 import { CASE_CATEGORY_META } from "./caseCategoryMeta";
 
 /**
- * 01 — Cinematic hero. Full-bleed project photograph under a deep-green wash
- * with blueprint grids and contour overlays, a parallax scroll-out, and a
- * staggered content reveal. `id="hero"` keeps the header transparent over it.
+ * 01 — Cinematic hero. Full-bleed project photograph (kept visible — the wash
+ * only darkens where text sits), a parallax scroll-out and a staggered reveal.
+ * A facts strip (client · location · type · industry) closes the hero, so the
+ * page needs no separate "snapshot" section. `id="hero"` keeps the header
+ * transparent over it.
  */
 export function CaseStudyHero({ study }: { study: CaseStudy }) {
   const locale = useLocale();
@@ -24,6 +25,12 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
   const tc = useTranslations("CaseStudiesPage.categories");
   const root = useRef<HTMLElement>(null);
   const { Icon } = CASE_CATEGORY_META[study.category];
+  const facts = [
+    { label: t("snapshot.client"), value: study.client[lang] },
+    { label: t("snapshot.location"), value: study.location[lang] },
+    study.projectType && { label: t("snapshot.type"), value: study.projectType[lang] },
+    study.industry && { label: t("snapshot.industry"), value: study.industry[lang] },
+  ].filter(Boolean) as { label: string; value: string }[];
 
   useGsapContext(
     () => {
@@ -52,7 +59,7 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
     <section
       id="hero"
       ref={root}
-      className="relative flex min-h-[80svh] w-full items-end overflow-hidden bg-ink-900 pb-16 pt-32 lg:pb-24"
+      className="relative isolate flex min-h-[80svh] w-full items-end overflow-hidden bg-ink-900 pb-12 pt-32 lg:pb-16"
     >
       {/* Media */}
       <div className="csh-media absolute inset-0 -z-10">
@@ -63,10 +70,8 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
           className="h-full w-full object-cover"
           style={{ viewTransitionName: `cs-hero-${study.slug}` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/70 to-ink-900/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/80 via-ink-900/20 to-transparent rtl:bg-gradient-to-l" />
-        <TechBackground variant="topo" opacity={8} className="text-brand-400" />
-        <TechBackground variant="grid" opacity={5} className="text-tech-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/45 to-ink-900/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/70 via-ink-900/10 to-transparent rtl:bg-gradient-to-l" />
       </div>
 
       <Container className="relative">
@@ -97,22 +102,16 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
           <p className="csh-fade mt-5 max-w-2xl text-body-lg text-mist-50/90">{study.tagline[lang]}</p>
         )}
 
-        <div className="csh-fade mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-body text-mist-50/90">
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="size-4 text-brand-400" strokeWidth={2} />
-            {study.location[lang]}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Building className="size-4 text-brand-400" strokeWidth={2} />
-            {study.client[lang]}
-          </span>
-          {study.projectType && (
-            <span className="inline-flex items-center gap-2">
-              <Layers className="size-4 text-brand-400" strokeWidth={2} />
-              {study.projectType[lang]}
-            </span>
-          )}
-        </div>
+        <dl className="csh-fade mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-mist-50/20 pt-6 lg:grid-cols-4">
+          {facts.map((f) => (
+            <div key={f.label} className="min-w-0">
+              <dt className="font-display text-small font-semibold uppercase tracking-[0.06em] text-brand-400">
+                {f.label}
+              </dt>
+              <dd className="mt-1.5 text-body font-medium text-mist-50">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
       </Container>
     </section>
   );

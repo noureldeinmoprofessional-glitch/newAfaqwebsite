@@ -1052,8 +1052,8 @@
   "CaseStudyDetail": {
     "back": "كل دراسات الحالة",
     "kicker": "دراسة حالة",
+    "resultsTitle": "أبرز النتائج",
     "overviewTitle": "الملخّص التنفيذي",
-    "snapshotTitle": "لمحة عن المشروع",
     "snapshot": {
       "client": "العميل / الجهة المالكة",
       "location": "الموقع",
@@ -1064,8 +1064,6 @@
     "challengeTitle": "التحدي الهندسي",
     "solutionTitle": "حلّ أفاق",
     "scopeTitle": "نطاق العمل",
-    "highlightsTitle": "أبرز ملامح المشروع",
-    "metricsTitle": "مؤشرات المشروع",
     "technologiesTitle": "التقنيات المستخدمة",
     "deliverablesTitle": "أبرز المخرجات",
     "galleryTitle": "معرض المشروع",
@@ -1073,16 +1071,7 @@
     "lightboxClose": "إغلاق",
     "lightboxPrev": "السابق",
     "lightboxNext": "التالي",
-    "relatedServicesTitle": "الخدمات الهندسية ذات الصلة",
-    "relatedServicesCta": "استكشاف الخدمة",
-    "relatedTitle": "دراسات حالة ذات صلة",
-    "services": {
-      "survey": "المساحة والجيومكانية",
-      "civil": "الهندسة المدنية والحديد",
-      "its": "أنظمة النقل الذكية",
-      "av": "الأنظمة الصوتية البصرية والذكية",
-      "integrated": "الهندسة المتكاملة"
-    },
+    "relatedTitle": "دراسات حالة قد تهمّك",
     "cta": {
       "eyebrow": "لنبنِ معاً",
       "title": "جاهز لتنفيذ مشروعك الهندسي القادم؟",
