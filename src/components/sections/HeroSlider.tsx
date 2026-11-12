@@ -7,7 +7,14 @@ import { Container, Button } from "@/components/primitives";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-const SLIDES = ["/images/hero/drone-survey.jpg", "/images/hero/av-facade.jpg"] as const;
+/**
+ * `inset` slides sit smaller and anchored to the end edge on desktop, leaving
+ * extra white space for the copy (their top/start edges already fade to white).
+ */
+const SLIDES = [
+  { src: "/images/hero/drone-survey.jpg", inset: false },
+  { src: "/images/hero/av-facade.jpg", inset: true },
+] as const;
 /** Time each slide stays on screen before cross-fading to the next. */
 const SLIDE_MS = 6000;
 
@@ -55,7 +62,7 @@ export function HeroSlider() {
     >
       {/* ── Slides. Desktop: full-bleed behind the copy. Mobile: a band below it. ── */}
       <div className="relative order-2 h-[40svh] w-full lg:absolute lg:inset-0 lg:order-none lg:h-auto">
-        {SLIDES.map((src, i) => {
+        {SLIDES.map(({ src, inset }, i) => {
           const active = i === index;
           return (
             <div
@@ -68,7 +75,7 @@ export function HeroSlider() {
             >
               <div
                 className={cn(
-                  "h-full w-full transition-transform ease-out",
+                  "h-full w-full origin-bottom transition-transform ease-out lg:origin-bottom-right rtl:lg:origin-bottom-left",
                   active ? "scale-100 duration-[7000ms]" : "scale-105 duration-1000",
                 )}
               >
@@ -78,7 +85,12 @@ export function HeroSlider() {
                   alt={alts[i] ?? ""}
                   fetchPriority={i === 0 ? "high" : "auto"}
                   loading={i === 0 ? "eager" : "lazy"}
-                  className="h-full w-full object-cover object-[75%_100%] lg:object-right rtl:-scale-x-100"
+                  className={cn(
+                    "h-full w-full object-cover object-[75%_100%] rtl:-scale-x-100",
+                    inset
+                      ? "lg:hero-inset-mask lg:absolute lg:bottom-0 lg:end-0 lg:h-auto lg:w-[68%] lg:max-w-none"
+                      : "lg:object-right",
+                  )}
                 />
               </div>
             </div>
