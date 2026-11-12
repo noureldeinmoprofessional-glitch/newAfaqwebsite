@@ -75,7 +75,7 @@ export function OurStory() {
               <p className="mt-6 max-w-md text-body-lg text-mist-50/90">{t("lead")}</p>
               <MediaFrame
                 ratio="4/5"
-                image="riyadh-skyline"
+                src="/images/about/our-story.jpg"
                 label={t("imageLabel")}
                 className="mt-10"
               />
