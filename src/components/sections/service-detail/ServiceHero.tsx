@@ -35,7 +35,7 @@ export function ServiceHero({ service }: { service: Service }) {
             <p className="mt-6 font-display text-eyebrow uppercase text-brand-600">
               {service.tagline[lang]}
             </p>
-            <h1 className="mt-3 font-display text-display font-semibold text-slate-900">
+            <h1 className="mt-3 font-display text-h1 font-semibold text-slate-900">
               {service.name[lang]}
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-slate-600">{service.intro[lang]}</p>
