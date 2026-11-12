@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Plus } from "lucide-react";
-import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
+import { Container, Section, Eyebrow, Heading, type Surface } from "@/components/primitives";
 import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils";
 import type { Faq } from "@/data/services";
@@ -12,13 +12,13 @@ import type { Faq } from "@/data/services";
  * 10 — FAQs. Accessible accordion (one open at a time). The Q&A text is
  * SEO-friendly service copy grounded in the company profile.
  */
-export function ServiceFaqs({ faqs }: { faqs: Faq[] }) {
+export function ServiceFaqs({ faqs, surface = "mist-50" }: { faqs: Faq[]; surface?: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("ServiceDetail.faqs");
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <Section surface="mist-50" id="faqs">
+    <Section surface={surface} id="faqs">
       <Container>
         <Reveal className="max-w-2xl">
           <Eyebrow tone="brand">{t("eyebrow")}</Eyebrow>
