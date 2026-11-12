@@ -19,7 +19,7 @@ export function ProjectsShowcase() {
   const lang = useLocale() as "en" | "ar";
 
   return (
-    <Section surface="ink-900" id="projects">
+    <Section surface="ink-800" id="projects">
       <Container>
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">

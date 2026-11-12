@@ -7,6 +7,7 @@ import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { easeOut } from "@/lib/gsap/easings";
 import { Container, Button } from "@/components/primitives";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Homepage hero — a scroll-scrubbed engineering film on a bright white theme.
@@ -190,9 +191,9 @@ export function VideoHero() {
             </p>
 
             <div className="vh-reveal mt-8 flex flex-wrap gap-3 sm:gap-4 lg:mt-10">
-              {/* Primary CTA — in-page anchor, so a plain <a> (not a locale route). */}
-              <a
-                href="#services"
+              {/* Primary CTA — the Services overview page (locale-aware Link). */}
+              <Link
+                href="/services"
                 className="group/btn inline-flex items-center gap-3 rounded-full bg-brand-500 py-2 ps-7 pe-2 font-display text-body font-medium text-ink-900 transition-colors hover:bg-brand-400"
               >
                 <span>{t("ctaPrimary")}</span>
@@ -202,7 +203,7 @@ export function VideoHero() {
                 >
                   <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2.5} />
                 </span>
-              </a>
+              </Link>
 
               <Button variant="outline-dark" size="lg" href="/contact">
                 {t("ctaSecondary")}
