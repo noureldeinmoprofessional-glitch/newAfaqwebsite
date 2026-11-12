@@ -236,35 +236,41 @@ function Industries({ service, surface }: { service: Service; surface: Surface }
   );
 }
 
-/* ── 06 · Our Process (horizontal timeline) ──────────────────────────────── */
+/* ── 06 · Our Process (aligned step index) ───────────────────────────────── */
 function Process({ service, surface }: { service: Service; surface: Surface }) {
   const lang = useLocale() as "en" | "ar";
   const t = useTranslations("ServiceDetail.process");
   return (
     <Section surface={surface} id="process">
       <Container>
-        <SectionHead eyebrow={t("eyebrow")} title={t("title")} />
-        <div className="relative mt-12">
-          <div className="absolute inset-x-0 top-6 hidden h-px bg-line lg:block" aria-hidden="true" />
-          <Reveal
-            className="flex snap-x gap-4 overflow-x-auto pb-4 lg:grid lg:grid-cols-7 lg:gap-3 lg:overflow-visible lg:pb-0"
-            stagger={0.05}
-          >
-            {service.process.map((step, i) => {
-              const Icon = serviceIcon(step.icon);
-              return (
-                <div key={i} className="relative min-w-[220px] snap-start lg:min-w-0">
-                  <span className="relative z-10 inline-flex size-12 items-center justify-center rounded-full border border-brand-500/30 bg-white font-display text-body font-semibold text-brand-600">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="mt-4 flex items-center gap-2 text-slate-900">
-                    <Icon className="size-4 text-brand-600" strokeWidth={2} />
-                    <h3 className="font-display text-h4 font-semibold">{step.title[lang]}</h3>
-                  </div>
-                  <p className="mt-1.5 text-small leading-relaxed text-slate-500">{step.desc[lang]}</p>
-                </div>
-              );
-            })}
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-28">
+              <SectionHead eyebrow={t("eyebrow")} title={t("title")} note={t("note")} />
+            </div>
+          </div>
+
+          {/* One row per stage: number · title · description on fixed columns. */}
+          <Reveal as="ol" className="border-b border-line lg:col-span-8" stagger={0.05}>
+            {service.process.map((step, i) => (
+              <li
+                key={i}
+                className="grid grid-cols-[3rem_minmax(0,1fr)] gap-x-4 gap-y-2 border-t border-line py-6 md:grid-cols-[3.5rem_minmax(0,13rem)_minmax(0,1fr)] md:gap-x-8"
+              >
+                <span
+                  dir="ltr"
+                  className="font-display text-h4 font-semibold text-brand-600 tabular-nums"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-display text-h4 font-semibold text-slate-900">
+                  {step.title[lang]}
+                </h3>
+                <p className="col-start-2 text-body text-slate-600 md:col-start-3 md:pt-0.5">
+                  {step.desc[lang]}
+                </p>
+              </li>
+            ))}
           </Reveal>
         </div>
       </Container>
