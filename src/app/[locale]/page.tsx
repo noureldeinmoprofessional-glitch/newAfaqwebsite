@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import {
-  VideoHero,
+  HeroSlider,
   TrustedBy,
   About,
   IntegratedAdvantage,
@@ -20,7 +20,7 @@ export default async function HomePage({
 
   return (
     <main id="main">
-      <VideoHero />
+      <HeroSlider />
       <TrustedBy />
       <About />
       <IntegratedAdvantage />

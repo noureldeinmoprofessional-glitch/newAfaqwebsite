@@ -31,6 +31,7 @@
     "subtitle": "Pioneers in Integrated Engineering — delivering end-to-end solutions from geospatial intelligence to smart infrastructure, supporting Saudi Arabia's Vision 2030.",
     "ctaPrimary": "Explore Services",
     "ctaSecondary": "Contact Us",
+    "slider": {"prev": "Previous slide", "next": "Next slide", "pause": "Pause slideshow", "play": "Play slideshow", "goTo": "Show slide {n}", "slides": ["Survey drone scanning terrain beside the Riyadh skyline", "LED media façade on a steel-framed building"]},
     "scroll": "Scroll",
     "layers": {
       "earth": "Depths of the Earth",
