@@ -17,7 +17,7 @@ const FEATURED = CASE_STUDIES.filter((c) => c.featured).slice(0, 5);
  * cards, moved with prev/next buttons (top right) or by swiping — never by
  * page scroll. Each card follows the company-profile layout: the photo fades
  * into a light panel so every line of text sits on white: green project name,
- * dark client name, a solid green tagline bar, readable teaser, service pills
+ * dark client name, the tagline as a green-accented lead line, readable teaser, service pills
  * and a "View Case Study" button.
  */
 export function ProjectsShowcase() {
@@ -144,7 +144,7 @@ export function ProjectsShowcase() {
                 <p className="mt-1 font-display text-h4 font-semibold text-slate-900">{study.client[lang]}</p>
 
                 {study.tagline && (
-                  <p className="mt-4 w-fit rounded-md bg-brand-600 px-4 py-2 font-display text-h4 font-semibold text-white">
+                  <p className="mt-4 border-s-[3px] border-brand-500 ps-3 font-display text-body-lg font-medium leading-snug text-slate-800">
                     {study.tagline[lang]}
                   </p>
                 )}
