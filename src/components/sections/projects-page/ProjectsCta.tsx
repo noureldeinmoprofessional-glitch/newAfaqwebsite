@@ -46,7 +46,7 @@ export function ProjectsCta() {
           <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
-          <p className="mx-auto mt-8 max-w-2xl text-body-lg text-mist-50/70">{t("body")}</p>
+          <p className="mx-auto mt-8 max-w-2xl text-body-lg text-mist-50/90">{t("body")}</p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button variant="primary" size="lg" href="/case-studies">

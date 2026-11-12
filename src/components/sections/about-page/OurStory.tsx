@@ -72,7 +72,7 @@ export function OurStory() {
               <Heading as="h2" size="h2" className="mt-6 text-mist-50">
                 {t("title")}
               </Heading>
-              <p className="mt-6 max-w-md text-body-lg text-mist-50/60">{t("lead")}</p>
+              <p className="mt-6 max-w-md text-body-lg text-mist-50/90">{t("lead")}</p>
               <MediaFrame
                 ratio="4/5"
                 image="riyadh-skyline"
@@ -99,14 +99,14 @@ export function OurStory() {
                     <span className="font-display text-eyebrow uppercase text-brand-400">
                       {t(`milestones.${key}.tag`)}
                     </span>
-                    <span className="font-display text-small tabular-nums text-mist-50/30">
+                    <span className="font-display text-small tabular-nums text-mist-50/60">
                       0{i + 1}
                     </span>
                   </div>
                   <h3 className="mt-3 font-display text-h3 font-semibold text-mist-50">
                     {t(`milestones.${key}.title`)}
                   </h3>
-                  <p className="mt-2 max-w-md text-body text-mist-50/55">
+                  <p className="mt-2 max-w-md text-body text-mist-50/90">
                     {t(`milestones.${key}.body`)}
                   </p>
                 </li>

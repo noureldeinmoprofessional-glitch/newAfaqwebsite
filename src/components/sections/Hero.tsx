@@ -103,7 +103,7 @@ export function Hero() {
               {t("title")}
             </h1>
 
-            <p className="hero-sub mt-8 max-w-2xl text-body-lg text-mist-50/70 opacity-0" style={{ transform: "translateY(20px)" }}>
+            <p className="hero-sub mt-8 max-w-2xl text-body-lg text-mist-50/90 opacity-0" style={{ transform: "translateY(20px)" }}>
               {t("subtitle")}
             </p>
 
@@ -144,7 +144,7 @@ export function Hero() {
                 <span className="font-display text-small tabular-nums text-brand-500">
                   0{i + 1}
                 </span>
-                <span className="font-display text-small uppercase tracking-[0.1em] text-mist-50/60">
+                <span className="font-display text-small uppercase tracking-[0.1em] text-mist-50/90">
                   {t(`layers.${k}`)}
                 </span>
               </div>
@@ -155,7 +155,7 @@ export function Hero() {
 
       {/* Scroll cue */}
       <div className="hero-scroll absolute inset-x-0 bottom-8 flex justify-center opacity-0">
-        <div className="flex flex-col items-center gap-2 text-mist-50/50">
+        <div className="flex flex-col items-center gap-2 text-mist-50/70">
           <span className="font-display text-eyebrow uppercase">{t("scroll")}</span>
           <ArrowDown className="size-4 animate-bounce" strokeWidth={2} />
         </div>

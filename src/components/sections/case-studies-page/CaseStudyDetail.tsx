@@ -204,7 +204,7 @@ function Solution({ study }: { study: CaseStudy }) {
               </div>
               <div className={cn("pb-12", i === arr.length - 1 && "pb-0")}>
                 <h3 className="font-display text-h3 font-semibold text-mist-50">{phase.title[lang]}</h3>
-                <p className="mt-2 max-w-2xl text-body leading-relaxed text-mist-50/70">{phase.body[lang]}</p>
+                <p className="mt-2 max-w-2xl text-body leading-relaxed text-mist-50/90">{phase.body[lang]}</p>
               </div>
             </Reveal>
           ))}

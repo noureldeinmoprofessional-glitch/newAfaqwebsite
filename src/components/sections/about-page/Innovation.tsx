@@ -63,7 +63,7 @@ export function Innovation() {
                 <h3 className="mt-5 font-display text-h3 font-semibold text-mist-50">
                   {t(`items.${key}.name`)}
                 </h3>
-                <p className="mt-2 max-w-sm text-body text-mist-50/60 opacity-100 transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-100">
+                <p className="mt-2 max-w-sm text-body text-mist-50/90 opacity-100 transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-100">
                   {t(`items.${key}.body`)}
                 </p>
               </div>

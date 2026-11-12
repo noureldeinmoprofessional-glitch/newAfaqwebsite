@@ -33,7 +33,7 @@ export function LogoMarks({
             className={cn(
               "font-display text-small font-medium leading-tight transition-colors duration-300 md:text-body",
               variant === "dark"
-                ? "text-mist-50/45 group-hover/mark:text-brand-400"
+                ? "text-mist-50/75 group-hover/mark:text-brand-400"
                 : "text-slate-900/40 group-hover/mark:text-brand-600",
             )}
           >

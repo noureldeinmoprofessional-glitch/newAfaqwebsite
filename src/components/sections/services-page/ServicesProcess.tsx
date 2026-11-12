@@ -22,7 +22,7 @@ export function ServicesProcess() {
           <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
-          <p className="mt-6 max-w-xl text-body-lg text-mist-50/60">{t("lead")}</p>
+          <p className="mt-6 max-w-xl text-body-lg text-mist-50/90">{t("lead")}</p>
         </Reveal>
 
         <DrawOnScroll className="relative mt-16 lg:mt-20" duration={1.8} stagger={0}>
@@ -48,7 +48,7 @@ export function ServicesProcess() {
                 <h3 className="mt-6 font-display text-h3 font-semibold text-mist-50">
                   {t(`steps.${key}.title`)}
                 </h3>
-                <p className="mt-3 text-body text-mist-50/60">{t(`steps.${key}.body`)}</p>
+                <p className="mt-3 text-body text-mist-50/90">{t(`steps.${key}.body`)}</p>
               </div>
             ))}
           </Reveal>

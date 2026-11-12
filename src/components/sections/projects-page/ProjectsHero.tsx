@@ -80,7 +80,7 @@ export function ProjectsHero({ count }: { count: number }) {
           </h1>
 
           <p
-            className="ph-sub mt-8 max-w-2xl text-body-lg text-mist-50/70 opacity-0"
+            className="ph-sub mt-8 max-w-2xl text-body-lg text-mist-50/90 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
             {t("subtitle", { count })}
@@ -89,7 +89,7 @@ export function ProjectsHero({ count }: { count: number }) {
       </Container>
 
       <div className="ph-scroll absolute inset-x-0 bottom-8 flex justify-center opacity-0">
-        <div className="flex flex-col items-center gap-2 text-mist-50/50">
+        <div className="flex flex-col items-center gap-2 text-mist-50/70">
           <span className="font-display text-eyebrow uppercase">{t("scroll")}</span>
           <ArrowDown className="size-4 animate-bounce" strokeWidth={2} />
         </div>

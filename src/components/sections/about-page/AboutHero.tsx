@@ -85,7 +85,7 @@ export function AboutHero() {
           </h1>
 
           <p
-            className="ah-sub mt-8 max-w-2xl text-body-lg text-mist-50/70 opacity-0"
+            className="ah-sub mt-8 max-w-2xl text-body-lg text-mist-50/90 opacity-0"
             style={{ transform: "translateY(20px)" }}
           >
             {t("subtitle")}
@@ -106,7 +106,7 @@ export function AboutHero() {
 
       {/* Blueprint scroll indicator */}
       <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8">
-        <span className="font-display text-eyebrow uppercase text-mist-50/50">
+        <span className="font-display text-eyebrow uppercase text-mist-50/85">
           {t("scroll")}
         </span>
         <span className="ah-scroll-line block h-16 w-px origin-top bg-gradient-to-b from-brand-500 to-transparent" aria-hidden="true" />
