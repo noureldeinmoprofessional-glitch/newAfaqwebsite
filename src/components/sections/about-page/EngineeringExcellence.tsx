@@ -12,6 +12,7 @@ import {
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { TechBackground } from "@/components/visual/TechBackground";
 import { Reveal } from "@/components/motion/Reveal";
+import { MediaFrame } from "@/components/visual/MediaFrame";
 
 /**
  * About §5 — Engineering Excellence. A bright credentials panel: an intro with a
@@ -34,7 +35,7 @@ export function EngineeringExcellence() {
   const isAr = useLocale() === "ar";
 
   return (
-    <Section surface="white" id="excellence" className="relative overflow-hidden">
+    <Section surface="mist-50" id="excellence" className="relative overflow-hidden">
       <TechBackground variant="grid" opacity={3} className="text-brand-500" />
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -47,7 +48,7 @@ export function EngineeringExcellence() {
               </Heading>
               <p className="mt-6 max-w-md text-body-lg text-slate-600">{t("note")}</p>
 
-              <div className="mt-8 flex items-center gap-4 rounded-card border border-line bg-mist-50 p-5">
+              <div className="mt-8 flex items-center gap-4 rounded-card border border-line bg-white p-5">
                 <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-button bg-brand-500/10 text-brand-600">
                   <ShieldCheck className="size-6" strokeWidth={2} />
                 </span>
@@ -60,6 +61,7 @@ export function EngineeringExcellence() {
                   </p>
                 </div>
               </div>
+              <MediaFrame ratio="4/3" src="/images/about/excellence.jpg" alt="" className="mt-8" />
             </Reveal>
           </div>
 
