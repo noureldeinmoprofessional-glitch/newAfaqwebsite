@@ -1,7 +1,5 @@
 import { useLocale, useTranslations } from "next-intl";
 import {
-  ArrowRight,
-  MapPin,
   Check,
   Sparkles,
   Crosshair,
@@ -24,9 +22,7 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
   type Service,
-  relatedWorkForService,
   featuredCaseStudyForService,
-  type WorkCard,
 } from "@/data/services";
 import type { CaseStudy } from "@/data/case-studies";
 import { serviceIcon } from "./serviceIcons";
@@ -42,10 +38,7 @@ const STRENGTHS = [
 ];
 
 export function ServiceDetail({ service }: { service: Service }) {
-  const work = relatedWorkForService(service.category);
   const featured = featuredCaseStudyForService(service.category);
-  // Don't repeat the featured study inside the related grid.
-  const related = featured ? work.filter((w) => w.href !== `/case-studies/${featured.slug}`) : work;
 
   return (
     <>
@@ -56,9 +49,8 @@ export function ServiceDetail({ service }: { service: Service }) {
       <Industries service={service} surface="white" />
       <Process service={service} surface="mist-50" />
       <Why service={service} surface="white" />
-      {related.length > 0 && <RelatedProjects items={related} surface="mist-50" />}
-      {featured && <FeaturedCase study={featured} surface="white" />}
-      <ServiceFaqs faqs={service.faqs} />
+      {featured && <FeaturedCase study={featured} surface="mist-50" />}
+      <ServiceFaqs faqs={service.faqs} surface={featured ? "white" : "mist-50"} />
     </>
   );
 }
@@ -315,56 +307,6 @@ function Why({ service, surface }: { service: Service; surface: Surface }) {
               <Sparkles className="size-5 shrink-0 text-brand-600" strokeWidth={2} />
               <span className="font-display text-small font-semibold text-slate-900">{st[lang]}</span>
             </div>
-          ))}
-        </Reveal>
-      </Container>
-    </Section>
-  );
-}
-
-/* ── 08 · Related Projects ───────────────────────────────────────────────── */
-function RelatedProjects({ items, surface }: { items: WorkCard[]; surface: Surface }) {
-  const lang = useLocale() as "en" | "ar";
-  const t = useTranslations("ServiceDetail.related");
-  return (
-    <Section surface={surface} id="related-projects">
-      <Container>
-        <SectionHead eyebrow={t("eyebrow")} title={t("title")} note={t("note")} />
-        <Reveal className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
-          {items.map((w, i) => (
-            <article key={i} className="group">
-              <Link href={w.href} className="block">
-                <div className="overflow-hidden rounded-image">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={w.image}
-                    alt=""
-                    loading="lazy"
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                  />
-                </div>
-                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-slate-500">
-                  {w.industry[lang] && <span className="text-brand-600">{w.industry[lang]}</span>}
-                  <span className="inline-flex items-center gap-1.5">
-                    <MapPin className="size-3.5" strokeWidth={2} />
-                    {w.location[lang]}
-                  </span>
-                </div>
-                <h3 className="mt-2 font-display text-h3 font-semibold leading-tight text-slate-900 transition-colors group-hover:text-brand-600">
-                  {w.title[lang]}
-                </h3>
-                <p className="mt-2 line-clamp-2 text-body text-slate-600">{w.teaser[lang]}</p>
-                {w.tech.length > 0 && (
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {w.tech.map((tech) => (
-                      <span key={tech} className="rounded-full bg-brand-500/10 px-2.5 py-1 text-small font-medium text-brand-600">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </Link>
-            </article>
           ))}
         </Reveal>
       </Container>
