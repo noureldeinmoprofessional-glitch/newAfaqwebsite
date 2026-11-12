@@ -21,7 +21,7 @@ export function Technologies() {
           <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
-          <p className="mt-6 text-body-lg text-mist-50/70">{t("note")}</p>
+          <p className="mt-6 text-body-lg text-mist-50/90">{t("note")}</p>
         </Reveal>
 
         <div className="mt-12 lg:mt-16">

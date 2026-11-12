@@ -99,7 +99,7 @@ export function InnerHero({
             {title}
           </h1>
 
-          <p className="ih-sub mt-8 max-w-2xl text-body-lg text-mist-50/70 opacity-0" style={{ transform: "translateY(20px)" }}>
+          <p className="ih-sub mt-8 max-w-2xl text-body-lg text-mist-50/90 opacity-0" style={{ transform: "translateY(20px)" }}>
             {subtitle}
           </p>
 
@@ -121,7 +121,7 @@ export function InnerHero({
 
       {scrollLabel && (
         <div className="ih-scroll absolute inset-x-0 bottom-8 flex justify-center opacity-0">
-          <div className="flex flex-col items-center gap-2 text-mist-50/50">
+          <div className="flex flex-col items-center gap-2 text-mist-50/70">
             <span className="font-display text-eyebrow uppercase">{scrollLabel}</span>
             <ArrowDown className="size-4 animate-bounce" strokeWidth={2} />
           </div>

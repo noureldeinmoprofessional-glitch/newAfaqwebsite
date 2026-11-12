@@ -61,7 +61,7 @@ export function CaseStudyMetrics({ metrics }: { metrics: Metric[] }) {
               >
                 <MetricValue value={m.value} play={play} />
               </span>
-              <span className="mt-3 block text-eyebrow uppercase text-mist-50/60">
+              <span className="mt-3 block text-eyebrow uppercase text-mist-50/85">
                 {m.label[lang]}
               </span>
             </div>

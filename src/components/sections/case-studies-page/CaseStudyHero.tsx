@@ -72,7 +72,7 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
       <Container className="relative">
         <Link
           href="/case-studies"
-          className="csh-fade inline-flex items-center gap-2 font-display text-eyebrow uppercase text-mist-50/60 transition-colors hover:text-brand-400"
+          className="csh-fade inline-flex items-center gap-2 font-display text-eyebrow uppercase text-mist-50/85 transition-colors hover:text-brand-400"
         >
           <ArrowLeft className="size-4 rtl:rotate-180" strokeWidth={2} />
           {t("back")}
@@ -80,7 +80,7 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
 
         <div className="csh-fade mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-eyebrow uppercase text-brand-400">
           <span>{t("kicker")}</span>
-          <span aria-hidden="true" className="text-mist-50/40">
+          <span aria-hidden="true" className="text-mist-50/60">
             ·
           </span>
           <span className="inline-flex items-center gap-1.5 text-brand-400">
@@ -94,10 +94,10 @@ export function CaseStudyHero({ study }: { study: CaseStudy }) {
         </h1>
 
         {study.tagline && (
-          <p className="csh-fade mt-5 max-w-2xl text-body-lg text-mist-50/75">{study.tagline[lang]}</p>
+          <p className="csh-fade mt-5 max-w-2xl text-body-lg text-mist-50/90">{study.tagline[lang]}</p>
         )}
 
-        <div className="csh-fade mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-body text-mist-50/70">
+        <div className="csh-fade mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-body text-mist-50/90">
           <span className="inline-flex items-center gap-2">
             <MapPin className="size-4 text-brand-400" strokeWidth={2} />
             {study.location[lang]}

@@ -41,19 +41,19 @@ export function SiteFooter() {
             <p className="mt-6 font-display text-h3 font-medium text-mist-50">
               {t("tagline")}
             </p>
-            <p className="mt-4 max-w-xl text-body text-mist-50/60">{t("summary")}</p>
+            <p className="mt-4 max-w-xl text-body text-mist-50/90">{t("summary")}</p>
           </div>
 
           <div className="lg:col-span-6 xl:col-span-5">
             <p className="font-display text-eyebrow uppercase text-brand-500">
               {t("newsletterHeading")}
             </p>
-            <p className="mt-3 max-w-sm text-body text-mist-50/60">{t("newsletterBody")}</p>
+            <p className="mt-3 max-w-sm text-body text-mist-50/90">{t("newsletterBody")}</p>
             <form className="mt-6 flex max-w-md items-center gap-2" aria-label={t("newsletterHeading")}>
               <input
                 type="email"
                 placeholder={t("newsletterPlaceholder")}
-                className="h-12 w-full rounded-button border border-line-inv bg-white/5 px-4 text-body text-mist-50 placeholder:text-mist-50/40 focus:border-brand-500 focus:outline-none"
+                className="h-12 w-full rounded-button border border-line-inv bg-white/5 px-4 text-body text-mist-50 placeholder:text-mist-50/60 focus:border-brand-500 focus:outline-none"
                 aria-label={t("newsletterPlaceholder")}
               />
               <button
@@ -101,7 +101,7 @@ export function SiteFooter() {
                 <a
                   key={k}
                   href="#"
-                  className="group inline-flex items-center gap-1 rounded-button border border-line-inv px-3 py-1.5 text-small text-mist-50/70 transition-colors hover:border-brand-500 hover:text-brand-400"
+                  className="group inline-flex items-center gap-1 rounded-button border border-line-inv px-3 py-1.5 text-small text-mist-50/90 transition-colors hover:border-brand-500 hover:text-brand-400"
                 >
                   {t(`social.${k}`)}
                   <ArrowUpRight className="size-3" strokeWidth={2} />
@@ -116,7 +116,7 @@ export function SiteFooter() {
               <div className="absolute inset-0 grid place-items-center">
                 <div className="text-center">
                   <MapPin className="mx-auto size-6 text-brand-500" strokeWidth={2} />
-                  <p className="mt-2 font-display text-eyebrow uppercase text-mist-50/50">
+                  <p className="mt-2 font-display text-eyebrow uppercase text-mist-50/85">
                     {t("mapLabel")}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col gap-4 py-8 text-small text-mist-50/50 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 py-8 text-small text-mist-50/75 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {t("rights")}</p>
           <p className="font-display uppercase tracking-[0.12em] text-brand-500/80">
             {t("vision")}
@@ -158,7 +158,7 @@ function FooterCol({
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="text-body text-mist-50/70 transition-colors hover:text-brand-400">
+      <Link href={href} className="text-body text-mist-50/90 transition-colors hover:text-brand-400">
         {children}
       </Link>
     </li>
@@ -167,7 +167,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 
 function ContactRow({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-3 text-body text-mist-50/70">
+    <li className="flex items-start gap-3 text-body text-mist-50/90">
       <span className="mt-1 shrink-0">{icon}</span>
       <span>{children}</span>
     </li>

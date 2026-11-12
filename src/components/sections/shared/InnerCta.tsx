@@ -58,7 +58,7 @@ export function InnerCta({
           <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {title}
           </Heading>
-          <p className="mx-auto mt-8 max-w-2xl text-body-lg text-mist-50/70">{body}</p>
+          <p className="mx-auto mt-8 max-w-2xl text-body-lg text-mist-50/90">{body}</p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button variant="primary" size="lg" href={primary.href}>

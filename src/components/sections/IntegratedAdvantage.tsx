@@ -70,7 +70,7 @@ export function IntegratedAdvantage() {
           <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
-          <p className="mt-6 max-w-xl text-body-lg text-mist-50/60">{t("lead")}</p>
+          <p className="mt-6 max-w-xl text-body-lg text-mist-50/90">{t("lead")}</p>
         </div>
 
         <div className="mt-16 grid gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-16">
@@ -124,13 +124,13 @@ export function IntegratedAdvantage() {
                       active === i ? "opacity-100" : "lg:opacity-40",
                     )}
                   >
-                    <span className="font-display text-eyebrow uppercase text-mist-50/50">
+                    <span className="font-display text-eyebrow uppercase text-mist-50/85">
                       {t(`layers.${layer.key}.depth`)}
                     </span>
                     <h3 className="mt-4 font-display text-h3 font-semibold text-mist-50">
                       {t(`layers.${layer.key}.name`)}
                     </h3>
-                    <p className="mt-5 max-w-md text-body-lg text-mist-50/60">
+                    <p className="mt-5 max-w-md text-body-lg text-mist-50/90">
                       {t(`layers.${layer.key}.body`)}
                     </p>
 

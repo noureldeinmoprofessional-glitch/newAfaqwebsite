@@ -39,7 +39,7 @@ export function Vision2030() {
           <Heading as="h2" size="h2" className="mt-6 text-mist-50">
             {t("title")}
           </Heading>
-          <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">{t("body")}</p>
+          <p className="mt-6 max-w-xl text-body-lg text-mist-50/90">{t("body")}</p>
         </Reveal>
 
         {/* Landmark programs — full-width balanced grid (7 tiles + 1 note = 2×4) */}
@@ -66,7 +66,7 @@ export function Vision2030() {
           {/* Note tile completes the grid */}
           <div className="flex min-h-[176px] flex-col justify-center rounded-card border border-brand-500/30 bg-brand-500/[0.08] p-5">
             <Sparkles className="size-5 text-brand-400" strokeWidth={2} aria-hidden="true" />
-            <p className="mt-3 text-small leading-relaxed text-mist-50/75">{t("note")}</p>
+            <p className="mt-3 text-small leading-relaxed text-mist-50/90">{t("note")}</p>
           </div>
         </Reveal>
       </Container>
