@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { IntegratedAdvantage, Industries } from "@/components/sections";
+import { Industries } from "@/components/sections";
 import {
   AboutHero,
   OurStory,
@@ -43,7 +43,6 @@ export default async function AboutUsPage({
       <AboutHero />
       <OurStory />
       <OurValues />
-      <IntegratedAdvantage />
       <EngineeringExcellence />
       <Innovation />
       <TrustPillars />
