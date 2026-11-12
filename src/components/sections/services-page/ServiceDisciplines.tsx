@@ -2,15 +2,16 @@ import { useTranslations } from "next-intl";
 import { Radar, Building2, Route, MonitorPlay, Check, ArrowRight } from "lucide-react";
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { MediaFrame } from "@/components/visual/MediaFrame";
+import { SERVICE_PHOTOS } from "@/lib/images";
 import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const DISCIPLINES = [
-  { key: "survey", Icon: Radar, image: "survey" },
-  { key: "civil", Icon: Building2, image: "steel-fabrication" },
-  { key: "its", Icon: Route, image: "its" },
-  { key: "av", Icon: MonitorPlay, image: "av-led" },
+  { key: "survey", Icon: Radar },
+  { key: "civil", Icon: Building2 },
+  { key: "its", Icon: Route },
+  { key: "av", Icon: MonitorPlay },
 ] as const;
 
 const CAP_KEYS = ["c1", "c2", "c3", "c4", "c5"] as const;
@@ -28,7 +29,7 @@ export function ServiceDisciplines() {
     <Section surface="white" id="services" className="relative">
       <Container>
         <div className="flex flex-col gap-20 lg:gap-32">
-          {DISCIPLINES.map(({ key, Icon, image }, i) => {
+          {DISCIPLINES.map(({ key, Icon }, i) => {
             const flipped = i % 2 === 1;
             return (
               <article
@@ -39,7 +40,7 @@ export function ServiceDisciplines() {
                 {/* Media */}
                 <div className={cn("lg:col-span-6", flipped && "lg:order-2")}>
                   <Reveal>
-                    <MediaFrame ratio="4/3" image={image} label={t(`${key}.imageLabel`)} />
+                    <MediaFrame ratio="4/3" src={SERVICE_PHOTOS[key]} label={t(`${key}.imageLabel`)} />
                   </Reveal>
                 </div>
 

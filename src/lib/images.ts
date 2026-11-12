@@ -24,6 +24,18 @@ export const IMAGE_TOPICS = [
 
 export type ImageTopic = (typeof IMAGE_TOPICS)[number];
 
+/**
+ * Photo per service discipline — used by Integrated Advantage, the Services
+ * overview and each service hero. Client-supplied files keep their original
+ * names, so paths are URL-encoded (spaces, "&").
+ */
+export const SERVICE_PHOTOS = {
+  survey: "/images/survey.jpg",
+  civil: encodeURI("/images/Civil & Steel.JPG"),
+  its: encodeURI("/images/Intelligent Transport.jpeg"),
+  av: encodeURI("/images/AV & Digital Systems.jpeg"),
+} as const;
+
 export function imageSrc(topic: ImageTopic): string {
   return `/images/${topic}.jpg`;
 }
