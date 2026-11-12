@@ -26,12 +26,12 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
   const hasScope = !!study.scope?.length;
   const related = relatedCaseStudies(study.slug, 3);
 
-  // Each photo appears once: the hero, then the next unused images go to the
-  // challenge and solution, and only what is left forms the gallery.
-  const pool = Array.from(new Set(study.gallery ?? [])).filter((src) => src !== study.hero);
-  const challengeImg = hasChallenge ? pool.shift() : undefined;
-  const solutionImg = hasSolution ? pool.shift() : undefined;
-  const hasGallery = pool.length >= 2;
+  // Project photos other than the hero (already full-bleed at the top): the
+  // challenge and solution each feature one, and the gallery collects them all.
+  const photos = Array.from(new Set(study.gallery ?? [])).filter((src) => src !== study.hero);
+  const challengeImg = hasChallenge ? photos[0] : undefined;
+  const solutionImg = hasSolution ? photos[1] : undefined;
+  const hasGallery = photos.length >= 2;
 
   // Render order of the light sections that actually appear (drives alternation).
   const lightKeys: string[] = ["overview"];
@@ -48,7 +48,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
       {hasChallenge && <Challenge study={study} img={challengeImg} surface={surf("challenge")} />}
       {hasSolution && <Solution study={study} img={solutionImg} />}
       {hasScope && <Scope study={study} surface={surf("scope")} />}
-      {hasGallery && <CaseStudyGallery images={pool} title={t("galleryTitle")} surface={surf("gallery")} />}
+      {hasGallery && <CaseStudyGallery images={photos} title={t("galleryTitle")} surface={surf("gallery")} />}
       {related.length > 0 && <RelatedStudies studies={related} surface={surf("related")} />}
     </>
   );
