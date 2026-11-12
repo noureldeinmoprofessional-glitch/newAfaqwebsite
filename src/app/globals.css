@@ -178,6 +178,30 @@
 }
 
 /* ============================================================================
+   HERO SLIDER — the active dot fills over one slide's duration; its
+   animationend advances the slider (see HeroSlider.tsx).
+   ========================================================================= */
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-progress {
+  transform-origin: left;
+  animation-name: hero-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+[dir="rtl"] .hero-progress {
+  transform-origin: right;
+}
+
+/* ============================================================================
    LOGO MARQUEE — infinite rows of logo tiles (About · Clients & Partners).
    The track holds the list twice; shifting it by half its width loops
    seamlessly. RTL runs the other way; hovering a row pauses it.
