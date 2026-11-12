@@ -123,20 +123,20 @@ export function ProjectsShowcase() {
             <article
               key={study.slug}
               data-card
-              className="grid w-[90%] shrink-0 snap-start overflow-hidden rounded-card bg-white shadow-xl shadow-ink-900/30 grid-cols-1 sm:w-[86%] lg:w-[88%] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]"
+              className="grid w-[90%] shrink-0 snap-start overflow-hidden rounded-card bg-white shadow-xl shadow-ink-900/30 grid-cols-1 sm:w-[86%] lg:w-[88%] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]"
             >
-              {/* Photo — fades into the white text panel */}
-              <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
+              {/* Photo — fades into the white text panel (text first on desktop: EN text-left, AR text-right) */}
+              <div className="relative aspect-[16/10] lg:order-2 lg:aspect-auto lg:min-h-[520px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={study.hero} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
                 <div
-                  className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white lg:bg-gradient-to-r lg:via-white/10 rtl:lg:bg-gradient-to-l"
+                  className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white lg:bg-gradient-to-l lg:via-white/10 rtl:lg:bg-gradient-to-r"
                   aria-hidden="true"
                 />
               </div>
 
               {/* Text panel — everything on white */}
-              <div className="flex min-w-0 flex-col p-6 sm:p-8 lg:py-10 lg:pe-10 lg:ps-4">
+              <div className="flex min-w-0 flex-col p-6 sm:p-8 lg:order-1 lg:py-10 lg:ps-10 lg:pe-4">
                 <span className="inline-flex w-fit items-center gap-2 rounded-full bg-mist-100 px-3.5 py-1.5 font-display text-small font-semibold text-slate-700">
                   <span className="size-1.5 rounded-full bg-brand-500" aria-hidden="true" />
                   {study.industry?.[lang] ?? tc(study.category)}
