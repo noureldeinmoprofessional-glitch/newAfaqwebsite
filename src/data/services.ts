@@ -6,7 +6,7 @@
  * Each of the four engineering divisions (survey · civil · its · av) becomes a
  * dedicated /services/[slug] page. Related work and the featured case study are
  * DERIVED from the case-study register (see helpers) so the site stays
- * interconnected — service → related projects → case study → contact.
+ * interconnected — service → case study → contact.
  *
  * Free text carries both locales. Technology names render as Latin badges in
  * both locales (brand/standard marks).
@@ -14,8 +14,7 @@
 
 import type { Category } from "./projects";
 import { CASE_STUDIES, type CaseStudy } from "./case-studies";
-import { PROJECTS } from "./projects";
-import { projectImage, imageSrc, SERVICE_PHOTOS } from "@/lib/images";
+import { SERVICE_PHOTOS } from "@/lib/images";
 
 interface B {
   en: string;
@@ -503,54 +502,4 @@ export function caseStudiesForService(cat: Category): CaseStudy[] {
 export function featuredCaseStudyForService(cat: Category): CaseStudy | undefined {
   const list = caseStudiesForService(cat);
   return list.find((c) => c.featured) ?? list[0];
-}
-
-/** A normalized card for the Related Projects grid. */
-export interface WorkCard {
-  title: B;
-  industry: B;
-  location: B;
-  teaser: B;
-  tech: string[];
-  image: string;
-  href: string;
-  category: Category;
-}
-
-/**
- * Related work for a service — real case studies first (they have detail pages),
- * then representative projects of the same discipline to fill out the grid so
- * every service (including ITS) shows proof of expertise.
- */
-export function relatedWorkForService(cat: Category, excludeSlug?: string): WorkCard[] {
-  const fromCases: WorkCard[] = caseStudiesForService(cat)
-    .filter((c) => c.slug !== excludeSlug)
-    .map((c) => ({
-      title: c.name,
-      industry: c.industry ?? { en: "", ar: "" },
-      location: c.location,
-      teaser: c.teaser,
-      tech: (c.technologies ?? c.services).slice(0, 4).map((x) => x.en),
-      image: c.hero,
-      href: `/case-studies/${c.slug}`,
-      category: c.category,
-    }));
-
-  if (fromCases.length >= 3) return fromCases.slice(0, 6);
-
-  // Fill from the representative project register (links to the archive).
-  const fill: WorkCard[] = PROJECTS.filter((p) => p.category === cat)
-    .slice(0, 6 - fromCases.length)
-    .map((p) => ({
-      title: p.name,
-      industry: { en: "", ar: "" },
-      location: p.city,
-      teaser: p.scope,
-      tech: p.technical.en.replace(/·/g, ",").split(",").map((s) => s.trim()).filter(Boolean).slice(0, 4),
-      image: imageSrc(projectImage(p.category, p.id)),
-      href: "/projects",
-      category: p.category,
-    }));
-
-  return [...fromCases, ...fill].slice(0, 6);
 }
