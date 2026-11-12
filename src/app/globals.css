@@ -201,6 +201,17 @@
   transform-origin: right;
 }
 
+/* Inset hero slides: melt the top and start edges into the white page. The
+   image is flipped in RTL, so the start-edge fade flips with it. */
+@utility hero-inset-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 28%),
+    linear-gradient(to right, transparent, #000 32%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent, #000 28%),
+    linear-gradient(to right, transparent, #000 32%);
+  mask-composite: intersect;
+}
+
 /* ============================================================================
    LOGO MARQUEE — infinite rows of logo tiles (About · Clients & Partners).
    The track holds the list twice; shifting it by half its width loops
