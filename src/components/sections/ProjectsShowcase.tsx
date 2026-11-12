@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, ArrowRight, Crosshair, Clock, MapPin, Layers } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getDirectionMultiplier } from "@/i18n/direction";
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { Link } from "@/i18n/navigation";
@@ -11,16 +11,14 @@ import { CASE_STUDIES } from "@/data/case-studies";
 /** The five flagship case studies — real work spanning survey, GIS, AV and steel. */
 const FEATURED = CASE_STUDIES.filter((c) => c.featured).slice(0, 5);
 
-/** Icons for the stats strip, in order. */
-const METRIC_ICONS = [Crosshair, Clock, MapPin, Layers];
 
 /**
  * Section — Selected Projects. A horizontally scrolling carousel of case-study
  * cards, moved with prev/next buttons (top right) or by swiping — never by
  * page scroll. Each card follows the company-profile layout: the photo fades
  * into a light panel so every line of text sits on white: green project name,
- * dark client name, a solid green tagline bar, readable teaser, service pills,
- * a dark stats strip and a "View Case Study" button.
+ * dark client name, a solid green tagline bar, readable teaser, service pills
+ * and a "View Case Study" button.
  */
 export function ProjectsShowcase() {
   const t = useTranslations("Projects");
@@ -123,7 +121,7 @@ export function ProjectsShowcase() {
             <article
               key={study.slug}
               data-card
-              className="grid w-[90%] shrink-0 snap-start overflow-hidden rounded-card bg-white shadow-xl shadow-ink-900/30 grid-cols-1 sm:w-[86%] lg:w-[88%] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]"
+              className="grid w-[90%] shrink-0 snap-start overflow-hidden rounded-card bg-white shadow-xl shadow-ink-900/30 grid-cols-1 sm:w-[86%] lg:w-[88%] lg:grid-cols-[minmax(0,0.84fr)_minmax(0,1fr)]"
             >
               {/* Photo — fades into the white text panel (text first on desktop: EN text-left, AR text-right) */}
               <div className="relative aspect-[16/10] lg:order-2 lg:aspect-auto lg:min-h-[520px]">
@@ -165,28 +163,6 @@ export function ProjectsShowcase() {
                       </li>
                     ))}
                   </ul>
-                )}
-
-                {/* Dark stats strip */}
-                {study.metrics && study.metrics.length > 0 && (
-                  <dl className="mt-6 grid grid-cols-3 divide-x divide-mist-50/15 rounded-card bg-ink-900 py-4 rtl:divide-x-reverse">
-                    {study.metrics.slice(0, 3).map((m, i) => {
-                      const Icon = METRIC_ICONS[i % METRIC_ICONS.length];
-                      return (
-                        <div key={i} className="flex min-w-0 items-center gap-3 px-3 sm:px-4">
-                          <span className="hidden size-10 shrink-0 items-center justify-center rounded-full border border-mist-50/30 text-mist-50 2xl:inline-flex">
-                            <Icon className="size-5" strokeWidth={2} />
-                          </span>
-                          <div className="flex min-w-0 flex-col">
-                            <dt className="order-2 text-small leading-snug text-mist-50/90">{m.label[lang]}</dt>
-                            <dd dir="ltr" className="order-1 font-display text-h4 font-bold leading-tight text-brand-400 tabular-nums">
-                              {m.value}
-                            </dd>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </dl>
                 )}
 
                 <Link
