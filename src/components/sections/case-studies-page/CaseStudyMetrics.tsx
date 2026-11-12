@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { Container, Section } from "@/components/primitives";
+import { useLocale } from "next-intl";
 import type { Metric } from "@/data/case-studies";
 
 /** Split "1,080+" → {prefix:"", num:1080, decimals:0, suffix:"+"}. */
@@ -15,13 +14,13 @@ function parse(value: string): { prefix: string; num: number; decimals: number; 
 }
 
 /**
- * 08 — Project Metrics. Numeric values count up once on scroll into view
+ * Key results — the project's metrics as a stacked list that sits beside the
+ * executive overview. Numeric values count up once on scroll into view
  * (reduced-motion safe); non-numeric values (e.g. "Sub-cm", "Zero") show as-is.
  */
-export function CaseStudyMetrics({ metrics }: { metrics: Metric[] }) {
-  const t = useTranslations("CaseStudyDetail");
+export function CaseStudyMetrics({ metrics, title }: { metrics: Metric[]; title: string }) {
   const lang = useLocale() as "en" | "ar";
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDListElement>(null);
   const [play, setPlay] = useState(false);
 
   useEffect(() => {
@@ -45,30 +44,24 @@ export function CaseStudyMetrics({ metrics }: { metrics: Metric[] }) {
   }, []);
 
   return (
-    <Section surface="ink-900" id="metrics">
-      <Container>
-        <h2 className="font-display text-h2 font-semibold text-mist-50">{t("metricsTitle")}</h2>
-
-        <div
-          ref={ref}
-          className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4"
-        >
-          {metrics.map((m, i) => (
-            <div key={i} className="border-t border-mist-50/15 pt-5">
-              <span
-                dir="ltr"
-                className="block font-display text-stat font-bold text-brand-400 tabular-nums"
-              >
-                <MetricValue value={m.value} play={play} />
-              </span>
-              <span className="mt-3 block text-eyebrow uppercase text-mist-50/85">
-                {m.label[lang]}
-              </span>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </Section>
+    <div className="rounded-card bg-ink-900 p-7 lg:p-8">
+      <p className="font-display text-eyebrow uppercase text-brand-400">{title}</p>
+      <dl ref={ref} className="mt-4 divide-y divide-mist-50/15">
+        {metrics.map((m, i) => (
+          <div key={i} className="flex items-baseline justify-between gap-6 py-5 last:pb-0">
+            <dt className="text-small font-semibold uppercase tracking-[0.06em] text-mist-50/85">
+              {m.label[lang]}
+            </dt>
+            <dd
+              dir="ltr"
+              className="shrink-0 font-display text-stat-sm font-bold text-brand-400 tabular-nums"
+            >
+              <MetricValue value={m.value} play={play} />
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
   );
 }
 

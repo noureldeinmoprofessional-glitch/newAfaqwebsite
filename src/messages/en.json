@@ -1052,8 +1052,8 @@
   "CaseStudyDetail": {
     "back": "All Case Studies",
     "kicker": "Case Study",
+    "resultsTitle": "Key Results",
     "overviewTitle": "Executive Overview",
-    "snapshotTitle": "Project Snapshot",
     "snapshot": {
       "client": "Client / Owning Entity",
       "location": "Location",
@@ -1062,10 +1062,8 @@
       "industry": "Industry Sector"
     },
     "challengeTitle": "The Engineering Challenge",
-    "solutionTitle": "The AFAQ Solution",
+    "solutionTitle": "AFAQ Solution",
     "scopeTitle": "Scope of Work",
-    "highlightsTitle": "Project Highlights",
-    "metricsTitle": "Project Metrics",
     "technologiesTitle": "Technologies Used",
     "deliverablesTitle": "Key Deliverables",
     "galleryTitle": "Project Gallery",
@@ -1073,16 +1071,7 @@
     "lightboxClose": "Close",
     "lightboxPrev": "Previous",
     "lightboxNext": "Next",
-    "relatedServicesTitle": "Related Engineering Services",
-    "relatedServicesCta": "Explore service",
-    "relatedTitle": "Related Case Studies",
-    "services": {
-      "survey": "Survey & Geospatial",
-      "civil": "Civil & Steel Engineering",
-      "its": "Intelligent Transportation Systems",
-      "av": "AV & Smart Systems",
-      "integrated": "Integrated Engineering"
-    },
+    "relatedTitle": "Interesting Case Studies",
     "cta": {
       "eyebrow": "Let's build together",
       "title": "Ready to Deliver Your Next Engineering Project?",
