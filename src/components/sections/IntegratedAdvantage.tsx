@@ -7,14 +7,9 @@ import { useGsapContext } from "@/lib/gsap/useGsapContext";
 import { Container, Section, Eyebrow, Heading } from "@/components/primitives";
 import { MediaFrame } from "@/components/visual/MediaFrame";
 import { cn } from "@/lib/utils";
+import { SERVICE_PHOTOS } from "@/lib/images";
 
-/** Each layer's photo (client-supplied files keep their original names; encoded for URLs). */
-const LAYERS = [
-  { key: "survey", src: "/images/survey.jpg" },
-  { key: "civil", src: encodeURI("/images/Civil & Steel.JPG") },
-  { key: "its", src: encodeURI("/images/Intelligent Transport.jpeg") },
-  { key: "av", src: encodeURI("/images/AV & Digital Systems.jpeg") },
-] as const;
+const LAYERS = (["survey", "civil", "its", "av"] as const).map((key) => ({ key, src: SERVICE_PHOTOS[key] }));
 
 /**
  * Section 4 — The Integrated Advantage (brief §4). A continuous vertical line

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
-import { IntegratedAdvantage } from "@/components/sections";
 import { InnerHero } from "@/components/sections/shared/InnerHero";
 import { InnerCta } from "@/components/sections/shared/InnerCta";
 import { ServiceDisciplines, ServicesProcess } from "@/components/sections/services-page";
@@ -61,7 +60,6 @@ export default async function ServicesRoute({
     <main id="main">
       <ServicesHero />
       <ServiceDisciplines />
-      <IntegratedAdvantage />
       <ServicesProcess />
       <ServicesCta />
     </main>

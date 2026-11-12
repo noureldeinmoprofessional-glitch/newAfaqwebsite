@@ -15,7 +15,7 @@
 import type { Category } from "./projects";
 import { CASE_STUDIES, type CaseStudy } from "./case-studies";
 import { PROJECTS } from "./projects";
-import { projectImage, imageSrc } from "@/lib/images";
+import { projectImage, imageSrc, SERVICE_PHOTOS } from "@/lib/images";
 
 interface B {
   en: string;
@@ -131,7 +131,7 @@ export const SERVICES: Service[] = [
       "Since 2008, AFAQ has delivered topographic survey, drone mapping and enterprise GIS across the Kingdom — from remote desert terrain to dense urban corridors like KAFD and NEOM.",
       "منذ 2008، تُقدّم أفاق المسح الطبوغرافي والمسح بالطائرات المسيّرة ونظم المعلومات الجغرافية المؤسسية عبر المملكة — من الصحاري النائية إلى الممرات الحضرية الكثيفة كالميدان المالي ونيوم.",
     ),
-    hero: "/images/survey.jpg",
+    hero: SERVICE_PHOTOS.survey,
     overview: [
       {
         icon: "what",
@@ -235,7 +235,7 @@ export const SERVICES: Service[] = [
       "We provide the robust physical infrastructure that supports advanced digital systems — from FEA-certified steel fabrication to complex underground utilities, engineered for the toughest desert and coastal environments.",
       "نوفّر البنية التحتية المادية المتينة التي تدعم الأنظمة الرقمية المتقدمة — من تصنيع الحديد المعتمد بتحليل FEA إلى المرافق المدفونة المعقّدة، مهندَسة لأقسى بيئات الصحراء والسواحل.",
     ),
-    hero: "/images/steel-fabrication.jpg",
+    hero: SERVICE_PHOTOS.civil,
     overview: [
       {
         icon: "what",
@@ -325,7 +325,7 @@ export const SERVICES: Service[] = [
       "We deliver complete ITS solutions for highways, urban corridors and border crossings — integrating enforcement cameras, variable message signs and traffic management centers into one operational platform.",
       "نُقدّم حلول نقل ذكي متكاملة للطرق السريعة والممرات الحضرية والمنافذ الحدودية — بدمج كاميرات الضبط ولوحات الرسائل المتغيّرة ومراكز إدارة الحركة في منصة تشغيلية واحدة.",
     ),
-    hero: "/images/its.jpg",
+    hero: SERVICE_PHOTOS.its,
     overview: [
       {
         icon: "what",
@@ -409,7 +409,7 @@ export const SERVICES: Service[] = [
       "We design and deploy enterprise-grade AV systems and digital infrastructure — from NOC/SOC command centers to dvLED immersive environments — using the world's leading AV-over-IP technologies.",
       "نصمّم وننفّذ أنظمة صوت وصورة وبنية رقمية بمستوى مؤسسي — من مراكز القيادة NOC/SOC إلى بيئات dvLED الغامرة — باستخدام أبرز تقنيات الصوت والصورة عبر الشبكة عالمياً.",
     ),
-    hero: "/images/av-led.jpg",
+    hero: SERVICE_PHOTOS.av,
     overview: [
       {
         icon: "what",
