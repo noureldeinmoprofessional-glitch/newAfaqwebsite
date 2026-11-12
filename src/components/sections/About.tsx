@@ -43,7 +43,7 @@ export function About() {
           {/* Representative GIS / geospatial image */}
           <div className="lg:col-span-5">
             <Reveal>
-              <MediaFrame ratio="4/5" src="/images/about-gis.jpg" alt={t("imageLabel")} label={t("imageLabel")} />
+              <MediaFrame ratio="4/5" src="/images/about-drone.jpg" alt={t("imageLabel")} label={t("imageLabel")} />
             </Reveal>
           </div>
 
