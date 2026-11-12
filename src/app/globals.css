@@ -178,6 +178,45 @@
 }
 
 /* ============================================================================
+   LOGO MARQUEE — infinite rows of logo tiles (About · Clients & Partners).
+   The track holds the list twice; shifting it by half its width loops
+   seamlessly. RTL runs the other way; hovering a row pauses it.
+   ========================================================================= */
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% * var(--marquee-dir, 1)));
+  }
+}
+
+.logo-marquee-track {
+  animation: logo-marquee var(--marquee-duration, 40s) linear infinite;
+}
+.logo-marquee-track[data-reverse="true"] {
+  animation-direction: reverse;
+}
+[dir="rtl"] .logo-marquee-track {
+  --marquee-dir: -1;
+}
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none !important;
+    width: auto !important;
+    flex-wrap: wrap;
+  }
+  .logo-marquee-track [aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* ============================================================================
    REDUCED MOTION — CSS-level guard.
    JS/GSAP motion is gated separately via gsap.matchMedia().
    ========================================================================= */
