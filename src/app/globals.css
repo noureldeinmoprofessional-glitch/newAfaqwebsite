@@ -46,10 +46,10 @@
      desktop). body-lg's minimum (18px) stays above body (17px) at every
      width, so "large body" is never smaller than body on phones.          */
 
-  /* Uppercase micro-labels, tags, pills, overlines (15px, bold). */
-  --text-eyebrow: 0.9375rem;
+  /* Uppercase micro-labels, tags, pills, overlines (16 → 18px, bold). */
+  --text-eyebrow: clamp(1rem, 1.25vw, 1.125rem);
   --text-eyebrow--line-height: 1.4;
-  --text-eyebrow--letter-spacing: 0.1em;
+  --text-eyebrow--letter-spacing: 0.08em;
   --text-eyebrow--font-weight: 700;
 
   /* Captions, meta, form help, secondary nav (14px). */

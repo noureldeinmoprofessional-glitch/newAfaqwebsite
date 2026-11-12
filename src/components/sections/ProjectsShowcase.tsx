@@ -59,7 +59,7 @@ export function ProjectsShowcase() {
                     />
                   </div>
                   {study.industry && (
-                    <span className="absolute start-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-3 py-1.5 font-display text-eyebrow uppercase text-ink-900 shadow-sm">
+                    <span className="absolute start-4 top-4 inline-flex max-w-[calc(100%-2rem)] items-center gap-1.5 rounded-full bg-brand-500 px-3 py-1.5 font-display text-small font-bold uppercase tracking-[0.06em] text-ink-900 shadow-sm">
                       <Factory className="size-3.5" strokeWidth={2.5} />
                       {study.industry[lang]}
                     </span>

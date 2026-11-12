@@ -26,8 +26,8 @@ export default async function HomePage({
       <IntegratedAdvantage />
       <ProjectsShowcase />
       <Numbers />
-      <CtaBanner />
       <Blog />
+      <CtaBanner />
     </main>
   );
 }
