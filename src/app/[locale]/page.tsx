@@ -4,7 +4,6 @@ import {
   TrustedBy,
   About,
   IntegratedAdvantage,
-  Services,
   ProjectsShowcase,
   Numbers,
   CtaBanner,
@@ -25,7 +24,6 @@ export default async function HomePage({
       <TrustedBy />
       <About />
       <IntegratedAdvantage />
-      <Services />
       <ProjectsShowcase />
       <Numbers />
       <CtaBanner />

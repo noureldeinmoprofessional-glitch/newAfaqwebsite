@@ -88,11 +88,7 @@ export function IntegratedAdvantage() {
                       "absolute inset-0 transition-opacity duration-700",
                       active === i ? "opacity-100" : "opacity-0",
                     )}
-                  >
-                    <span className="absolute right-4 top-4 font-display text-small tabular-nums text-brand-400 rtl:left-4 rtl:right-auto">
-                      {t(`layers.${layer.key}.index`)}
-                    </span>
-                  </MediaFrame>
+                  />
                 ))}
               </div>
             </div>
@@ -128,14 +124,9 @@ export function IntegratedAdvantage() {
                       active === i ? "opacity-100" : "lg:opacity-40",
                     )}
                   >
-                    <div className="flex items-center gap-3">
-                      <span className="font-display text-small tabular-nums text-brand-500">
-                        {t(`layers.${layer.key}.index`)}
-                      </span>
-                      <span className="font-display text-eyebrow uppercase text-mist-50/50">
-                        {t(`layers.${layer.key}.depth`)}
-                      </span>
-                    </div>
+                    <span className="font-display text-eyebrow uppercase text-mist-50/50">
+                      {t(`layers.${layer.key}.depth`)}
+                    </span>
                     <h3 className="mt-4 font-display text-h3 font-semibold text-mist-50">
                       {t(`layers.${layer.key}.name`)}
                     </h3>
