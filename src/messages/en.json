@@ -28,6 +28,7 @@
   "Hero": {
     "eyebrow": "EST. 2008 · RIYADH · VISION 2030 ALIGNED",
     "title": "Engineering Every Layer of Tomorrow.",
+    "titleLines": ["Engineering", "Every Layer of", "Tomorrow."],
     "subtitle": "Pioneers in Integrated Engineering — delivering end-to-end solutions from geospatial intelligence to smart infrastructure, supporting Saudi Arabia's Vision 2030.",
     "ctaPrimary": "Explore Services",
     "ctaSecondary": "Contact Us",

@@ -8,13 +8,11 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 /**
- * `inset` slides sit smaller and anchored to the end edge on desktop, leaving
- * extra white space for the copy (their top/start edges already fade to white).
+ * On desktop each slide sits at two-thirds width, anchored to the bottom end
+ * corner, leaving clear white space for the three-line headline (top and start
+ * edges are masked into the page).
  */
-const SLIDES = [
-  { src: "/images/hero/drone-survey.jpg", inset: false },
-  { src: "/images/hero/av-facade.jpg", inset: true },
-] as const;
+const SLIDES = ["/images/hero/drone-survey.jpg", "/images/hero/av-facade.jpg"] as const;
 /** Time each slide stays on screen before cross-fading to the next. */
 const SLIDE_MS = 6000;
 
@@ -34,6 +32,7 @@ const SLIDE_MS = 6000;
 export function HeroSlider() {
   const t = useTranslations("Hero");
   const alts = t.raw("slider.slides") as string[];
+  const titleLines = t.raw("titleLines") as string[];
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reducedMotion = useRef(false);
@@ -62,7 +61,7 @@ export function HeroSlider() {
     >
       {/* ── Slides. Desktop: full-bleed behind the copy. Mobile: a band below it. ── */}
       <div className="relative order-2 h-[40svh] w-full lg:absolute lg:inset-0 lg:order-none lg:h-auto">
-        {SLIDES.map(({ src, inset }, i) => {
+        {SLIDES.map((src, i) => {
           const active = i === index;
           return (
             <div
@@ -85,12 +84,7 @@ export function HeroSlider() {
                   alt={alts[i] ?? ""}
                   fetchPriority={i === 0 ? "high" : "auto"}
                   loading={i === 0 ? "eager" : "lazy"}
-                  className={cn(
-                    "h-full w-full object-cover object-[75%_100%] rtl:-scale-x-100",
-                    inset
-                      ? "lg:hero-inset-mask lg:absolute lg:bottom-0 lg:end-0 lg:h-auto lg:w-[68%] lg:max-w-none"
-                      : "lg:object-right",
-                  )}
+                  className="h-full w-full object-cover object-[75%_100%] rtl:-scale-x-100 lg:hero-inset-mask lg:absolute lg:bottom-0 lg:end-0 lg:h-auto lg:w-[68%] lg:max-w-none xl:w-[76%]"
                 />
               </div>
             </div>
@@ -105,8 +99,15 @@ export function HeroSlider() {
       {/* ── Copy ── */}
       <Container className="pointer-events-none relative z-10 order-1">
         <div className="flex flex-col justify-start pt-28 pb-8 lg:min-h-[100svh] lg:justify-center lg:pt-0 lg:pb-0">
-          <div className="pointer-events-auto max-w-xl">
-            <h1 className="font-display text-display font-semibold text-brand-600">{t("title")}</h1>
+          <div className="pointer-events-auto">
+            {/* Always exactly three lines: each line is set explicitly and never wraps. */}
+            <h1 className="font-display text-display font-semibold text-brand-600">
+              {titleLines.map((line) => (
+                <span key={line} className="block whitespace-nowrap">
+                  {line}
+                </span>
+              ))}
+            </h1>
             <p className="mt-5 max-w-lg text-body-lg text-slate-600 lg:mt-7">{t("subtitle")}</p>
 
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4 lg:mt-10">
