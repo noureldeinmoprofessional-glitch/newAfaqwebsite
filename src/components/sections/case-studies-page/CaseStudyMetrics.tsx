@@ -2,7 +2,48 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale } from "next-intl";
+import {
+  BadgeCheck,
+  Boxes,
+  Clock,
+  Crosshair,
+  Database,
+  FileText,
+  Gauge,
+  Handshake,
+  Layers,
+  LayoutDashboard,
+  Map as MapIcon,
+  MapPin,
+  MonitorPlay,
+  Ruler,
+  ShieldCheck,
+  Target,
+  Wind,
+  type LucideIcon,
+} from "lucide-react";
 import type { Metric } from "@/data/case-studies";
+
+/** Pick an icon from the metric's English label (first match wins). */
+const ICON_RULES: [RegExp, LucideIcon][] = [
+  [/control point|geodetic/i, Target],
+  [/gis cent/i, MapIcon],
+  [/control room/i, LayoutDashboard],
+  [/site|parcel/i, MapPin],
+  [/downtime|uptime|safety|security/i, ShieldCheck],
+  [/time|month|schedule|duration/i, Clock],
+  [/accuracy|tolerance|pitch|precision/i, Crosshair],
+  [/asset/i, Boxes],
+  [/document/i, FileText],
+  [/record/i, Database],
+  [/led|façade|facade|video wall|display|screen/i, MonitorPlay],
+  [/contract|epc/i, Handshake],
+  [/certif|compliance|standard/i, BadgeCheck],
+  [/area|length|distance/i, Ruler],
+  [/thickness|layer/i, Layers],
+  [/wind/i, Wind],
+];
+const metricIcon = (label: string): LucideIcon => ICON_RULES.find(([re]) => re.test(label))?.[1] ?? Gauge;
 
 /** Split "1,080+" → {prefix:"", num:1080, decimals:0, suffix:"+"}. */
 function parse(value: string): { prefix: string; num: number; decimals: number; suffix: string } | null {
@@ -48,9 +89,10 @@ export function CaseStudyMetrics({ metrics, title }: { metrics: Metric[]; title:
       <p className="font-display text-eyebrow uppercase text-brand-400">{title}</p>
       <dl ref={ref} className="mt-4 divide-y divide-mist-50/15">
         {metrics.map((m, i) => (
-          <div key={i} className="flex items-baseline justify-between gap-6 py-5 last:pb-0">
-            <dt className="text-small font-semibold uppercase tracking-[0.06em] text-mist-50/85">
-              {m.label[lang]}
+          <div key={i} className="flex items-center justify-between gap-6 py-5 last:pb-0">
+            <dt className="flex min-w-0 items-center gap-3 text-small font-semibold uppercase tracking-[0.06em] text-mist-50/85">
+              <MetricIcon label={m.label.en} />
+              <span>{m.label[lang]}</span>
             </dt>
             <dd
               dir="ltr"
@@ -62,6 +104,18 @@ export function CaseStudyMetrics({ metrics, title }: { metrics: Metric[]; title:
         ))}
       </dl>
     </div>
+  );
+}
+
+function MetricIcon({ label }: { label: string }) {
+  const Icon = metricIcon(label);
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-flex size-10 shrink-0 items-center justify-center rounded-button bg-brand-500/15 text-brand-400"
+    >
+      <Icon className="size-5" strokeWidth={2} />
+    </span>
   );
 }
 
