@@ -15,10 +15,10 @@ export const IMAGE_TOPICS = [
   "integrated-smartcity",
   "riyadh-skyline",
   "drone-survey",
-  "gis-mapping",
+  "gis-workstation",
   "control-room",
   "water-infrastructure",
-  "engineers-site",
+  "engineers-site-saudi",
   "digital-twin",
 ] as const;
 
@@ -33,7 +33,7 @@ export const SERVICE_PHOTOS = {
   survey: "/images/survey.jpg",
   civil: encodeURI("/images/Civil & Steel.JPG"),
   its: encodeURI("/images/Intelligent Transport.jpeg"),
-  av: "/images/av-led-wall.jpg",
+  av: "/images/av-dvled-lobby.jpg",
 } as const;
 
 export function imageSrc(topic: ImageTopic): string {
@@ -48,8 +48,8 @@ function pick<T>(list: readonly T[], seed: string): T {
 }
 
 const PROJECT_TOPICS: Record<Category, readonly ImageTopic[]> = {
-  survey: ["survey", "drone-survey", "gis-mapping"],
-  civil: ["steel-fabrication", "engineers-site", "water-infrastructure"],
+  survey: ["survey", "drone-survey", "gis-workstation"],
+  civil: ["steel-fabrication", "engineers-site-saudi", "water-infrastructure"],
   its: ["its", "control-room"],
   av: ["av-led", "control-room"],
   integrated: ["integrated-smartcity", "riyadh-skyline", "digital-twin"],
@@ -60,7 +60,7 @@ export function projectImage(category: Category, seed: string): ImageTopic {
 }
 
 const ARTICLE_TOPICS: Record<ArticleCategory, ImageTopic> = {
-  geospatial: "gis-mapping",
+  geospatial: "gis-workstation",
   digital: "digital-twin",
   transport: "its",
   infrastructure: "steel-fabrication",

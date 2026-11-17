@@ -192,7 +192,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/images/case-studies/kafd.jpg",
       "/images/riyadh-skyline.jpg",
       "/images/drone-survey.jpg",
-      "/images/gis-mapping.jpg",
+      "/images/gis-workstation.jpg",
     ],
   },
 
@@ -290,8 +290,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     gallery: [
       "/images/case-studies/swcc.jpg",
       "/images/water-infrastructure.jpg",
-      "/images/gis-mapping.jpg",
-      "/images/engineers-site.jpg",
+      "/images/gis-workstation.jpg",
+      "/images/engineers-site-saudi.jpg",
     ],
   },
 
@@ -597,7 +597,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     gallery: [
       "/images/case-studies/al-shabab-stadium.jpg",
       "/images/steel-fabrication.jpg",
-      "/images/engineers-site.jpg",
+      "/images/engineers-site-saudi.jpg",
     ],
   },
 
@@ -730,7 +730,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       b("Geodatabase Development", "تطوير قواعد بيانات جغرافية"),
     ],
     relatedServiceKeys: ["survey"],
-    hero: "/images/gis-mapping.jpg",
+    hero: "/images/gis-workstation.jpg",
     overview: b(
       "AFAQ built 20+ municipal GIS centers, delivering land digitization, smart-city asset management and geodatabase development for government and municipalities.",
       "أنشأت أفاق أكثر من 20 مركز نظم معلومات جغرافية بلدي، وسلّمت رقمنة الأراضي وإدارة أصول المدن الذكية وتطوير قواعد البيانات الجغرافية للجهات الحكومية والبلديات.",
