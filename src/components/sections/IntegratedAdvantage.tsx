@@ -9,15 +9,7 @@ import { MediaFrame } from "@/components/visual/MediaFrame";
 import { cn } from "@/lib/utils";
 import { SERVICE_PHOTOS } from "@/lib/images";
 
-/** This section's own AV photo (the service pages keep SERVICE_PHOTOS.av). */
-const PHOTO_OVERRIDES: Partial<Record<keyof typeof SERVICE_PHOTOS, string>> = {
-  av: "/images/integrated-av.jpg",
-};
-
-const LAYERS = (["survey", "civil", "its", "av"] as const).map((key) => ({
-  key,
-  src: PHOTO_OVERRIDES[key] ?? SERVICE_PHOTOS[key],
-}));
+const LAYERS = (["survey", "civil", "its", "av"] as const).map((key) => ({ key, src: SERVICE_PHOTOS[key] }));
 
 /**
  * Section 4 — The Integrated Advantage (brief §4). A continuous vertical line
