@@ -596,7 +596,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     gallery: [
       "/images/case-studies/al-shabab-stadium.jpg",
-      "/images/steel-fabrication.jpg",
+      "/images/case-studies/al-shabab-crane-lift.jpg",
       "/images/case-studies/al-shabab-steel-install.jpg",
     ],
   },
