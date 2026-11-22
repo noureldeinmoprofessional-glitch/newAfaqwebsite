@@ -79,7 +79,19 @@ export interface CaseStudy {
   gallery?: string[];
 }
 
-export const CASE_STUDIES: CaseStudy[] = [
+/**
+ * Studies shown on the site. The others stay in ALL_CASE_STUDIES (content kept)
+ * and can be switched back on by adding their slug here.
+ */
+const PUBLISHED_SLUGS = new Set([
+  "kafd",
+  "swcc",
+  "vov-riyadh-front",
+  "sec-control-rooms",
+  "al-shabab-stadium",
+]);
+
+const ALL_CASE_STUDIES: CaseStudy[] = [
   // ═══════════════════════ FEATURED CASE STUDIES ═══════════════════════════
   {
     slug: "kafd",
@@ -926,6 +938,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   },
 ];
+
+/** Everything the site lists, routes and links to. */
+export const CASE_STUDIES: CaseStudy[] = ALL_CASE_STUDIES.filter((c) => PUBLISHED_SLUGS.has(c.slug));
 
 /** Facet order for the listing filter. */
 export const CASE_CATEGORY_KEYS: Category[] = ["survey", "civil", "its", "av", "integrated"];
