@@ -202,7 +202,7 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
     ],
     gallery: [
       "/images/case-studies/kafd.jpg",
-      "/images/riyadh-skyline.jpg",
+      "/images/case-studies/kafd-site-skyline.jpg",
       "/images/drone-survey.jpg",
       "/images/gis-workstation.jpg",
     ],
