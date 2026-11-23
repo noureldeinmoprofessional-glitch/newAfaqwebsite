@@ -506,7 +506,7 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
     ],
     gallery: [
       "/images/case-studies/sec-control-rooms.jpg",
-      "/images/case-studies/sec-subframe-install.jpg",
+      "/images/case-studies/sec-led-wall-build.jpg",
       "/images/case-studies/sec-dvled-install.jpg",
       "/images/steel-fabrication.jpg",
     ],
