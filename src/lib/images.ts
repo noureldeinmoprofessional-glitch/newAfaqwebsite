@@ -33,7 +33,7 @@ export const SERVICE_PHOTOS = {
   survey: "/images/survey.jpg",
   civil: encodeURI("/images/Civil & Steel.JPG"),
   its: encodeURI("/images/Intelligent Transport.jpeg"),
-  av: "/images/av-dvled-lobby.jpg",
+  av: "/images/av-curved-led-lobby.jpg",
 } as const;
 
 export function imageSrc(topic: ImageTopic): string {
