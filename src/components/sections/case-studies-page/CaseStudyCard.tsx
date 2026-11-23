@@ -67,13 +67,6 @@ export function CaseStudyCard({ study, className }: { study: CaseStudy; classNam
               {tc(study.category)}
             </span>
           </div>
-
-          {/* Featured tag */}
-          {study.featured && (
-            <span className="absolute end-4 top-4 rounded-full bg-brand-500 px-2.5 py-1 font-display text-small font-bold uppercase tracking-[0.06em] text-ink-900">
-              {t("card.featured")}
-            </span>
-          )}
         </div>
 
         {/* Body */}
