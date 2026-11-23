@@ -404,7 +404,7 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
     ],
     gallery: [
       "/images/case-studies/vov-riyadh-front.jpg",
-      "/images/av-led.jpg",
+      "/images/case-studies/vov-led-wall-build.jpg",
       "/images/steel-fabrication.jpg",
       "/images/integrated-smartcity.jpg",
     ],
